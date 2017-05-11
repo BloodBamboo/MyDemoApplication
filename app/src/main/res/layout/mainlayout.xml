@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        </android.support.v7.widget.Toolbar>
+
+        <Button
+            android:id="@+id/button_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="retrofit2.0" />
+
+        <Button
+            android:id="@+id/button_animation_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="path View动画" />
+
+        <Button
+            android:id="@+id/button_list_pop_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="list弹出动画" />
+
+        <Button
+            android:id="@+id/button_lead_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="引导页动画" />
+
+        <Button
+            android:id="@+id/button_service_guard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="双进程守护" />
+
+        <Button
+            android:id="@+id/button_view_touch_event_transmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewTouch事件传递验证" />
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_nav" />
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/image_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        tools:src="@drawable/b" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="布局测试，引导文件" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:text="布局测试，引导文件" />
+    </RelativeLayout>
+
+
+    <com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom|center_horizontal"
+        app:layout_heightPercent="50%h"
+        app:layout_widthPercent="50%w"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="100%"
+            android:scaleType="fitXY"
+            android:src="@drawable/aa" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="100%"
+            android:scaleType="fitXY"
+            android:src="@drawable/bb" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="100%"
+            android:scaleType="fitXY"
+            android:src="@drawable/cc" />
+
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+</com.zhy.android.percent.support.PercentFrameLayout>
