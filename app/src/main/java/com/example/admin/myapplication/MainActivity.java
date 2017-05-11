@@ -1,14 +1,18 @@
 package com.example.admin.myapplication;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.example.admin.myapplication.activity.LeadPagerActivity;
+import com.example.admin.myapplication.activity.ListPopAnimationActivity;
+import com.example.admin.myapplication.activity.ScrollingActivity;
+import com.example.admin.myapplication.activity.ServiceGuardActivity;
+import com.example.admin.myapplication.activity.ShaderViewActivity;
+import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.anime.AnimationActivity;
 
 import butterknife.BindView;
@@ -70,5 +74,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_view_touch_event_transmit)
     public void onClickTouchTransmit() {
         startActivity(new Intent(this, TouchEventTransmitActivity.class));
+    }
+
+    @OnClick(R.id.button_view_Shader_demo)
+    public void onClickShader() {
+        startActivity(new Intent(this, ShaderViewActivity.class));
     }
 }

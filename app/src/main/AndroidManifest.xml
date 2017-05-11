@@ -18,15 +18,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScrollingActivity"/>
+        <activity android:name=".activity.ScrollingActivity"/>
         <activity android:name=".anime.AnimationActivity"/>
-        <activity android:name=".ListPopAnimationActivity"/>
-        <activity android:name=".LeadPagerActivity"
+        <activity android:name=".activity.ListPopAnimationActivity"/>
+        <activity android:name=".activity.LeadPagerActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".ServiceGuardActivity"/>
-        <activity android:name=".TouchEventTransmitActivity"/>
+        <activity android:name=".activity.ServiceGuardActivity"/>
+        <activity android:name=".activity.TouchEventTransmitActivity"/>
+        <activity android:name=".activity.ShaderViewActivity"/>
+
         <service android:name=".service.LocalService"/>
         <service android:name=".service.RemoteService" android:process=":com.test.tt"/>
+
     </application>
 
 </manifest>
