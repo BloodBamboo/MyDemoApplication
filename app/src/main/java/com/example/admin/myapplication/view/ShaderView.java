@@ -37,7 +37,7 @@ public class ShaderView extends View {
         super(context, attrs);
         mPaint = new Paint();
 
-        mBitmap = ((BitmapDrawable)context.getDrawable(R.drawable.xyjy)).getBitmap();
+        mBitmap = ((BitmapDrawable)context.getDrawable(R.drawable.xyjy2)).getBitmap();
 
         mWidth = mBitmap.getWidth();
         mHeight = mBitmap.getHeight();

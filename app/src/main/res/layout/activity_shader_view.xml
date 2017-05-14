@@ -3,6 +3,19 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.example.admin.myapplication.view.ShaderView
+        android:layout_width="300dp"
+        android:layout_height="300dp" />
+    <com.example.admin.myapplication.view.RippleButton
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="ripple"/>
+    <com.example.admin.myapplication.view.LinearGradientTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#666666"
+        android:text="欢迎同学们来到动脑学院高级UI"/>
+    <com.example.admin.myapplication.view.GuaGuaVIew
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
 </LinearLayout>
