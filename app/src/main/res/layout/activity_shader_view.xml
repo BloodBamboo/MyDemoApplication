@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.example.admin.myapplication.view.ShaderView
-        android:layout_width="300dp"
-        android:layout_height="300dp" />
-    <com.example.admin.myapplication.view.RippleButton
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ripple"/>
-    <com.example.admin.myapplication.view.LinearGradientTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:textColor="#666666"
-        android:text="欢迎同学们来到动脑学院高级UI"/>
-    <com.example.admin.myapplication.view.GuaGuaVIew
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.admin.myapplication.view.ui.ShaderView
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
+
+        <com.example.admin.myapplication.view.ui.RippleButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ripple" />
+
+        <com.example.admin.myapplication.view.ui.LinearGradientTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="欢迎同学们来到动脑学院高级UI"
+            android:textColor="#666666"
+            android:textSize="30sp" />
+
+        <com.example.admin.myapplication.view.ui.GuaGuaVIew
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.example.admin.myapplication.view.ui.ColourlessView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.example.admin.myapplication.view.ui.ColorView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>

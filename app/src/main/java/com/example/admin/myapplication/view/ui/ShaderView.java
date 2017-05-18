@@ -1,4 +1,4 @@
-package com.example.admin.myapplication.view;
+package com.example.admin.myapplication.view.ui;
 
 import android.content.Context;
 import android.graphics.Bitmap;
