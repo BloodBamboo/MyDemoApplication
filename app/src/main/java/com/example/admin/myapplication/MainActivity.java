@@ -9,6 +9,7 @@ import android.view.Menu;
 
 import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
+import com.example.admin.myapplication.activity.RevealSearchViewActivity;
 import com.example.admin.myapplication.activity.ScrollingActivity;
 import com.example.admin.myapplication.activity.ServiceGuardActivity;
 import com.example.admin.myapplication.activity.ShaderViewActivity;
@@ -79,5 +80,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_view_Shader_demo)
     public void onClickShader() {
         startActivity(new Intent(this, ShaderViewActivity.class));
+    }
+
+    @OnClick(R.id.button_view_reveal_search)
+    public void onClickRevealSearch() {
+        startActivity(new Intent(this, RevealSearchViewActivity.class));
     }
 }

@@ -59,7 +59,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="画笔着色器例子和xfermode" />
-
+        <Button
+            android:id="@+id/button_view_reveal_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="reveal和search例子" />
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

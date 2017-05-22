@@ -26,6 +26,8 @@
         <activity android:name=".activity.ServiceGuardActivity"/>
         <activity android:name=".activity.TouchEventTransmitActivity"/>
         <activity android:name=".activity.ShaderViewActivity"/>
+        <activity android:name=".activity.RevealSearchViewActivity"/>
+
 
         <service android:name=".service.LocalService"/>
         <service android:name=".service.RemoteService" android:process=":com.test.tt"/>
