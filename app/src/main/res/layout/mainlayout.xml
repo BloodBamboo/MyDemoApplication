@@ -64,6 +64,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="reveal和search例子" />
+        <Button
+            android:id="@+id/button_view_water"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="水波纹" />
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

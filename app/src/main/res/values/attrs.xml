@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WaterView">
+        <attr name="colorDark" format="color" />
+        <attr name="colorLight" format="color" />
+        <attr name="radiusDark" format="dimension" />
+        <attr name="radiusLight" format="dimension" />
+        <attr name="percent" format="float" />
+    </declare-styleable>
+</resources>

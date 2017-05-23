@@ -14,6 +14,7 @@ import com.example.admin.myapplication.activity.ScrollingActivity;
 import com.example.admin.myapplication.activity.ServiceGuardActivity;
 import com.example.admin.myapplication.activity.ShaderViewActivity;
 import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
+import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.anime.AnimationActivity;
 
 import butterknife.BindView;
@@ -85,5 +86,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_view_reveal_search)
     public void onClickRevealSearch() {
         startActivity(new Intent(this, RevealSearchViewActivity.class));
+    }
+    @OnClick(R.id.button_view_water)
+    public void onClickWater() {
+        startActivity(new Intent(this, WaterActivity.class));
     }
 }
