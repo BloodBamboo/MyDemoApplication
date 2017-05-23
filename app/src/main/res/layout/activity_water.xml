@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <com.example.admin.myapplication.view.ui.WaterView
+        android:id="@+id/water1"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:onClick="true"
         app:colorDark="@color/colorPrimaryDark"
         app:colorLight="@color/colorLight"
         app:radiusDark="20dp"
         app:radiusLight="10dp"
-        />
+        app:percent="0.1"/>
+
+    <com.example.admin.myapplication.view.ui.WaterView2
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
 </LinearLayout>

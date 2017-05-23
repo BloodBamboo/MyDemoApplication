@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PaintFlagsDrawFilter;
 import android.graphics.Path;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -25,6 +26,8 @@ public class WaterView extends View {
     private int radiusDark;
     private int radiusLight;
     private float percent;
+    private int x;
+
 
     public WaterView(Context context) {
         this(context, null);
@@ -44,7 +47,6 @@ public class WaterView extends View {
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setAntiAlias(true);
-
     }
 
     @Override
@@ -52,35 +54,41 @@ public class WaterView extends View {
         super.onDraw(canvas);
         int width = getWidth();
         int height = getHeight();
+        canvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG));
 
-
-        float showHeight = height * percent;
+        float showHeight = height - height * percent;
         float startDot = 0;
+        canvas.translate(-x, 0);
 
-//        mPaint.setColor(colorLight);
-//        mPath.moveTo(startDot, showHeight - radiusLight);
-//        mPath.quadTo(width / 4,  showHeight, width / 2, showHeight + radiusLight);
-//        mPath.quadTo(width * 0.75f,  showHeight, width, showHeight - radiusLight);
-//        mPath.lineTo(width, height);
-//        mPath.lineTo(startDot, height);
-//        mPath.lineTo(startDot, showHeight);
-//
-//        canvas.drawPath(mPath, mPaint);
-//        mPath.reset();
-
+        mPath.reset();
         mPaint.setColor(colorDark);
         mPath.moveTo(startDot, showHeight);
-        mPath.quadTo(width * 0.25f,  showHeight - radiusDark, width * 0.5f, showHeight);
-        mPath.quadTo(width * 0.75f,  showHeight + radiusDark, width, showHeight);
-        mPath.quadTo(width * 1.25f,  showHeight - radiusDark, width * 1.5f, showHeight);
-        mPath.quadTo(width * 1.75f,  showHeight + radiusDark, width * 2, showHeight);
-        mPath.lineTo(width, height);
+        mPath.quadTo(width * 0.25f, showHeight - radiusDark, width * 0.5f, showHeight);
+        mPath.quadTo(width * 0.75f, showHeight + radiusDark, width, showHeight);
+        mPath.quadTo(width * 1.25f, showHeight - radiusDark, width * 1.5f, showHeight);
+        mPath.quadTo(width * 1.75f, showHeight + radiusDark, width * 2, showHeight);
+        mPath.quadTo(width * 2.25f, showHeight - radiusDark, width * 2.5f, showHeight);
+        mPath.quadTo(width * 2.75f, showHeight + radiusDark, width * 3, showHeight);
+        mPath.lineTo(width * 3, height);
         mPath.lineTo(startDot, height);
         mPath.lineTo(startDot, showHeight);
 
         canvas.drawPath(mPath, mPaint);
-        mPath.reset();
+    }
+
+    public void setX() {
+        if (percent > 1) {
+            percent = 0.1f;
+        } else {
+            percent += 0.001f;
+        }
 
 
+        if (x > (getWidth() * 2 - 10)) {
+            x = 0;
+        } else {
+            x += 10;
+        }
+        invalidate();
     }
 }
