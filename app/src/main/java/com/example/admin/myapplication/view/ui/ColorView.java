@@ -46,7 +46,6 @@ public class ColorView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         setMeasuredDimension(width * 7, height);
     }
 

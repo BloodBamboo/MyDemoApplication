@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.example.admin.myapplication.R;
 import com.example.admin.myapplication.view.ui.RevealDrawable;
+import com.example.admin.myapplication.view.ui.TrashCanView;
 
 import java.util.concurrent.TimeUnit;
 
@@ -34,6 +35,8 @@ public class RevealSearchViewActivity extends AppCompatActivity {
 
     @BindView(R.id.image)
     ImageView image;
+    @BindView(R.id.trash_can_view)
+    TrashCanView trash_can_view;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,11 +69,11 @@ public class RevealSearchViewActivity extends AppCompatActivity {
             public void run() {
                 try {
                     while (!isCancel) {
-                        Thread.sleep(100);
+                        Thread.sleep(20);
                         if (level > 10000) {
                             level = 0;
                         } else {
-                            level += 30;
+                            level += 10;
                         }
                         if (image != null) {
                             image.post(new Runnable() {
@@ -113,5 +116,10 @@ public class RevealSearchViewActivity extends AppCompatActivity {
         if (thread != null) {
             isCancel = true;
         }
+    }
+
+    @OnClick(R.id.button3)
+    public void onClcik3() {
+        trash_can_view.startAnim();
     }
 }

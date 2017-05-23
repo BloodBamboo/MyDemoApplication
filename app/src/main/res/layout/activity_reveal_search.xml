@@ -29,5 +29,13 @@
             android:text="停止动画" />
     </LinearLayout>
 
-
+    <com.example.admin.myapplication.view.ui.TrashCanView
+        android:id="@+id/trash_can_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="桶动画" />
 </LinearLayout>
