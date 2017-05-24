@@ -67,9 +67,9 @@ public class WaterView extends View {
         mPath.quadTo(width * 0.75f, showHeight + radiusDark, width, showHeight);
         mPath.quadTo(width * 1.25f, showHeight - radiusDark, width * 1.5f, showHeight);
         mPath.quadTo(width * 1.75f, showHeight + radiusDark, width * 2, showHeight);
-        mPath.quadTo(width * 2.25f, showHeight - radiusDark, width * 2.5f, showHeight);
-        mPath.quadTo(width * 2.75f, showHeight + radiusDark, width * 3, showHeight);
-        mPath.lineTo(width * 3, height);
+//        mPath.quadTo(width * 2.25f, showHeight - radiusDark, width * 2.5f, showHeight);
+//        mPath.quadTo(width * 2.75f, showHeight + radiusDark, width * 3, showHeight);
+        mPath.lineTo(width * 2, height);
         mPath.lineTo(startDot, height);
         mPath.lineTo(startDot, showHeight);
 
@@ -84,7 +84,7 @@ public class WaterView extends View {
         }
 
 
-        if (x > (getWidth() * 2 - 10)) {
+        if (x > (getWidth() - 10)) {
             x = 0;
         } else {
             x += 10;
