@@ -15,6 +15,7 @@ import com.example.admin.myapplication.activity.ServiceGuardActivity;
 import com.example.admin.myapplication.activity.ShaderViewActivity;
 import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
+import com.example.admin.myapplication.activity.old.OLdScrollingActivity;
 import com.example.admin.myapplication.anime.AnimationActivity;
 
 import butterknife.BindView;
@@ -47,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_scrolling, menu);
         return true;
+    }
+
+    @OnClick(R.id.button_old_demo)
+    public void onClickOldDemo() {
+        startActivity(new Intent(this, OLdScrollingActivity.class));
     }
 
     @OnClick(R.id.button_retrofit)

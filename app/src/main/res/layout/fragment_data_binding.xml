@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data class="com.example.admin.myapplication.databinding.fragment.FragmentDataBinding">
+        <import type="android.view.View"/>
+        <!-- 变量user， 描述了一个布局中会用到的属性 -->
+        <variable name="user" type="com.example.admin.myapplication.bean.User"/>
+        <variable name="handler" type="com.example.admin.myapplication.handler.EventHandler"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}"
+            app:font="@{user.age}"
+            />
+
+        <!-- 布局文件中的表达式使用 “@{}” 的语法 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(user.age)}"
+            android:visibility="@{user.age > 0 ? View.VISIBLE : View.GONE}"
+            />
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`Age :` + String.valueOf(user.age)}"
+            android:textColor="@{@color/colorPrimary}"
+            />
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{handler.loadString(context)}"
+            android:textColor="@{handler.getColor(context)}"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更改数据内容"
+            android:onClick="@{() -> handler.upData(user)}"/>
+    </LinearLayout>
+</layout>

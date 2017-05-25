@@ -49,15 +49,12 @@ public class RevealSearchViewActivity extends AppCompatActivity {
                 RevealDrawable.HORIZONTAL);
         image.setImageDrawable(rd);
         image.setImageLevel(level);
-        image.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
+        image.setOnClickListener((v) -> {
 				level += 1000;
                 if (level > 10000) {
                     level = 0;
                 }
                 image.setImageLevel(level);
-			}
 		});
     }
 

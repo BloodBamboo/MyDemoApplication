@@ -89,5 +89,18 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="string_from_context">阿萨德房顶上发法国大使馆</string>
     <string name="action_settings">Settings</string>
+    <string name="primary_color">Primary Color</string>
+    <string name="accent_color">Accent Color</string>
+    <string name="primary_text_color">Primary Text Color</string>
+    <string name="secondary_text_color">Secondary Text Color</string>
+
+    <string name="header">Header</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel nisl vel eros accumsan lacinia. Pellentesque vel tellus vitae purus interdum sagittis. Pellentesque vehicula odio ac nibh bibendum suscipit.</string>
+    <string name="checkbox">Checkbox</string>
+    <string name="switchView">Switch</string>
+    <string name="switchViewCompat">SwitchCompat</string>
+    <string name="radiobutton">Ratio Button</string>
+    <string name="edit_text">Input field</string>
 </resources>

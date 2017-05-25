@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data class="ccom.example.admin.myapplication.databinding.DataBindingBinding">
+        <import type="android.view.View"/>
+        <!-- 变量user， 描述了一个布局中会用到的属性 -->
+        <variable name="user" type="com.example.admin.myapplication.bean.User"/>
+        <variable name="handler" type="com.example.admin.myapplication.handler.EventHandler"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            />
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}"/>
+
+        <!-- 布局文件中的表达式使用 “@{}” 的语法 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(user.age)}"
+            android:visibility="@{user.age > 0 ? View.VISIBLE : View.GONE}"
+            />
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`Age :` + String.valueOf(user.age)}"
+            android:textColor="@{@color/colorPrimary}"
+            />
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{handler.loadString(context)}"
+            android:textColor="@{handler.getColor(context)}"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点击事件"
+            android:onClick="@{() -> handler.onClick(context, user)}"/>
+        <fragment
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.example.admin.myapplication.fragment.DataBindingFragment"
+            />
+
+    </LinearLayout>
+</layout>

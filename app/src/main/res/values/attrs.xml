@@ -7,4 +7,9 @@
         <attr name="radiusLight" format="dimension" />
         <attr name="percent" format="float" />
     </declare-styleable>
+    <declare-styleable name="IndexBar">
+        <attr name="textSize" format="dimension"/>
+        <attr name="textColor" format="color"/>
+        <attr name="pressBackground" format="color" />
+    </declare-styleable>
 </resources>

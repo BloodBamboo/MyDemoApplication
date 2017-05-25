@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.view.ViewPager
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/view_pager"
+<com.zhy.android.percent.support.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="移动" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/h_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="50%w"
+        app:layout_widthPercent="50%w"
+        app:layout_marginPercent="15%w">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="500dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/pp1"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.zhy.android.percent.support.PercentFrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:background="#ff44aacc"
+        app:layout_heightPercent="50%w"
+        app:layout_widthPercent="50%w">
+
+        <com.zhy.android.percent.support.PercentFrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:background="#ffcc5ec7"
+            app:layout_heightPercent="50%w"
+            app:layout_widthPercent="50%w">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ff7ecc16"
+                android:gravity="center"
+                android:text="margin 15% of w"
+                app:layout_marginPercent="15%w" />
+
+        </com.zhy.android.percent.support.PercentFrameLayout>
+
+    </com.zhy.android.percent.support.PercentFrameLayout>
+
+    <com.zhy.android.percent.support.PercentFrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom|center_horizontal"
+        app:layout_heightPercent="50%"
+        app:layout_widthPercent="50%">
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lead1"
+                    app:layout_widthPercent="100%" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lead2"
+                    app:layout_widthPercent="100%" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lead3"
+                    app:layout_widthPercent="100%" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+    </com.zhy.android.percent.support.PercentFrameLayout>
+</com.zhy.android.percent.support.PercentFrameLayout>
