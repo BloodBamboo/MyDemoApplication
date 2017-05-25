@@ -16,7 +16,7 @@ import com.example.admin.myapplication.activity.ShaderViewActivity;
 import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.activity.old.OLdScrollingActivity;
-import com.example.admin.myapplication.anime.AnimationActivity;
+import com.example.admin.myapplication.activity.AnimationActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

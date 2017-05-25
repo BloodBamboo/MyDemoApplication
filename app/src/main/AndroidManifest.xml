@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ScrollingActivity"/>
-        <activity android:name=".anime.AnimationActivity"/>
+        <activity android:name=".activity.AnimationActivity"/>
         <activity android:name=".activity.ListPopAnimationActivity"/>
         <activity android:name=".activity.LeadPagerActivity"
             android:theme="@style/AppTheme.NoActionBar"/>

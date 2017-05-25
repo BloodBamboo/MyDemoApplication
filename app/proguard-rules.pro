@@ -44,6 +44,7 @@
 
 -keepclassmembers class * extends android.app.Activity {
 public void *(android.view.View);
+void set*(***);
 }
 -keep public class * extends android.view.View {
 *** get*();
