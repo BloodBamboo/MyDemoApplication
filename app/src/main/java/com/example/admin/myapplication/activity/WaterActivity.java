@@ -21,8 +21,6 @@ public class WaterActivity extends AppCompatActivity {
     @BindView(R.id.water1)
     public WaterView water1;
 
-    boolean isCancel;
-    Thread thread;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,33 +31,11 @@ public class WaterActivity extends AppCompatActivity {
 
     @OnClick(R.id.water1)
     public void onClcik1() {
-        isCancel = false;
-        thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    while (!isCancel) {
-                        Thread.sleep(50);
-                        water1.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                water1.setX();
-                            }
-                        });
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-
-                }
-            }
-        });
-        thread.start();
+        water1.start();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        isCancel = true;
     }
 }
