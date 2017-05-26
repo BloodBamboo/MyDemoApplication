@@ -1,6 +1,7 @@
 package com.example.admin.myapplication.view.ui;
 
 
+import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,6 +13,7 @@ import android.graphics.Path;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 
 import com.example.admin.myapplication.R;
 
@@ -106,9 +108,26 @@ public class WaterView extends View {
             x = (int) animation.getAnimatedValue();
             invalidate();
         });
-        valueAnimator.setDuration(3500);
-        valueAnimator.setInterpolator(null);
+        valueAnimator.setDuration(2500);
+//        valueAnimator.setInterpolator(null);
         valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
-        valueAnimator.start();
+//        valueAnimator.start();
+//
+        ValueAnimator valueAnimator1 = ValueAnimator.ofFloat(0, 1);
+        valueAnimator1.addUpdateListener((ValueAnimator animation) -> {
+            percent = (float) animation.getAnimatedValue();
+            invalidate();
+        });
+        valueAnimator1.setDuration(7000);
+//        valueAnimator1.setInterpolator(null);
+        valueAnimator1.setRepeatCount(ValueAnimator.INFINITE);
+//        valueAnimator1.start();
+
+        AnimatorSet animSet = new AnimatorSet();
+//        animSet.setDuration(5000);
+        animSet.setInterpolator(new LinearInterpolator());
+        //两个动画同时执行
+        animSet.playTogether(valueAnimator, valueAnimator1);
+        animSet.start();
     }
 }

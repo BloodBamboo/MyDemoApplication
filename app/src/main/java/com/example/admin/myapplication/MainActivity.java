@@ -11,6 +11,7 @@ import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
 import com.example.admin.myapplication.activity.RevealSearchViewActivity;
 import com.example.admin.myapplication.activity.ScrollingActivity;
+import com.example.admin.myapplication.activity.SearchViewActivity;
 import com.example.admin.myapplication.activity.ServiceGuardActivity;
 import com.example.admin.myapplication.activity.ShaderViewActivity;
 import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
@@ -96,5 +97,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_view_water)
     public void onClickWater() {
         startActivity(new Intent(this, WaterActivity.class));
+    }
+
+    @OnClick(R.id.button_search_view)
+    public void onClickSearchView() {
+        startActivity(new Intent(this, SearchViewActivity.class));
     }
 }
