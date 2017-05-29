@@ -50,13 +50,17 @@ public class SearchView extends View {
         path.reset();
         int x = width / 2 + radius;
         int y = height / 3 + radius;
-        path.moveTo(x, y);
-        //path.addCircle(width / 2, height / 3, radius, Path.Direction.CW);
-        path.addArc(new RectF(width / 2 - radius, height / 3 - radius, width / 2 + radius, height / 3 + radius), 45,360);
-        path.addArc(new RectF(width / 2 - radius, height / 3 - radius, width / 2 + radius, height / 3 + radius), 0, 45);
 
+//        canvas.save();
+//        canvas.translate(width / 2, 0);
+//        canvas.rotate(45);
+//        path.addCircle(width / 2, height / 3, radius, Path.Direction.CW);
+//        path.lineTo(x + radius, y - radius);
+
+        //不能画360度一个满圆，否则会改变path的最后落点，不是45度的点
+        path.addArc(new RectF(width / 2 - radius, height / 3 - radius, width / 2 + radius, height / 3 + radius), 45, 359);
         path.lineTo(x + radius, y + radius);
-        path.lineTo(x, y);
+
         if (!b) {
             canvas.drawPath(path, paint);
         } else {
@@ -68,9 +72,12 @@ public class SearchView extends View {
 //            float start = (float) (stop - ((0.5 - Math.abs(p - 0.5)) * length));
             float start = stop - 50;
             pathMeasure.getSegment(start, stop, path, true);
+//            pathMeasure.nextContour();
+//            pathMeasure.getSegment(start, stop, path, true);
             canvas.drawPath(path, paint);
-
         }
+        path.close();
+//        canvas.restore();
     }
 
     public void start() {
