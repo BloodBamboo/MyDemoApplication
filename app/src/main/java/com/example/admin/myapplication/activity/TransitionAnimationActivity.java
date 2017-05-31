@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.admin.myapplication.R;
+import com.example.admin.myapplication.activity.Scene.BeginDelayedActivity;
 import com.example.admin.myapplication.activity.Scene.SceneActivity;
 
 import butterknife.ButterKnife;
@@ -27,5 +28,10 @@ public class TransitionAnimationActivity extends AppCompatActivity {
     @OnClick(R.id.button1)
     public void OnClick1() {
         startActivity(new Intent(this, SceneActivity.class));
+    }
+
+    @OnClick(R.id.button2)
+    public void OnClick2() {
+        startActivity(new Intent(this, BeginDelayedActivity.class));
     }
 }

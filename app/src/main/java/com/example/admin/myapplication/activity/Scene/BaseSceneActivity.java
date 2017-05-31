@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.support.transition.Scene;
-import android.support.transition.Transition;
-import android.support.transition.TransitionManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Scene;
+import android.transition.Transition;
+import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -19,8 +19,8 @@ import com.example.admin.myapplication.R;
  */
 
 public abstract class BaseSceneActivity extends AppCompatActivity {
-    private Scene scene1;
-    private Scene scene2;
+    protected Scene scene1;
+    protected Scene scene2;
     private boolean isScene2;
 //
 //    abstract Transition getTransition();

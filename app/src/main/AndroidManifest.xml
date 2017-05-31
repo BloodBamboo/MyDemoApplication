@@ -44,7 +44,16 @@
             android:theme="@style/AppTheme3"/>
         <activity android:name=".activity.Scene.SceneChangeBoundsActivity"
             android:theme="@style/AppTheme3"/>
-
+        <activity android:name=".activity.Scene.SceneChangeTransformActivity"
+            android:theme="@style/AppTheme3"/>
+        <activity android:name=".activity.Scene.SceneChangeClipBoundsActivity"
+            android:theme="@style/AppTheme3"/>
+        <activity android:name=".activity.Scene.SceneChangeImageTransformActivity"
+            android:theme="@style/AppTheme3"/>
+        <activity android:name=".activity.Scene.SceneFadeSlideExplodeActivity"
+            android:theme="@style/AppTheme3"/>
+        <activity android:name=".activity.Scene.BeginDelayedActivity"
+            android:theme="@style/AppTheme3"/>
         <service android:name=".service.LocalService" />
         <service
             android:name=".service.RemoteService"

@@ -23,4 +23,18 @@ public class SceneActivity extends AppCompatActivity {
     public void changeBounds(View view) {
         startActivity(new Intent(this, SceneChangeBoundsActivity.class));
     }
+
+    public void changeTransform(View view){
+        startActivity(new Intent(this, SceneChangeTransformActivity.class));
+    }
+
+    public void changeClipBounds(View view){
+        startActivity(new Intent(this, SceneChangeClipBoundsActivity.class));
+    }
+    public void changeImageTransform(View view){
+        startActivity(new Intent(this, SceneChangeImageTransformActivity.class));
+    }
+    public void fade(View view){
+        startActivity(new Intent(this, SceneFadeSlideExplodeActivity.class));
+    }
 }
