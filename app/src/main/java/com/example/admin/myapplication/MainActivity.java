@@ -15,6 +15,7 @@ import com.example.admin.myapplication.activity.SearchViewActivity;
 import com.example.admin.myapplication.activity.ServiceGuardActivity;
 import com.example.admin.myapplication.activity.ShaderViewActivity;
 import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
+import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.activity.old.OLdScrollingActivity;
 import com.example.admin.myapplication.activity.AnimationActivity;
@@ -102,5 +103,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_search_view)
     public void onClickSearchView() {
         startActivity(new Intent(this, SearchViewActivity.class));
+    }
+
+    @OnClick(R.id.button_transition_anim)
+    public void onClickTransitionAnim() {
+        startActivity(new Intent(this, TransitionAnimationActivity.class));
     }
 }

@@ -4,4 +4,6 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">10dp</dimen>
     <dimen name="activity_horizontal_margin">10dp</dimen>
+    <dimen name="material_text_title_size">20sp</dimen>
+    <dimen name="elevation_toolbar">4dp</dimen>
 </resources>
