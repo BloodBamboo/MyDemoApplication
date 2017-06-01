@@ -9,6 +9,7 @@ import android.view.Menu;
 
 import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
+import com.example.admin.myapplication.activity.MapActivity;
 import com.example.admin.myapplication.activity.RevealSearchViewActivity;
 import com.example.admin.myapplication.activity.ScrollingActivity;
 import com.example.admin.myapplication.activity.SearchViewActivity;
@@ -19,6 +20,8 @@ import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.activity.old.OLdScrollingActivity;
 import com.example.admin.myapplication.activity.AnimationActivity;
+
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -108,5 +111,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_transition_anim)
     public void onClickTransitionAnim() {
         startActivity(new Intent(this, TransitionAnimationActivity.class));
+    }
+
+    @OnClick(R.id.button_map)
+    public void onClickMap() {
+        startActivity(new Intent(this, MapActivity.class));
     }
 }

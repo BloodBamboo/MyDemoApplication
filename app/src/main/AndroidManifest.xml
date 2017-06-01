@@ -40,6 +40,7 @@
         <activity android:name=".activity.old.OLdScrollingActivity" />
         <activity android:name=".activity.SearchViewActivity" />
         <activity android:name=".activity.TransitionAnimationActivity"/>
+        <activity android:name=".activity.MapActivity"/>
         <activity android:name=".activity.Scene.SceneActivity"
             android:theme="@style/AppTheme3"/>
         <activity android:name=".activity.Scene.SceneChangeBoundsActivity"

@@ -101,6 +101,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="过渡动画" />
+                <Button
+                    android:id="@+id/button_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="地图练习" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
