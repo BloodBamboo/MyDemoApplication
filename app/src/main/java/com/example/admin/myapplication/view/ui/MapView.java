@@ -30,6 +30,9 @@ import java.util.List;
  */
 
 public class MapView extends View {
+
+    private float aFloat;
+
     class PathBean {
         public Path path;
 
@@ -40,28 +43,29 @@ public class MapView extends View {
         }
 
         public void onDraw(Canvas canvas, Paint paint) {
-            if (!isSelected) {
-                int color = paint.getColor();
-                paint.setColor(Color.WHITE);
-                paint.setStyle(Paint.Style.STROKE);
-                paint.setStrokeWidth(4);
-                canvas.drawPath(path, paint);
+            int color = paint.getColor();
+            paint.setColor(Color.WHITE);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(4);
+            canvas.drawPath(path, paint);
 
-                paint.setColor(color);
-                paint.setStyle(Paint.Style.FILL);
-                paint.setStrokeWidth(2);
-                canvas.drawPath(path, paint);
-            } else {
-                int color = paint.getColor();
-                paint.setColor(Color.BLACK);
-                paint.setStyle(Paint.Style.STROKE);
-                paint.setStrokeWidth(4);
-                canvas.drawPath(path, paint);
-                paint.setColor(color);
-                paint.setStyle(Paint.Style.FILL);
-                paint.setStrokeWidth(2);
-                canvas.drawPath(path, paint);
-            }
+            paint.setColor(color);
+            paint.setStyle(Paint.Style.FILL);
+            paint.setStrokeWidth(2);
+            canvas.drawPath(path, paint);
+        }
+
+        public void onDrawLight(Canvas canvas, Paint paint) {
+            int color = paint.getColor();
+            paint.setColor(Color.BLACK);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(4);
+            canvas.drawPath(path, paint);
+
+            paint.setColor(color);
+            paint.setStyle(Paint.Style.FILL);
+            paint.setStrokeWidth(2);
+            canvas.drawPath(path, paint);
         }
 
     }
@@ -73,6 +77,9 @@ public class MapView extends View {
     private Paint paint;
     private int Colors[] = {Color.parseColor("#3F51B5"), Color.parseColor("#FF4081"), Color.parseColor("#55FF4081")};
 
+    private float minWidth = 1000;
+    private float minHeight = 1000;
+    float rate = 0.5f;
 
     public MapView(Context context) {
         this(context, null);
@@ -118,19 +125,63 @@ public class MapView extends View {
         }).run();
     }
 
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+
+        int width = widthSize;
+        int height = heightSize;
+
+        switch (widthMode) {
+            case MeasureSpec.EXACTLY :
+            case MeasureSpec.AT_MOST:
+//                width = widthSize > minWidth ? widthSize : minWidth;
+                width = widthSize;
+                break;
+        }
+
+        switch (heightMode) {
+            case MeasureSpec.EXACTLY :
+            case MeasureSpec.AT_MOST:
+//                height = heightSize > minHeight ? heightSize : minHeight;
+                height = heightSize;
+                break;
+        }
+        float temp1 = width / minWidth;
+        float temp2 = height / minHeight;
+        rate = temp1 > temp2 ? temp1 : temp2;
+
+        setMeasuredDimension(width, height);
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawColor(Color.LTGRAY);
+
+        canvas.scale(rate, rate);
         for (PathBean bean : list) {
-            paint.setColor(Colors[list.indexOf(bean) % 3]);
-            bean.onDraw(canvas, paint);
+            if (!bean.isSelected) {
+                paint.setColor(Colors[list.indexOf(bean) % 3]);
+                bean.onDraw(canvas, paint);
+            }
+        }
+
+        for (PathBean bean : list) {
+            if (bean.isSelected) {
+                paint.setColor(Colors[list.indexOf(bean) % 3]);
+                bean.onDrawLight(canvas, paint);
+            }
         }
     }
 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        list.clear();
     }
 
     @Override
@@ -141,8 +192,22 @@ public class MapView extends View {
                     RectF bounds = new RectF();
                     bean.path.computeBounds(bounds, true);
                     Region region = new Region();
-                    region.setPath(bean.path, new Region((int)bounds.left, (int)bounds.top,(int)bounds.right, (int)bounds.bottom));
-                    if (region.contains((int)event.getX(), (int)event.getY())) {
+                    region.setPath(bean.path, new Region((int) bounds.left, (int) bounds.top, (int) bounds.right, (int) bounds.bottom));
+                    if (region.contains((int) (event.getX() / rate), (int) (event.getY() / rate))) {
+                        bean.isSelected = true;
+                    } else {
+                        bean.isSelected = false;
+                    }
+                }
+                handler.sendEmptyMessage(0);
+                return true;
+            case MotionEvent.ACTION_MOVE:
+                for (PathBean bean : list) {
+                    RectF bounds = new RectF();
+                    bean.path.computeBounds(bounds, true);
+                    Region region = new Region();
+                    region.setPath(bean.path, new Region((int) bounds.left, (int) bounds.top, (int) bounds.right, (int) bounds.bottom));
+                    if (region.contains((int) (event.getX() / rate), (int) (event.getY() / rate))) {
                         bean.isSelected = true;
                     } else {
                         bean.isSelected = false;
