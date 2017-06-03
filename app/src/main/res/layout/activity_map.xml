@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <com.example.admin.myapplication.view.ui.MapView
+        android:id="@+id/view1"
         android:layout_width="300dp"
         android:layout_height="300dp" />
 </LinearLayout>

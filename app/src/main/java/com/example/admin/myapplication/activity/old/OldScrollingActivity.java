@@ -19,7 +19,7 @@ import com.afollestad.appthemeengine.Config;
 import com.example.admin.myapplication.R;
 import com.example.admin.myapplication.view.old.CircleProgressBar;
 
-public class OLdScrollingActivity extends AppCompatActivity {
+public class OldScrollingActivity extends AppCompatActivity {
 
     private long updateTime = -1;
     float progress = 0;
@@ -75,10 +75,10 @@ public class OLdScrollingActivity extends AppCompatActivity {
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener((v) -> {
 //让新的Activity从一个小的范围扩大到全屏
-            ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(OLdScrollingActivity.this, R.anim.slide_bottom_in, R.anim.slide_bottom_out);
-            Intent intent = new Intent(OLdScrollingActivity.this, LayoutManagerActivity.class);
-            ActivityCompat.startActivity(OLdScrollingActivity.this, intent, options.toBundle());
-//            startActivity(new Intent(OLdScrollingActivity.this, LayoutManagerActivity.class));
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(OldScrollingActivity.this, R.anim.slide_bottom_in, R.anim.slide_bottom_out);
+            Intent intent = new Intent(OldScrollingActivity.this, LayoutManagerActivity.class);
+            ActivityCompat.startActivity(OldScrollingActivity.this, intent, options.toBundle());
+//            startActivity(new Intent(OldScrollingActivity.this, LayoutManagerActivity.class));
         });
 
         Button button3 = (Button) findViewById(R.id.button3);

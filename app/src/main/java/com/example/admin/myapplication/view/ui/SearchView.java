@@ -1,6 +1,7 @@
 package com.example.admin.myapplication.view.ui;
 
 
+import android.Manifest;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,7 +10,9 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.RectF;
+import android.support.annotation.ColorRes;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresPermission;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -76,11 +79,12 @@ public class SearchView extends View {
 //            pathMeasure.getSegment(start, stop, path, true);
             canvas.drawPath(path, paint);
         }
-        path.close();
+//        path.close();
 //        canvas.restore();
     }
 
-    public void start() {
+    @RequiresPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+    public void start(@ColorRes int color) {
         b = true;
         ValueAnimator animator = ValueAnimator.ofFloat(0, 1);
         animator.setDuration(1000);

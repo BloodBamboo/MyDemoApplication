@@ -1,7 +1,9 @@
 package com.example.admin.myapplication;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.RequiresPermission;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,7 +20,7 @@ import com.example.admin.myapplication.activity.ShaderViewActivity;
 import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
-import com.example.admin.myapplication.activity.old.OLdScrollingActivity;
+import com.example.admin.myapplication.activity.old.OldScrollingActivity;
 import com.example.admin.myapplication.activity.AnimationActivity;
 
 import java.util.Map;
@@ -55,9 +57,10 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @RequiresPermission(Manifest.permission.WRITE_CONTACTS)
     @OnClick(R.id.button_old_demo)
     public void onClickOldDemo() {
-        startActivity(new Intent(this, OLdScrollingActivity.class));
+        startActivity(new Intent(this, OldScrollingActivity.class));
     }
 
     @OnClick(R.id.button_retrofit)
