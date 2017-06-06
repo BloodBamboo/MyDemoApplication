@@ -200,7 +200,6 @@ public class MapView extends View {
                     }
                 }
                 handler.sendEmptyMessage(0);
-                return true;
             case MotionEvent.ACTION_MOVE:
                 for (PathBean bean : list) {
                     RectF bounds = new RectF();
