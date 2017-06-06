@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolBar"
+    style="@style/Material_TextAppearance_Title"
+    android:layout_width="match_parent"
+    android:layout_height="?android:actionBarSize"
+    android:background="?android:colorPrimary">
+
+    <TextView
+        style="@style/MaterialAnimations.TextAppearance.Title.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BeginDelayedActivity" />
+</android.support.v7.widget.Toolbar>

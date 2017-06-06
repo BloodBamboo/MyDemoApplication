@@ -3,6 +3,7 @@ package com.example.admin.myapplication.activity.Scene;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
 import android.view.View;
@@ -41,9 +42,9 @@ public class BeginDelayedActivity extends AppCompatActivity implements View.OnCl
     }
 
     public void onClick(View v) {
+        Transition transition = TransitionInflater.from(BeginDelayedActivity.this).inflateTransition(R.transition.explode_and_changebounds);
         //start scene 是当前的scene
-        TransitionManager.beginDelayedTransition((ViewGroup) findViewById(R.id.scene_root),
-                TransitionInflater.from(BeginDelayedActivity.this).inflateTransition(R.transition.explode_and_changebounds));
+        TransitionManager.beginDelayedTransition((ViewGroup) findViewById(R.id.scene_root), transition);
         //next scene 此时通过代码已改变了scene statue
         changeScene(v);
     }
