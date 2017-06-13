@@ -42,10 +42,10 @@
 #-keep class android.support.v7.**{*;}
 #-dontwarn android.support.v7.**
 
--keepclassmembers class * extends android.app.Activity {
-public void *(android.view.View);
-void set*(***);
-}
+#-keepclassmembers class * extends android.app.Activity {
+#public void *(android.view.View);
+#void set*(***);
+#}
 -keep public class * extends android.view.View {
 *** get*();
 void set*(***);

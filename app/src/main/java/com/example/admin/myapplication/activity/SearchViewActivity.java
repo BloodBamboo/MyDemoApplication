@@ -3,6 +3,7 @@ package com.example.admin.myapplication.activity;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,7 @@ public class SearchViewActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
+    @Keep
     @OnClick(R.id.search_view)
     public void onClick(SearchView searchView) {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -38,7 +40,7 @@ public class SearchViewActivity extends AppCompatActivity {
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
-            return;
+//            return;
         }
         searchView.start(R.color.colorPrimary);
     }
