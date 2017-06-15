@@ -69,6 +69,7 @@
         <activity
             android:name=".activity.TransitionActivity2"
             android:theme="@style/AppTheme3" />
+        <activity android:name=".activity.LoveBezierActivity"/>
         <activity android:name=".activity.DelayedActivity2" />
 
         <service android:name=".service.LocalService" />
