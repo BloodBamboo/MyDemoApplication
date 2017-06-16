@@ -7,4 +7,9 @@
         android:layout_height="wrap_content"
         android:text="打赏"
         android:onClick="onClick"/>
+    <com.example.admin.myapplication.view.ui.LoveLayout
+        android:id="@+id/iv_love"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </LinearLayout>
