@@ -2,6 +2,8 @@ package com.example.admin.myapplication;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.RequiresPermission;
 import android.support.design.widget.NavigationView;
@@ -9,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.example.admin.myapplication.activity.AnimationActivity;
 import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
 import com.example.admin.myapplication.activity.LoveBezierActivity;
@@ -22,7 +25,6 @@ import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.activity.old.OldScrollingActivity;
-import com.example.admin.myapplication.activity.AnimationActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,9 +45,37 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ApplicationInfo info = null;
+        try {
+            info = this.getPackageManager()
+                    .getApplicationInfo(getPackageName(),
+                            PackageManager.GET_META_DATA);
+
+            String msg = info.metaData.getString("LAUNCHER");
+            if (msg.equals("baidu") && !getIntent().getBooleanExtra("pass", false)) {
+                Intent intent = new Intent();
+                intent.setClassName(this, "com.example.admin.myapplication.HelloActivity");
+                startActivity(intent);
+                finish();
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
         setContentView(R.layout.mainlayout);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+        switch (getResources().getString(R.string.app_name)) {
+            case "baidu":
+                getSupportActionBar().setTitle("baidu");
+                break;
+            case "sina":
+                getSupportActionBar().setTitle("sina");
+                break;
+            default:
+                getSupportActionBar().setTitle("main");
+        }
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         nav.setCheckedItem(R.id.call);
     }
@@ -86,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickServiceGuard() {
         startActivity(new Intent(this, ServiceGuardActivity.class));
     }
+
     @OnClick(R.id.button_view_touch_event_transmit)
     public void onClickTouchTransmit() {
         startActivity(new Intent(this, TouchEventTransmitActivity.class));
@@ -100,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickRevealSearch() {
         startActivity(new Intent(this, RevealSearchViewActivity.class));
     }
+
     @OnClick(R.id.button_view_water)
     public void onClickWater() {
         startActivity(new Intent(this, WaterActivity.class));

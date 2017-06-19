@@ -2,6 +2,7 @@ package com.example.admin.myapplication.activity;
 
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -49,6 +50,7 @@ public class AnimationActivity extends AppCompatActivity {
         });
     }
 
+    @Keep
     public void setPath(PathPoint pathPoint) {
         Log.e("=========", "bbbbbbbbbbbbbbbbbbbbbbbbbbb");
         imageView.setTranslationX(pathPoint.getX());

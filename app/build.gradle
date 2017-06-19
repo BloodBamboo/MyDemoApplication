@@ -12,6 +12,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [ LAUNCHER:"main" ]
     }
     buildTypes {
         release {
@@ -24,6 +25,39 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        //默认版本,不设置 applicationId ,继承 defaultConfig 中的配置
+        flavors_default {
+        }
+
+        baidu {
+            applicationId "cn.com.baidu"
+            manifestPlaceholders = [ LAUNCHER:"baidu" ]
+        }
+
+        sina {
+            applicationId "cn.com.sina"
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res']
+        }
+//        dev {
+//            java.srcDirs = ['src/us/java/']
+//        }
+        baidu {
+//            jniLibs.srcDirs = ['libs-zh']
+            manifest.srcFile 'src/baidu/AndroidManifest.xml'
+            java.srcDirs = ['src/baidu/java/']
+            res.srcDirs = ['src/baidu/res']
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

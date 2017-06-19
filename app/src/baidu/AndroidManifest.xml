@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" tools:node="merge"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" tools:node="merge"/>
+
+    <application
+        tools:node="merge">
+        <activity
+            android:name="com.example.admin.myapplication.HelloActivity"
+            android:theme="@style/AppTheme2"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorAccent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <Button
+                    android:id="@+id/button_old_demo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="以前练习" />
+
+                <Button
+                    android:id="@+id/button_retrofit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="retrofit2.0" />
+
+                <Button
+                    android:id="@+id/button_animation_path"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="path View动画" />
+
+                <Button
+                    android:id="@+id/button_list_pop_animation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="list弹出动画" />
+
+                <Button
+                    android:id="@+id/button_lead_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="引导页动画" />
+
+                <Button
+                    android:id="@+id/button_service_guard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="双进程守护" />
+
+                <Button
+                    android:id="@+id/button_view_touch_event_transmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ViewTouch事件传递验证" />
+
+                <Button
+                    android:id="@+id/button_view_Shader_demo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="画笔着色器例子和xfermode" />
+
+                <Button
+                    android:id="@+id/button_view_reveal_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="reveal和search例子" />
+
+                <Button
+                    android:id="@+id/button_view_water"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="水波纹" />
+
+                <Button
+                    android:id="@+id/button_search_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="搜索按钮" />
+
+                <Button
+                    android:id="@+id/button_transition_anim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="过渡动画" />
+                <Button
+                    android:id="@+id/button_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="地图练习" />
+                <Button
+                    android:id="@+id/button_love_bezier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="打赏点赞动画" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_nav" />
+</android.support.v4.widget.DrawerLayout>
