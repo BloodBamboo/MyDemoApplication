@@ -9,4 +9,5 @@
 
     <color name="colorPrimaryDarkDefault">#37474F</color>
     <color name="colorAccentDarkDefault">#2196F3</color>
+    <color name="actionbar_opacity">#33000000</color>
 </resources>

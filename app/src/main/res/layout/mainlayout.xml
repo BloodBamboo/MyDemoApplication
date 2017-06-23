@@ -111,6 +111,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="打赏点赞动画" />
+                <Button
+                    android:id="@+id/button_scanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="扫描" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

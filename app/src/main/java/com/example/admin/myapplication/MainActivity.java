@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import com.example.admin.myapplication.activity.AnimationActivity;
+import com.example.admin.myapplication.activity.CustomViewFinderScannerActivity;
 import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
 import com.example.admin.myapplication.activity.LoveBezierActivity;
@@ -155,5 +156,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_love_bezier)
     public void onClickLoveBeizer() {
         startActivity(new Intent(this, LoveBezierActivity.class));
+    }
+
+    @OnClick(R.id.button_scanner)
+    public void onClickScanner() {
+        startActivity(new Intent(this, CustomViewFinderScannerActivity.class));
     }
 }

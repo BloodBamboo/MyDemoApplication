@@ -34,4 +34,10 @@
     <style name="MaterialAnimations.TextAppearance.Title.Inverse" parent="android:TextAppearance.Material.Title">
         <item name="android:textColor">?android:textColorPrimaryInverse</item>
     </style>
+
+    <style name="TransparentToolbar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <!-- Support Library compability -->
+        <item name="windowActionBarOverlay">true</item>
+    </style>
 </resources>
