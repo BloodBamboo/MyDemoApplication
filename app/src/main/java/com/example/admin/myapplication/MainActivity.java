@@ -22,6 +22,7 @@ import com.example.admin.myapplication.activity.ScrollingActivity;
 import com.example.admin.myapplication.activity.SearchViewActivity;
 import com.example.admin.myapplication.activity.ServiceGuardActivity;
 import com.example.admin.myapplication.activity.ShaderViewActivity;
+import com.example.admin.myapplication.activity.SplashViewActivity;
 import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
@@ -161,5 +162,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_scanner)
     public void onClickScanner() {
         startActivity(new Intent(this, CustomViewFinderScannerActivity.class));
+    }
+    @OnClick(R.id.button_splash_view)
+    public void onClickSplashView() {
+        startActivity(new Intent(this, SplashViewActivity.class));
     }
 }
