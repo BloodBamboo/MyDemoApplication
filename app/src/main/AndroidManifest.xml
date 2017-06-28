@@ -79,6 +79,7 @@
         <activity android:name=".activity.CustomViewFinderScannerActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".activity.SplashViewActivity"/>
+        <activity android:name=".activity.RecycleViewActivity"/>
         <service android:name=".service.LocalService" />
         <service
             android:name=".service.RemoteService"

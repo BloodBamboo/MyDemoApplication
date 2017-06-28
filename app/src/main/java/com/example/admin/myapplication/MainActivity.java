@@ -17,6 +17,7 @@ import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
 import com.example.admin.myapplication.activity.LoveBezierActivity;
 import com.example.admin.myapplication.activity.MapActivity;
+import com.example.admin.myapplication.activity.RecycleViewActivity;
 import com.example.admin.myapplication.activity.RevealSearchViewActivity;
 import com.example.admin.myapplication.activity.ScrollingActivity;
 import com.example.admin.myapplication.activity.SearchViewActivity;
@@ -166,5 +167,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_splash_view)
     public void onClickSplashView() {
         startActivity(new Intent(this, SplashViewActivity.class));
+    }
+
+    @OnClick(R.id.button_recycle_view)
+    public void onClickRecycleView() {
+        startActivity(new Intent(this, RecycleViewActivity.class));
     }
 }
