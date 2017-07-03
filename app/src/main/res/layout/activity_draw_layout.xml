@@ -15,8 +15,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:orientation="vertical"
-        app:maxTranslationX="66dp"
-        app:backColor="@color/colorAccentDarkDefault">
+        android:background="@color/blue"
+        app:maxTranslationX="66dp">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
