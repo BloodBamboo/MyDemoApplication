@@ -13,6 +13,7 @@ import android.view.Menu;
 
 import com.example.admin.myapplication.activity.AnimationActivity;
 import com.example.admin.myapplication.activity.CustomViewFinderScannerActivity;
+import com.example.admin.myapplication.activity.DrawLayoutActivity;
 import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
 import com.example.admin.myapplication.activity.LoveBezierActivity;
@@ -172,5 +173,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_recycle_view)
     public void onClickRecycleView() {
         startActivity(new Intent(this, RecycleViewActivity.class));
+    }
+
+    @OnClick(R.id.button_draw_layout)
+    public void onClickDrawLayout() {
+        startActivity(new Intent(this, DrawLayoutActivity.class));
     }
 }

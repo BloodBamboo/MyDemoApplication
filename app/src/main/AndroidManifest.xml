@@ -76,10 +76,15 @@
             android:theme="@style/AppTheme3" />
         <activity android:name=".activity.LoveBezierActivity" />
         <activity android:name=".activity.DelayedActivity2" />
-        <activity android:name=".activity.CustomViewFinderScannerActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activity.SplashViewActivity"/>
-        <activity android:name=".activity.RecycleViewActivity"/>
+        <activity
+            android:name=".activity.CustomViewFinderScannerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.SplashViewActivity" />
+        <activity android:name=".activity.RecycleViewActivity" />
+        <activity
+            android:name=".activity.DrawLayoutActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <service android:name=".service.LocalService" />
         <service
             android:name=".service.RemoteService"
