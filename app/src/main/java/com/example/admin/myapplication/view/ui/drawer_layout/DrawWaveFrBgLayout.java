@@ -30,4 +30,8 @@ public class DrawWaveFrBgLayout extends FrameLayout {
         addView(slideBarLayout, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     }
 
+    public void setTouchY(float y, float slideOffset) {
+        slideBarLayout.setTouchY(y, slideOffset);
+        bgView.setTouchY(y, slideOffset);
+    }
 }

@@ -42,4 +42,26 @@ public class DrawWaveBgView extends View {
         super.onDraw(canvas);
         canvas.drawPath(path, paint);
     }
+
+    public void setTouchY(float y, float percent) {
+        path.reset();
+        float width = getWidth() * percent;
+        float height = getHeight();
+        float offsetY = height / 8;
+        float x = width / 2;
+        path.moveTo(0, 0);
+        path.lineTo(x, -offsetY);
+        path.quadTo(width, y, x, height + offsetY);
+        path.lineTo(0, height);
+        path.close();
+//        float width=getWidth()*percent;
+//        float height=getHeight();
+//        float offsetY=height/8;
+//        float x=width/2;
+//        path.lineTo(x,-offsetY);
+//        path.quadTo(width*3/2,y,x,height+offsetY);
+//        path.lineTo(0,height);
+//        path.close();
+        invalidate();
+    }
 }

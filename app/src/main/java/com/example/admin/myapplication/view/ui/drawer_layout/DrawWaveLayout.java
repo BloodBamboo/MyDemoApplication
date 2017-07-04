@@ -13,11 +13,12 @@ import android.view.View;
 public class DrawWaveLayout extends DrawerLayout implements DrawerLayout.DrawerListener {
     private DrawSlideBarLayout slideBarLayout;
     private View content;
-    private DrawWaveFrBgLayout reBgLayout;
-
+    private DrawWaveFrBgLayout frBgLayout;
+    private float slideOffset;
+    private float y;
 
     public DrawWaveLayout(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public DrawWaveLayout(Context context, AttributeSet attrs) {
@@ -40,25 +41,39 @@ public class DrawWaveLayout extends DrawerLayout implements DrawerLayout.DrawerL
             }
         }
         removeView(slideBarLayout);
-        reBgLayout = new DrawWaveFrBgLayout(getContext(), slideBarLayout);
-        addView(reBgLayout, 1);
+        frBgLayout = new DrawWaveFrBgLayout(getContext(), slideBarLayout);
+        addView(frBgLayout, 1);
         addDrawerListener(this);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-
-        switch (ev.getAction()) {
-            case MotionEvent.ACTION_MOVE:
-
-                break;
+        y = ev.getY();
+        if (ev.getAction() == MotionEvent.ACTION_UP) {
+            closeDrawers();
+            slideBarLayout.onMotionUp();
+            return super.dispatchTouchEvent(ev);
         }
+
+        //没有打开之前 不拦截     打开之后拦不拦截  大于1  后  内容区域不再进行偏移
+        if (slideOffset < 1) {
+            return super.dispatchTouchEvent(ev);
+        }else {
+            //等于  1
+            frBgLayout.setTouchY(y,slideOffset);
+        }
+
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public void onDrawerSlide(View drawerView, float slideOffset) {
+        this.slideOffset = slideOffset;
+        frBgLayout.setTouchY(y, slideOffset);
 
+        //针对内容区域进行破偏移
+        float contentViewoffset = drawerView.getWidth() * slideOffset / 2;
+        content.setTranslationX(contentViewoffset);
     }
 
     @Override
