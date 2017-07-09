@@ -84,7 +84,7 @@
         <activity
             android:name=".activity.DrawLayoutActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
+        <activity android:name=".activity.PaletteActivity"/>
         <service android:name=".service.LocalService" />
         <service
             android:name=".service.RemoteService"

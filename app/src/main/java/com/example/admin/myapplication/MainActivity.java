@@ -18,6 +18,7 @@ import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
 import com.example.admin.myapplication.activity.LoveBezierActivity;
 import com.example.admin.myapplication.activity.MapActivity;
+import com.example.admin.myapplication.activity.PaletteActivity;
 import com.example.admin.myapplication.activity.RecycleViewActivity;
 import com.example.admin.myapplication.activity.RevealSearchViewActivity;
 import com.example.admin.myapplication.activity.ScrollingActivity;
@@ -178,5 +179,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_draw_layout)
     public void onClickDrawLayout() {
         startActivity(new Intent(this, DrawLayoutActivity.class));
+    }
+
+    @OnClick(R.id.button_palette)
+    public void onClickPalette() {
+        startActivity(new Intent(this, PaletteActivity.class));
     }
 }

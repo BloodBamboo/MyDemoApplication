@@ -132,6 +132,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="侧滑效果" />
+                <Button
+                    android:id="@+id/button_palette"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="palette应用" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
