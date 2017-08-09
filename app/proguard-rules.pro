@@ -182,3 +182,6 @@ java.lang.Object readResolve();
 -keep class retrofit2.** { *; }
 -keepattributes Signature
 -keepattributes Exceptions
+
+-dontwarn org.aspectj.**
+-keep class org.aspectj.** { *; }

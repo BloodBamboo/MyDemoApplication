@@ -29,6 +29,7 @@ import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.activity.old.OldScrollingActivity;
+import com.example.admin.myapplication.aop.AspectJAnnotation;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, OldScrollingActivity.class));
     }
 
+    @AspectJAnnotation(value = Manifest.permission.CAMERA)
     @OnClick(R.id.button_retrofit)
     public void onClickRetrofit() {
         startActivity(new Intent(this, ScrollingActivity.class));
