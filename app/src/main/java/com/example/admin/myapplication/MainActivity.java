@@ -9,6 +9,7 @@ import android.support.annotation.RequiresPermission;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 
 import com.example.admin.myapplication.activity.AnimationActivity;
@@ -82,12 +83,12 @@ public class MainActivity extends AppCompatActivity {
             default:
                 getSupportActionBar().setTitle("main");
         }
-
+        
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         nav.setCheckedItem(R.id.call);
 
         NDKTest ndkTest = new NDKTest();
-        ndkTest.stringFromJNI(3, 2);
+        Log.i("TEST_JNI", "onCreate: " + ndkTest.stringFromJNI(3, 2)); ;
     }
 
     @Override

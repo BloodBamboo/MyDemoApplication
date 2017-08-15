@@ -1,5 +1,6 @@
 package com.example.admin.myapplication.activity;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -42,9 +43,7 @@ public class PaletteActivity extends AppCompatActivity {
                 paletteRelativeLayout.setBgColor(vibreant.getRgb());
             }
         });
-
 //        SweepGradient mSweepGradient = new SweepGradient(300, 300, mColors, null);
     }
-
 
 }
