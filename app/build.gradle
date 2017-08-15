@@ -23,6 +23,12 @@ android {
         versionCode 1
         versionName "1.0"
         manifestPlaceholders = [ LAUNCHER:"main" ]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+            }
+        }
     }
     buildTypes {
         release {
@@ -33,6 +39,12 @@ android {
             // 移除无用的resource文件
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
         }
     }
 
@@ -52,11 +64,11 @@ android {
     }
 
     sourceSets {
-//        main {
-//            jniLibs.srcDirs = ['libs']
-//            java.srcDirs = ['src/main/java']
-//            res.srcDirs = ['src/main/res']
-//        }
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res']
+        }
 //        dev {
 //            java.srcDirs = ['src/us/java/']
 //        }

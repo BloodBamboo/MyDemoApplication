@@ -31,6 +31,7 @@ import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.activity.old.OldScrollingActivity;
 import com.example.admin.myapplication.aop.AspectJAnnotation;
+import com.example.admin.myapplication.ndk.NDKTest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -84,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         nav.setCheckedItem(R.id.call);
+
+        NDKTest ndkTest = new NDKTest();
+        ndkTest.stringFromJNI(3, 2);
     }
 
     @Override
