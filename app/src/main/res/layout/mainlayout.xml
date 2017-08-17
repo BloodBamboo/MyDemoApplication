@@ -137,6 +137,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="palette应用" />
+                <Button
+                    android:id="@+id/button_ndk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ndk应用" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

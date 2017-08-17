@@ -17,7 +17,7 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             src/main/cpp/native-lib.cpp )
+             src/main/cpp/native-lib.c )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -38,7 +38,7 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
                        native-lib
-                       lib-test
+                       test-lib
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
@@ -46,10 +46,10 @@ target_link_libraries( # Specifies the target library.
 #设置so库路径
 set(my_lib_path ${CMAKE_SOURCE_DIR}/libs)
 #讲第三方库作为动态库引用
-add_library( lib-test
+add_library( test-lib
              SHARED
              IMPORTED )
 #指名第三方库的绝对路径
-set_target_properties( lib-test
+set_target_properties( test-lib
                        PROPERTIES IMPORTED_LOCATION
-                       ${my_lib_path}/${ANDROID_ABI}/liblib-test.so )
+                       ${my_lib_path}/${ANDROID_ABI}/libtest-lib.so )

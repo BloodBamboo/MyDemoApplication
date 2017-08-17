@@ -40,6 +40,9 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            jniDebuggable true
+        }
     }
 
     externalNativeBuild {
@@ -173,4 +176,5 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:palette-v7:25.3.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+    compile 'com.lovedise:permissiongen:0.0.6'
 }
