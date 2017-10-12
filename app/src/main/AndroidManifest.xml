@@ -91,7 +91,10 @@
         <service
             android:name=".service.RemoteService"
             android:process=":com.test.tt" />
-
+        <activity android:name=".activity.theme.ThemeActivity"/>
+        <activity android:name=".activity.theme.Theme1Activity"/>
+        <activity android:name=".activity.theme.Theme2Activity"/>
+        <activity android:name=".activity.theme.Theme3Activity"/>
     </application>
 
 </manifest>
