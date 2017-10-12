@@ -53,3 +53,14 @@ add_library( test-lib
 set_target_properties( test-lib
                        PROPERTIES IMPORTED_LOCATION
                        ${my_lib_path}/${ANDROID_ABI}/libtest-lib.so )
+
+include_directories(libs/include)
+
+MESSAGE("路径  " ${DIR})
+
+add_library( avcodec-56
+             SHARED
+             IMPORTED )
+ set_target_properties(avcodec-56
+           PROPERTIES IMPORTED_LOCATION
+           ${DIR}/armeabi/libavcodec-56.so)
