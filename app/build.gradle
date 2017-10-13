@@ -2,16 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.jakewharton.butterknife'
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {//aop依赖库
-        classpath 'org.aspectj:aspectjtools:1.8.10'
-        classpath 'org.aspectj:aspectjweaver:1.8.10'
-    }
-}
-
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.3'
@@ -30,8 +20,19 @@ android {
             }
         }
     }
+
+    signingConfigs {
+        release {
+            storeFile file("d://123456.jks")
+            storePassword "123456"
+            keyAlias "123456"
+            keyPassword "123456"
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             // 混淆
             minifyEnabled true
             // Zipalign优化
@@ -41,6 +42,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
+            jniDebuggable true
+        }
+        tt.initWith(release)
+        tt {
+            applicationIdSuffix ".tt"
+            debuggable true
             jniDebuggable true
         }
     }
@@ -106,7 +113,7 @@ variants.all { variant ->
 //        log.debug("Skipping non-debuggable build type '${variant.buildType.name}'.")
 //        return;
 //    }
-
+    println "------------------------------------"
     JavaCompile javaCompile = variant.javaCompile
     javaCompile.doLast {
         String[] args = ["-showWeaveInfo",
@@ -178,3 +185,5 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
     compile 'com.lovedise:permissiongen:0.0.6'
 }
+
+

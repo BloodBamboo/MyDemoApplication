@@ -22,7 +22,7 @@ public class SplashViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         SplashView splashView = (SplashView) findViewById(R.id.splash_view);
-        Observable.timer(2, TimeUnit.SECONDS)
+        Observable.timer(3, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe((Long aLong) -> splashView.splashDisappear());
     }

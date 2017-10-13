@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.bumptech.glide.manager.Lifecycle;
 import com.example.admin.myapplication.R;
 
 import java.io.File;
