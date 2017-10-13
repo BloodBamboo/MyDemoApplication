@@ -15,4 +15,8 @@
     <declare-styleable name="SideBar">
         <attr name="maxTranslationX" format="dimension" />
     </declare-styleable>
+
+    <attr name="textPrimary" format="color" />
+    <attr name="buttonBg" format="color" />
+    <attr name="appbg" format="color" />
 </resources>

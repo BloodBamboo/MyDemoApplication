@@ -9,7 +9,6 @@ import android.support.annotation.RequiresPermission;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 
 import com.example.admin.myapplication.activity.AnimationActivity;
@@ -27,13 +26,13 @@ import com.example.admin.myapplication.activity.SearchViewActivity;
 import com.example.admin.myapplication.activity.ServiceGuardActivity;
 import com.example.admin.myapplication.activity.ShaderViewActivity;
 import com.example.admin.myapplication.activity.SplashViewActivity;
+import com.example.admin.myapplication.activity.theme.ThemeActivity;
 import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.activity.old.OldScrollingActivity;
 import com.example.admin.myapplication.aop.AspectJAnnotation;
 import com.example.admin.myapplication.ndk.NDKActivity;
-import com.example.admin.myapplication.ndk.NDKTest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -195,5 +194,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_ndk)
     public void onClickNDK() {
         startActivity(new Intent(this, NDKActivity.class));
+    }
+
+    @OnClick(R.id.button_theme)
+    public void onClickTheme() {
+        startActivity(new Intent(this, ThemeActivity.class));
     }
 }

@@ -25,4 +25,12 @@
         <item>@color/aqua</item>
         <item>@color/yellow</item>
     </array>
+
+    <color name="colorPrimaryTextBlack">#2e2e2e</color>
+    <color name="white">#ffffff</color>
+
+    <color name="darkColorPrimary">#37474F</color>
+    <color name="darkColorAccent">#2196F3</color>
+    <color name="colorSubTextWhite">#888888</color>
+    <color name="dark_bg">#33222222</color>
 </resources>
