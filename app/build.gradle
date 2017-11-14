@@ -10,8 +10,8 @@ android {
         applicationId "com.example.admin.myapplication"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 11
+        versionName "1.1"
         manifestPlaceholders = [ LAUNCHER:"main" ]
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
