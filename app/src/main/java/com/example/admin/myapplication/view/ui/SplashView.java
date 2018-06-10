@@ -82,15 +82,15 @@ public class SplashView extends View {
         mPaintBackground.setStyle(Paint.Style.STROKE);
         mPaintBackground.setAntiAlias(true);
         mPaintBackground.setColor(mSplashBgColor);
+        if (mState == null) {
+            mState = new RotateState();
+        }
     }
 
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (mState == null) {
-            mState = new RotateState();
-        }
         mState.drawState(canvas);
     }
 

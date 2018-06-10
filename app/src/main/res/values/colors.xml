@@ -32,5 +32,5 @@
     <color name="darkColorPrimary">#37474F</color>
     <color name="darkColorAccent">#2196F3</color>
     <color name="colorSubTextWhite">#888888</color>
-    <color name="dark_bg">#33222222</color>
+    <color name="dark_bg">#222222</color>
 </resources>

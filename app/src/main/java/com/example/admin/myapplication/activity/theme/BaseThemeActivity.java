@@ -21,6 +21,7 @@ public class BaseThemeActivity extends AppCompatActivity {
 //    public static final int theme3= 3;
 
     protected Toolbar toolbar;
+    private int theme = -1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,17 +29,28 @@ public class BaseThemeActivity extends AppCompatActivity {
         new SharedPreferencesHelper(this);
         switch ((int) SharedPreferencesHelper.get(THEME, theme1)) {
             case theme1:
+                theme = theme1;
                 setTheme(R.style.AppLightTheme);
                 SharedPreferencesHelper.put(THEME, theme1);
                 break;
             case theme2:
+                theme = theme2;
                 setTheme(R.style.AppDarkTheme);
                 SharedPreferencesHelper.put(THEME, theme2);
                 break;
             default:
+                theme = theme1;
                 setTheme(R.style.AppLightTheme);
                 SharedPreferencesHelper.put(THEME, theme1);
                 break;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (theme != (int)SharedPreferencesHelper.get(THEME, theme)) {
+            recreate();
         }
     }
 
@@ -49,10 +61,12 @@ public class BaseThemeActivity extends AppCompatActivity {
                 case R.id.action_theme1:
                     setTheme(R.style.AppLightTheme);
                     SharedPreferencesHelper.put(THEME, theme1);
+                    recreate();
                     return true;
                 case R.id.action_theme2:
                     setTheme(R.style.AppDarkTheme);
                     SharedPreferencesHelper.put(THEME, theme2);
+                    recreate();
                     return true;
             }
             return false;
