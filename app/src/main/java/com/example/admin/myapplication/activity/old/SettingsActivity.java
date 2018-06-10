@@ -48,6 +48,11 @@ public class SettingsActivity extends ATEActivity
     }
 
     @Override
+    public void onColorChooserDismissed(@NonNull ColorChooserDialog dialog) {
+        dialog.dismiss();
+    }
+
+    @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting);
@@ -56,7 +61,7 @@ public class SettingsActivity extends ATEActivity
         button4.setOnClickListener((v) -> {
             new ColorChooserDialog.Builder(SettingsActivity.this, R.string.accent_color)
                     .preselect(Config.accentColor(SettingsActivity.this, null))
-                    .show();
+                    .show(this);
         });
 
     }
