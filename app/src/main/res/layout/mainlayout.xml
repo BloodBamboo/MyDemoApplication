@@ -147,6 +147,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="主题换肤" />
+                <Button
+                    android:id="@+id/button_io"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="io操作" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

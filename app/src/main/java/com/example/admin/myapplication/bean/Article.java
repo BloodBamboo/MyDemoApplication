@@ -72,4 +72,18 @@ public class Article extends BaseBean {
 //    public boolean isTop = false;
 //    public int level = 0;
 //    public String titleImage = "";
+
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(istop+"\n");
+        sb.append(linkAddress+"\n");
+        sb.append(columnBankId+"\n");
+        sb.append(lastUpdateTime+"\n");
+        sb.append(columnId+"\n");
+        sb.append(type+"\n");
+        sb.append(categoryName+"\n");
+        return sb.toString();
+    }
 }

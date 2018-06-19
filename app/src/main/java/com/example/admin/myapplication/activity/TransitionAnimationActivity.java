@@ -35,6 +35,7 @@ public class TransitionAnimationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transition);
         ButterKnife.bind(this);
+        image.setOnClickListener(System.out::print);
     }
 
     @OnClick(R.id.button1)

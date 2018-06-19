@@ -95,6 +95,7 @@
         <activity android:name=".activity.theme.Theme1Activity"/>
         <activity android:name=".activity.theme.Theme2Activity"/>
         <activity android:name=".activity.theme.Theme3Activity"/>
+        <activity android:name=".activity.IOActivity"/>
     </application>
 
 </manifest>

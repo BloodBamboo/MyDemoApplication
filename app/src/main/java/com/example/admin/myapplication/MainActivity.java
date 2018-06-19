@@ -10,10 +10,12 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
 
 import com.example.admin.myapplication.activity.AnimationActivity;
 import com.example.admin.myapplication.activity.CustomViewFinderScannerActivity;
 import com.example.admin.myapplication.activity.DrawLayoutActivity;
+import com.example.admin.myapplication.activity.IOActivity;
 import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
 import com.example.admin.myapplication.activity.LoveBezierActivity;
@@ -86,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         nav.setCheckedItem(R.id.call);
-
     }
 
     @Override
@@ -199,5 +200,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_theme)
     public void onClickTheme() {
         startActivity(new Intent(this, ThemeActivity.class));
+    }
+
+    @OnClick(R.id.button_io)
+    public void onClickIO() {
+        startActivity(new Intent(this, IOActivity.class));
     }
 }
