@@ -9,6 +9,13 @@
         android:layout_height="wrap_content"
         android:textSize="15dp"
         android:textColor="@color/colorPrimaryDarkDefault"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="OKIO读数据到对象" />
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
@@ -21,11 +28,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="OKIO写数据到文件"/>
-
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button3"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OKIO读数据到对象"/>
+        android:text="OKIO拷贝文件demo.txt到copy.txt"/>
+    <Button
+        android:id="@+id/button4"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OKIO  Md5"/>
 </LinearLayout>
