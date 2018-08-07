@@ -152,6 +152,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="io操作" />
+                <Button
+                    android:id="@+id/button_receiver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BroadcastReceiver" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

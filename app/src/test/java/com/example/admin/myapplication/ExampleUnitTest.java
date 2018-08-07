@@ -345,4 +345,8 @@ public class ExampleUnitTest {
         //检查是否有未被验证的互动行为，因为add(2)没有被验证，所以下面的代码会失败抛出异常
         Mockito.verifyNoMoreInteractions(list2);
     }
+
+
+
+
 }
