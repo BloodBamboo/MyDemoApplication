@@ -148,6 +148,11 @@
                     android:layout_height="wrap_content"
                     android:text="主题换肤" />
                 <Button
+                    android:id="@+id/button_bluetooth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="蓝牙练习" />
+                <Button
                     android:id="@+id/button_io"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

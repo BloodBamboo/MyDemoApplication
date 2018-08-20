@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.widget.Button;
 
 import com.example.admin.myapplication.activity.AnimationActivity;
+import com.example.admin.myapplication.activity.bluetooth.BluetoothActivity;
 import com.example.admin.myapplication.activity.CustomViewFinderScannerActivity;
 import com.example.admin.myapplication.activity.DrawLayoutActivity;
 import com.example.admin.myapplication.activity.IOActivity;
@@ -205,5 +206,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_io)
     public void onClickIO() {
         startActivity(new Intent(this, IOActivity.class));
+    }
+
+    @OnClick(R.id.button_bluetooth)
+    public void onClickBlueTooth() {
+        startActivity(new Intent(this, BluetoothActivity.class));
     }
 }
