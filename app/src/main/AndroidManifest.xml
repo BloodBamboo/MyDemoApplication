@@ -101,6 +101,28 @@
         <activity android:name=".activity.theme.Theme2Activity"/>
         <activity android:name=".activity.theme.Theme3Activity"/>
         <activity android:name=".activity.IOActivity"/>
+        <activity android:name=".activity.ReceiverActivity"/>
+
+        <receiver android:name=".receiver.FirstReceiver">
+            <intent-filter android:priority="3">
+                <action android:name="com.example.admin.myapplication.ORDER_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.SecondReceiver">
+            <intent-filter android:priority="2">
+                <action android:name="com.example.admin.myapplication.ORDER_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.ThirdReceiver">
+            <intent-filter android:priority="1">
+                <action android:name="com.example.admin.myapplication.ORDER_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.Receiver_1">//静态注册
+            <intent-filter >
+                <action android:name="ttt"/>
+            </intent-filter>
+        </receiver>
         <activity android:name=".activity.bluetooth.BluetoothActivity"/>
 
     </application>

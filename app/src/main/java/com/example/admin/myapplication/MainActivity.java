@@ -10,7 +10,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.Button;
 
 import com.example.admin.myapplication.activity.AnimationActivity;
 import com.example.admin.myapplication.activity.bluetooth.BluetoothActivity;
@@ -22,6 +21,7 @@ import com.example.admin.myapplication.activity.ListPopAnimationActivity;
 import com.example.admin.myapplication.activity.LoveBezierActivity;
 import com.example.admin.myapplication.activity.MapActivity;
 import com.example.admin.myapplication.activity.PaletteActivity;
+import com.example.admin.myapplication.activity.ReceiverActivity;
 import com.example.admin.myapplication.activity.RecycleViewActivity;
 import com.example.admin.myapplication.activity.RevealSearchViewActivity;
 import com.example.admin.myapplication.activity.ScrollingActivity;
@@ -206,6 +206,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_io)
     public void onClickIO() {
         startActivity(new Intent(this, IOActivity.class));
+    }
+    @OnClick(R.id.button_receiver)
+    public void onClickReceiver() {
+        startActivity(new Intent(this, ReceiverActivity.class));
     }
 
     @OnClick(R.id.button_bluetooth)
