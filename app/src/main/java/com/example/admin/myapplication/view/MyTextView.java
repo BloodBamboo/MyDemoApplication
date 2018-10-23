@@ -1,6 +1,7 @@
 package com.example.admin.myapplication.view;
 
 import android.content.Context;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -62,5 +63,4 @@ public class MyTextView extends TextView {
         }
         return super.onTouchEvent(event);
     }
-
 }

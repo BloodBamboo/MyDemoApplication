@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.RequiresPermission;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.alipay.sdk.app.PayTask;
 import com.example.admin.myapplication.activity.AnimationActivity;
 import com.example.admin.myapplication.activity.CustomViewFinderScannerActivity;
 import com.example.admin.myapplication.activity.DrawLayoutActivity;
@@ -28,17 +30,23 @@ import com.example.admin.myapplication.activity.SearchViewActivity;
 import com.example.admin.myapplication.activity.ServiceGuardActivity;
 import com.example.admin.myapplication.activity.ShaderViewActivity;
 import com.example.admin.myapplication.activity.SplashViewActivity;
-import com.example.admin.myapplication.activity.theme.ThemeActivity;
 import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.activity.old.OldScrollingActivity;
+import com.example.admin.myapplication.activity.theme.ThemeActivity;
 import com.example.admin.myapplication.aop.AspectJAnnotation;
 import com.example.admin.myapplication.ndk.NDKActivity;
+
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.Observable;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by admin on 2017/2/6.
@@ -209,5 +217,48 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_receiver)
     public void onClickReceiver() {
         startActivity(new Intent(this, ReceiverActivity.class));
+    }
+
+    @OnClick(R.id.button_pay)
+    public void onClickPay() {
+        onPay1();
+    }
+
+    public void onPay1() {
+        try {
+            final String orderInfo = "app_id=2018091761447164&method=alipay.trade.app.pay&charset=utf-8&sign_type=RSA2&timestamp=2018-09-27+17%3A08%3A47&version=1.0&notify_url=http%3A%2F%2Filearning.edu-edu.com.cn%2Falipaytrad%2Fnotify_url.php&biz_content=%7B%22subject%22%3A%22%5Cu8d26%5Cu6237%5Cu8d2d%5Cu8bfe%22%2C%22out_trade_no%22%3A%22101234561234560002102%22%2C%22total_amount%22%3A%221.00%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%7D&sign=hHrAH6vO7YSW3NmtzZcxnqWlBYgoDppplCvO48%2BBVQd7wszWSmPQEgqnVjmfiCGRHyeX%2B5OObVD6%2FuEBcVoRkJ%2F7jmPHa1dgipIQSF3hVZRzJUxkP7h9ukGQKlMSPbYdblimyi4j4TlbPD6B9lMYIvwIomdRVskFisK2ith5E34YVt19map8RyawQwt9ZS1Ax7tvjoXq32dwvHZfTwOqsQNcyctX0nDDLj7ytbX6tm%2BYRVMhITFPK9GYtrIXqVkB6g7Xib4W5esqmBv3xiZ%2B%2BRvMPtG2A%2FTfk%2FbSQ19WUXBc3k%2BOSKXc4YWcYnfKFWeqVZ4MbGO5KECjRhkMPUjAcg%3D%3D";
+            Observable.create((Subscriber<? super Map<String, String>> subscriber) -> {
+                PayTask alipay = new PayTask(this);
+                Map<String, String> result = alipay.payV2(orderInfo, true);
+                subscriber.onNext(result);
+            }).subscribeOn(Schedulers.newThread())
+                    .map((Map<String, String> result) -> {
+                        try {
+                            if (!result.get("resultStatus").equals("9000")) {
+                                return false;
+                            } else {
+                                return true;
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        return false;
+                    })
+                    .onErrorReturn((Throwable throwable) -> {
+                        return false;
+                    })
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(response -> {
+
+                    });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 }
