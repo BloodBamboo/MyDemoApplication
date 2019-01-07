@@ -162,6 +162,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pay" />
+                <Button
+                    android:id="@+id/button_send_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="button_send_meaage" />
+                <Button
+                    android:id="@+id/button_stop_looper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="button_stop_looper" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

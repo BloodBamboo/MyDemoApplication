@@ -1,4 +1,5 @@
 #include <android/log.h>
+#include <malloc.h>
 #include "native-head.h"
 #include "assert.h"
 #include "pthread.h"

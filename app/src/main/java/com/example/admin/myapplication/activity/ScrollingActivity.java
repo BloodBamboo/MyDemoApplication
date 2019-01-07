@@ -2,7 +2,6 @@ package com.example.admin.myapplication.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -10,17 +9,16 @@ import com.example.admin.myapplication.R;
 
 import java.io.IOException;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -128,24 +126,17 @@ public class ScrollingActivity extends AppCompatActivity {
         html.getHtml(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<ResponseBody>() {
+                .subscribe(new Consumer<ResponseBody>() {
                     @Override
-                    public void onCompleted() {
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.e("*******", e.getMessage());
-                    }
-
-                    @Override
-                    public void onNext(ResponseBody respone) {
+                    public void accept(ResponseBody responseBody) throws Exception {
                         try {
-                            web_view.loadDataWithBaseURL("http://m.edu-edu.com.cn/", respone.string(), "text/html", "utf-8", null);
+                            web_view.loadDataWithBaseURL("http://m.edu-edu.com.cn/", responseBody.string(), "text/html", "utf-8", null);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
+                }, onError -> {
+
                 });
 
     }

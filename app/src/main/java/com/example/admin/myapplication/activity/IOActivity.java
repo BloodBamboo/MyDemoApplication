@@ -1,13 +1,9 @@
 package com.example.admin.myapplication.activity;
 
 import android.Manifest;
-import android.content.pm.PackageManager;
-import android.os.Binder;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -18,14 +14,11 @@ import com.alibaba.fastjson.TypeReference;
 import com.example.admin.myapplication.R;
 import com.example.admin.myapplication.Utils.AppUtile;
 import com.example.admin.myapplication.Utils.ToastUtil;
-import com.example.admin.myapplication.bean.Article;
 import com.example.admin.myapplication.bean.ElementData;
 
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
@@ -35,15 +28,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import okio.Buffer;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.Okio;
-import okio.Source;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 public class IOActivity extends AppCompatActivity {
 
@@ -117,26 +108,28 @@ public class IOActivity extends AppCompatActivity {
     @OnClick(R.id.button2)
     public void onButton2(View v) {
         ToastUtil.showShort(this, "开始读取------");
-        Observable.create((Subscriber<? super ElementData> subscriber) -> {
-            ElementData data = null;
-            try {
-                file = new File(AppUtile.getInnerSDCardPath(), "1529249340_807b#T1.txt");
-                if (!file.exists()) {
-                    ToastUtil.showShort(IOActivity.this, "文件不存在" + file.getAbsolutePath());
-                    return;
+        Observable.create((ObservableEmitter<ElementData> emitter) -> {
+                    ElementData data = null;
+                    try {
+                        file = new File(AppUtile.getInnerSDCardPath(), "1529249340_807b#T1.txt");
+                        if (!file.exists()) {
+                            ToastUtil.showShort(IOActivity.this, "文件不存在" + file.getAbsolutePath());
+                            return;
+                        }
+                        if (!file.getParentFile().exists()) {
+                            file.getParentFile().mkdir();
+                        }
+                        //String content = Okio.buffer(Okio.source(file)).readString(charset);
+                        data = JSON.parseObject(content, new TypeReference<ElementData>() {
+                        });
+                        //                list = JSON.parseArray(content, Article.class);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Log.d("----", "写入失败-=-----");
+                    }
+                    emitter.onNext(data);
                 }
-                if (!file.getParentFile().exists()) {
-                    file.getParentFile().mkdir();
-                }
-                //String content = Okio.buffer(Okio.source(file)).readString(charset);
-                data = JSON.parseObject(content, new TypeReference<ElementData>() {});
-//                list = JSON.parseArray(content, Article.class);
-            } catch (Exception e) {
-                e.printStackTrace();
-                Log.d("----", "写入失败-=-----");
-            }
-            subscriber.onNext(data);
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(data -> {
+        ).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(data -> {
             if (data != null) {
                 text.setText(data.toString());
                 articleList.add(data);

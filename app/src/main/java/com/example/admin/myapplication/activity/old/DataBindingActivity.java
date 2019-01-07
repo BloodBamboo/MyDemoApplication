@@ -14,15 +14,18 @@ import com.example.admin.myapplication.R;
 import com.example.admin.myapplication.bean.User;
 import com.example.admin.myapplication.handler.EventHandler;
 
+import org.reactivestreams.Subscriber;
+
 import ccom.example.admin.myapplication.databinding.DataBindingBinding;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.http.GET;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by Administrator on 2017/5/2.
@@ -53,17 +56,25 @@ public class DataBindingActivity extends AppCompatActivity {
         html.getIpInfo()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<ResponseBody>() {
-                    @Override
-                    public void onCompleted() {
-                    }
-
+                .subscribe(new Observer<ResponseBody>() {
                     @Override
                     public void onError(Throwable e) {
                         Log.e("*******", e.getMessage());
                         progressBar.setVisibility(View.GONE);
                         User user = new User("王", "明");
                         binding.setUser(user);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        if (d.isDisposed()) {
+                            d.dispose();
+                        }
                     }
 
                     @Override
