@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.alipay.sdk.app.PayTask;
 import com.example.admin.myapplication.Utils.ToastUtil;
 import com.example.admin.myapplication.activity.AnimationActivity;
+import com.example.admin.myapplication.activity.BluetoothActivity;
 import com.example.admin.myapplication.activity.CustomViewFinderScannerActivity;
 import com.example.admin.myapplication.activity.DrawLayoutActivity;
 import com.example.admin.myapplication.activity.IOActivity;
@@ -275,8 +276,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.button_stop_looper)
-    public void onClickStopLopper() {
+    public void onClickStopMessage() {
         handler.sendEmptyMessage(1);
+    }
+
+    @OnClick(R.id.button_bluetooth)
+    public void onClickStopLopper() {
+        startActivity(new Intent(this, BluetoothActivity.class));
     }
 
     public void onPay1() {

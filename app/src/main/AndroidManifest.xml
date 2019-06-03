@@ -7,6 +7,15 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <!--蓝牙必须的权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <!--android6.0以上使用蓝牙需要的权限，否则在Android6.0以上的手机扫描不到蓝牙设备-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.location.gps" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -97,6 +106,7 @@
         <activity android:name=".activity.theme.Theme3Activity"/>
         <activity android:name=".activity.IOActivity"/>
         <activity android:name=".activity.ReceiverActivity"/>
+        <activity android:name=".activity.BluetoothActivity"/>
 
         <receiver android:name=".receiver.FirstReceiver">
             <intent-filter android:priority="3">

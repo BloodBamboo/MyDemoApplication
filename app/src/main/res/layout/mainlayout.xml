@@ -172,6 +172,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="button_stop_looper" />
+                <Button
+                    android:id="@+id/button_bluetooth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="蓝牙" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
