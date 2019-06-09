@@ -1,64 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/saomiao"
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="扫描设备"/>
-    <Button
-        android:id="@+id/stop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="停止扫描"/>
-
-    <Button
-        android:id="@+id/bin_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="连接设备"/>
-    <Button
-        android:id="@+id/zhendong"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="短震 / 嘿嘿嘿"/>
-    <Button
-        android:id="@+id/changzhen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="长震 / 呵呵呵"/>
-    <TextView
-        android:id="@+id/jibu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="走了多少步："
-        android:gravity="center"
-        android:textSize="20dp"/>
-
-
-    <TextView
-        android:id="@+id/dianliang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="电池电量"
-        android:gravity="center"
-        android:textSize="20dp"/>
-
-    <TextView
-        android:id="@+id/lianjiezhuangtai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="连接状态：未连接"
-        android:gravity="center"
-        android:textSize="20dp"/>
-
-
+        android:text="扫描" />
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycle"
+        android:id="@+id/recycle_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_view1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 </LinearLayout>

@@ -3,7 +3,6 @@ package com.example.admin.myapplication.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.example.admin.myapplication.R;
@@ -15,11 +14,11 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import rx.Observable;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by Administrator on 2017/5/22.
@@ -28,7 +27,7 @@ import rx.schedulers.Schedulers;
 public class RevealSearchViewActivity extends AppCompatActivity {
 
     RevealDrawable rd;
-    Subscription subscribe;
+    Disposable subscribe;
     Thread thread;
     boolean isCancel = false;
     int level = 0;
@@ -90,24 +89,24 @@ public class RevealSearchViewActivity extends AppCompatActivity {
         });
         thread.start();
 
-//        subscribe = Observable.interval(1, TimeUnit.SECONDS)
-//                .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
-//                .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
-//                .subscribe(new Action1<Long>() {
-//                    @Override
-//                    public void call(Long aLong) {
-//                        if (level > 10000) {
-//                            level = 0;
-//                        }
-//                        image.setImageLevel(level++);
-//                    }
-//                });
+        subscribe = Observable.interval(1, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
+                .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        if (level > 10000) {
+                            level = 0;
+                        }
+                        image.setImageLevel(level++);
+                    }
+                });
     }
 
     @OnClick(R.id.button2)
     public void onClcik2() {
-        if (subscribe != null && !subscribe.isUnsubscribed()) {
-            subscribe.unsubscribe();
+        if (subscribe != null && !subscribe.isDisposed()) {
+            subscribe.dispose();
         }
 
         if (thread != null) {
