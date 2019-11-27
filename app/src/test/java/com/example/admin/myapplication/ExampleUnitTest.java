@@ -33,10 +33,9 @@ public class ExampleUnitTest {
 
     @Test
     public void addition_isCorrect() throws Exception {
-        System.out.println(3/4);
-        System.out.println(2%4);
-        ArrayList l = new ArrayList();
-        l.remove(2);
+        System.out.println(System.currentTimeMillis());
+        System.out.println("longToDate："+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+                .format(new Date(815602624)));//1529823960000L
     }
 
     @Test
