@@ -16,6 +16,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-feature android:name="android.hardware.location.gps" />
 
+    <!--相机相关权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -107,6 +110,7 @@
         <activity android:name=".activity.IOActivity"/>
         <activity android:name=".activity.ReceiverActivity"/>
         <activity android:name=".activity.BluetoothActivity"/>
+        <activity android:name=".activity.Camera2Activity"/>
 
         <receiver android:name=".receiver.FirstReceiver">
             <intent-filter android:priority="3">
@@ -123,7 +127,8 @@
                 <action android:name="com.example.admin.myapplication.ORDER_BROADCAST"/>
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.Receiver_1">//静态注册
+<!--   静态注册     -->
+        <receiver android:name=".receiver.Receiver_1">
             <intent-filter >
                 <action android:name="ttt"/>
             </intent-filter>

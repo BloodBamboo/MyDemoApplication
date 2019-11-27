@@ -20,6 +20,7 @@ import com.alipay.sdk.app.PayTask;
 import com.example.admin.myapplication.Utils.ToastUtil;
 import com.example.admin.myapplication.activity.AnimationActivity;
 import com.example.admin.myapplication.activity.BluetoothActivity;
+import com.example.admin.myapplication.activity.Camera2Activity;
 import com.example.admin.myapplication.activity.CustomViewFinderScannerActivity;
 import com.example.admin.myapplication.activity.DrawLayoutActivity;
 import com.example.admin.myapplication.activity.IOActivity;
@@ -156,7 +157,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, OldScrollingActivity.class));
     }
 
-    @AspectJAnnotation(value = Manifest.permission.CAMERA)
     @OnClick(R.id.button_retrofit)
     public void onClickRetrofit() {
         startActivity(new Intent(this, ScrollingActivity.class));
@@ -281,8 +281,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.button_bluetooth)
-    public void onClickStopLopper() {
+    public void onClickBluetooth() {
         startActivity(new Intent(this, BluetoothActivity.class));
+    }
+
+    @AspectJAnnotation(value = Manifest.permission.CAMERA)
+    @OnClick(R.id.button_camera2)
+    public void onClickCamera2() {
+        startActivity(new Intent(this, Camera2Activity.class));
     }
 
     public void onPay1() {

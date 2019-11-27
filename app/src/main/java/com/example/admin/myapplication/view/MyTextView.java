@@ -1,16 +1,15 @@
 package com.example.admin.myapplication.view;
 
 import android.content.Context;
-import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.widget.TextView;
+import android.support.v7.widget.AppCompatTextView;
 
 /**
- * Created by guhaoxin on 16/3/28.
+ * Created by yx on 16/3/28.
  */
-public class MyTextView extends TextView {
+public class MyTextView extends AppCompatTextView {
 
     private static final String TAG = "MyTextView";
 
