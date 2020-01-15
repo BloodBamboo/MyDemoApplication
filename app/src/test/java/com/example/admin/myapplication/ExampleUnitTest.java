@@ -14,8 +14,10 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -34,12 +36,12 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         System.out.println(System.currentTimeMillis());
-        System.out.println("longToDate："+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+        System.out.println("longToDate：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
                 .format(new Date(815602624)));//1529823960000L
     }
 
     @Test
-    public void when_thenReturn(){
+    public void when_thenReturn() {
         //mock一个Iterator类
         Iterator iterator = Mockito.mock(Iterator.class);
         //预设当iterator调用next()时第一次返回hello，第n次都返回world
@@ -47,19 +49,19 @@ public class ExampleUnitTest {
         //使用mock的对象
         String result = iterator.next() + " " + iterator.next() + " " + iterator.next();
         //验证结果
-        Assert.assertEquals("hello world world",result);
+        Assert.assertEquals("hello world world", result);
     }
 
     @Test()
     public void when_thenThrow() {
-        Account account=Mockito.mock(Account.class,Mockito.RETURNS_DEEP_STUBS);
+        Account account = Mockito.mock(Account.class, Mockito.RETURNS_DEEP_STUBS);
         Mockito.when(account.getRailwayTicket().getDestination()).thenReturn("Beijing");
         println(account.getRailwayTicket().getDestination());
         Mockito.verify(account.getRailwayTicket()).getDestination();
-        Assert.assertEquals("Beijing",account.getRailwayTicket().getDestination());
+        Assert.assertEquals("Beijing", account.getRailwayTicket().getDestination());
     }
 
-    public class RailwayTicket{
+    public class RailwayTicket {
         private String destination;
 
         public String getDestination() {
@@ -71,7 +73,7 @@ public class ExampleUnitTest {
         }
     }
 
-    public class Account{
+    public class Account {
         private RailwayTicket railwayTicket;
 
         public RailwayTicket getRailwayTicket() {
@@ -87,25 +89,25 @@ public class ExampleUnitTest {
     private List mockList;
 
     @Test
-    public void deepstubsTest2(){
-        Account account=Mockito.mock(Account.class);
-        RailwayTicket railwayTicket=Mockito.mock(RailwayTicket.class);
+    public void deepstubsTest2() {
+        Account account = Mockito.mock(Account.class);
+        RailwayTicket railwayTicket = Mockito.mock(RailwayTicket.class);
         Mockito.when(account.getRailwayTicket()).thenReturn(railwayTicket);
         Mockito.when(railwayTicket.getDestination()).thenReturn("Beijing");
 
         println(account.getRailwayTicket().getDestination());
         Mockito.verify(account.getRailwayTicket()).getDestination();
-        Assert.assertEquals("Beijing",account.getRailwayTicket().getDestination());
+        Assert.assertEquals("Beijing", account.getRailwayTicket().getDestination());
     }
 
     @Test
-    public void shorthand(){
+    public void shorthand() {
         mockList.add(2);
         Mockito.verify(mockList).add(2);
     }
 
     @Test
-    public void with_arguments(){
+    public void with_arguments() {
         Comparable comparable = Mockito.mock(Comparable.class);
         //预设根据不同的参数返回不同的结果
         Mockito.when(comparable.compareTo("Test")).thenReturn(1);
@@ -117,7 +119,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void with_unspecified_arguments(){
+    public void with_unspecified_arguments() {
         List list = Mockito.mock(List.class);
         //匹配任意参数
         Mockito.when(list.get(Mockito.anyInt())).thenReturn(1);
@@ -127,6 +129,7 @@ public class ExampleUnitTest {
         Assert.assertTrue(list.contains(1));
         Assert.assertTrue(!list.contains(3));
     }
+
     private class IsValid implements ArgumentMatcher<Integer> {
         @Override
         public boolean matches(Integer o) {
@@ -136,28 +139,28 @@ public class ExampleUnitTest {
 
 
     @Test
-    public void all_arguments_provided_by_matchers(){
+    public void all_arguments_provided_by_matchers() {
         Comparator comparator = Mockito.mock(Comparator.class);
-        comparator.compare("nihao231213","hello");
+        comparator.compare("nihao231213", "hello");
         //如果你使用了参数匹配，那么所有的参数都必须通过matchers来匹配
-        Mockito.verify(comparator).compare(Mockito.anyString(),Mockito.eq("hello"));
+        Mockito.verify(comparator).compare(Mockito.anyString(), Mockito.eq("hello"));
         //下面的为无效的参数匹配使用
         //verify(comparator).compare(anyString(),"hello");
     }
 
     @Test
-    public void capturing_args(){
+    public void capturing_args() {
         PersonDao personDao = Mockito.mock(PersonDao.class);
         PersonService personService = new PersonService(personDao);
 
         ArgumentCaptor<Person> argument = ArgumentCaptor.forClass(Person.class);
-        personService.update(1,"jack");
+        personService.update(1, "jack");
         Mockito.verify(personDao).update(argument.capture());
-        Assert.assertEquals(1,argument.getValue().getId());
-        Assert.assertEquals("jack",argument.getValue().getName());
+        Assert.assertEquals(1, argument.getValue().getId());
+        Assert.assertEquals("jack", argument.getValue().getName());
     }
 
-    class Person{
+    class Person {
         private int id;
         private String name;
 
@@ -175,39 +178,39 @@ public class ExampleUnitTest {
         }
     }
 
-    interface PersonDao{
+    interface PersonDao {
         public void update(Person person);
     }
 
-    class PersonService{
+    class PersonService {
         private PersonDao personDao;
 
         PersonService(PersonDao personDao) {
             this.personDao = personDao;
         }
 
-        public void update(int id,String name){
-            personDao.update(new Person(id,name));
+        public void update(int id, String name) {
+            personDao.update(new Person(id, name));
         }
     }
 
     @Test
-    public void answerTest(){
+    public void answerTest() {
         Mockito.when(mockList.get(Mockito.anyInt())).thenAnswer(new CustomAnswer());
-        Assert.assertEquals("hello world:0",mockList.get(0));
-        Assert.assertEquals("hello world:999",mockList.get(999));
+        Assert.assertEquals("hello world:0", mockList.get(0));
+        Assert.assertEquals("hello world:999", mockList.get(999));
     }
 
     private class CustomAnswer implements Answer<String> {
         @Override
         public String answer(InvocationOnMock invocation) throws Throwable {
             Object[] args = invocation.getArguments();
-            return "hello world:"+args[0];
+            return "hello world:" + args[0];
         }
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void spy_on_real_objects(){
+    public void spy_on_real_objects() {
         List list = new LinkedList();
         List spy = Mockito.spy(list);
         //下面预设的spy.get(0)会报错，因为会调用真实对象的get(0)，所以会抛出越界异常
@@ -220,46 +223,46 @@ public class ExampleUnitTest {
         //调用真实对象的api
         spy.add(1);
         spy.add(2);
-        Assert.assertEquals(100,spy.size());
-        Assert.assertEquals(1,spy.get(0));
-        Assert.assertEquals(2,spy.get(1));
+        Assert.assertEquals(100, spy.size());
+        Assert.assertEquals(1, spy.get(0));
+        Assert.assertEquals(2, spy.get(1));
         Mockito.verify(spy).add(1);
         Mockito.verify(spy).add(2);
-        Assert.assertEquals(999,spy.get(999));
+        Assert.assertEquals(999, spy.get(999));
         spy.get(2);
     }
 
     @Test
-    public void real_partial_mock(){
+    public void real_partial_mock() {
         //通过spy来调用真实的api
         List list = Mockito.spy(new ArrayList());
-        Assert.assertEquals(0,list.size());
-        A a  = Mockito.mock(A.class);
+        Assert.assertEquals(0, list.size());
+        A a = Mockito.mock(A.class);
         //通过thenCallRealMethod来调用真实的api
         Mockito.when(a.doSomething(Mockito.anyInt())).thenCallRealMethod();
-        Assert.assertEquals(999,a.doSomething(999));
+        Assert.assertEquals(999, a.doSomething(999));
     }
 
 
-    class A{
-        public int doSomething(int i){
+    class A {
+        public int doSomething(int i) {
             return i;
         }
     }
 
     @Test
-    public void reset_mock(){
+    public void reset_mock() {
         List list = Mockito.mock(List.class);
         Mockito.when(list.size()).thenReturn(10);
         list.add(1);
-        Assert.assertEquals(10,list.size());
+        Assert.assertEquals(10, list.size());
         //重置mock，清除所有的互动和预设
         Mockito.reset(list);
-        Assert.assertEquals(0,list.size());
+        Assert.assertEquals(0, list.size());
     }
 
     @Test
-    public void verifying_number_of_invocations(){
+    public void verifying_number_of_invocations() {
         List list = Mockito.mock(List.class);
         list.add(1);
         list.add(2);
@@ -269,38 +272,38 @@ public class ExampleUnitTest {
         list.add(3);
         //验证是否被调用一次，等效于下面的times(1)
         Mockito.verify(list).add(1);
-        Mockito.verify(list,Mockito.times(1)).add(1);
+        Mockito.verify(list, Mockito.times(1)).add(1);
         //验证是否被调用2次
-        Mockito.verify(list,Mockito.times(2)).add(2);
+        Mockito.verify(list, Mockito.times(2)).add(2);
         //验证是否被调用3次
-        Mockito.verify(list,Mockito.times(3)).add(3);
+        Mockito.verify(list, Mockito.times(3)).add(3);
         //验证是否从未被调用过
-        Mockito.verify(list,Mockito.never()).add(4);
+        Mockito.verify(list, Mockito.never()).add(4);
         //验证至少调用一次
-        Mockito.verify(list,Mockito.atLeastOnce()).add(1);
+        Mockito.verify(list, Mockito.atLeastOnce()).add(1);
         //验证至少调用2次
-        Mockito.verify(list,Mockito.atLeast(2)).add(2);
+        Mockito.verify(list, Mockito.atLeast(2)).add(2);
         //验证至多调用3次
-        Mockito.verify(list,Mockito.atMost(3)).add(3);
+        Mockito.verify(list, Mockito.atMost(3)).add(3);
     }
 
     @Test(expected = RuntimeException.class)
-    public void consecutive_calls(){
+    public void consecutive_calls() {
         //模拟连续调用返回期望值，如果分开，则只有最后一个有效
         Mockito.when(mockList.get(0)).thenReturn(0);
         Mockito.when(mockList.get(0)).thenReturn(1);
         Mockito.when(mockList.get(0)).thenReturn(2);
         Mockito.when(mockList.get(1)).thenReturn(0).thenReturn(1).thenThrow(new RuntimeException());
-        Assert.assertEquals(2,mockList.get(0));
-        Assert.assertEquals(2,mockList.get(0));
-        Assert.assertEquals(0,mockList.get(1));
-        Assert.assertEquals(1,mockList.get(1));
+        Assert.assertEquals(2, mockList.get(0));
+        Assert.assertEquals(2, mockList.get(0));
+        Assert.assertEquals(0, mockList.get(1));
+        Assert.assertEquals(1, mockList.get(1));
         //第三次或更多调用都会抛出异常
         mockList.get(1);
     }
 
     @Test
-    public void verification_in_order(){
+    public void verification_in_order() {
         List list = Mockito.mock(List.class);
         List list2 = Mockito.mock(List.class);
         list.add(1);
@@ -308,7 +311,7 @@ public class ExampleUnitTest {
         list.add(2);
         list2.add("world");
         //将需要验证执行顺序的mock对象放入InOrder
-        InOrder inOrder = Mockito.inOrder(list,list2);
+        InOrder inOrder = Mockito.inOrder(list, list2);
         //下面的代码不能颠倒顺序，验证执行顺序
         inOrder.verify(list).add(1);
         inOrder.verify(list2).add("hello");
@@ -317,23 +320,23 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void verify_interaction(){
+    public void verify_interaction() {
         List list = Mockito.mock(List.class);
         List list2 = Mockito.mock(List.class);
         List list3 = Mockito.mock(List.class);
         list.add(1);
         Mockito.verify(list).add(1);
-        Mockito.verify(list,Mockito.never()).add(2);
+        Mockito.verify(list, Mockito.never()).add(2);
         //验证零互动行为
-        Mockito.verifyZeroInteractions(list2,list3);
+        Mockito.verifyZeroInteractions(list2, list3);
     }
 
     @Test(expected = NoInteractionsWanted.class)
-    public void find_redundant_interaction(){
+    public void find_redundant_interaction() {
         List list = Mockito.mock(List.class);
         list.add(1);
         list.add(2);
-        Mockito.verify(list,Mockito.times(2)).add(Mockito.anyInt());
+        Mockito.verify(list, Mockito.times(2)).add(Mockito.anyInt());
         //检查是否有未被验证的互动行为，因为add(1)和add(2)都会被上面的anyInt()验证到，所以下面的代码会通过
         Mockito.verifyNoMoreInteractions(list);
 
@@ -345,7 +348,64 @@ public class ExampleUnitTest {
         Mockito.verifyNoMoreInteractions(list2);
     }
 
+    public static int binarySearch(int[] a, int key) {
+        int low, mid, high;
+        low = 0;//最小下标
+        high = a.length - 1;//最大小标
+        while (low <= high) {
+            mid = (high + low) / 2;//折半下标
+            if (key > a[mid]) {
+                low = mid + 1; //关键字比折半值大，则最小下标调成折半下标的下一位
+            } else if (key < a[mid]) {
+                high = mid - 1;//关键字比折半值小，则最大下标调成折半下标的前一位
+            } else {
+                return mid; //关键字和折半值相等时返回折半下标
+            }
+        }
+        return -1;
+    }
 
+    public int twofind(int[] a, int key) {
+        int left = 0;
+        int right = a.length - 1;
+        while (left != right) {
+            int mid = (left + right) / 2;
+            if (a[mid] == key) {
+                return mid;
+            } else if (key > a[mid]) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
 
+    public void quickSort(int[] a, int left, int right) {
+        if (left > right) {
+            return;
+        }
 
+        int i, j, temp, t;
+        i = left;
+        j = right;
+        temp = a[i];
+        while (i != j) {
+            while (a[j] >= temp && i < j) {
+                j--;
+            }
+            while (a[i] <= temp && i < j) {
+                i++;
+            }
+            if (i < j) {
+                t = a[i];
+                a[i] = a[j];
+                a[j] = t;
+            }
+        }
+        a[left] = a[i];
+        a[i] = temp;
+        quickSort(a, left, i - 1);
+        quickSort(a, i + 1, right);
+    }
 }

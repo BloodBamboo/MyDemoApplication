@@ -8,7 +8,7 @@ buildscript {
         maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:3.5.3'
         //aop依赖库
         classpath 'org.aspectj:aspectjtools:1.8.10'
         classpath 'org.aspectj:aspectjweaver:1.8.10'

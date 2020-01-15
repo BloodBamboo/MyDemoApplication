@@ -7,6 +7,12 @@
 #define MYAPPLICATIONNDK_NATIVE_HEAD_H
 #define NELEM(x) ((int) (sizeof(x) / sizeof((x)[0])))//计算有几个JNINativeMethod
 
+void native_diff(JNIEnv *env, jclass type, jstring path,
+                         jstring pattern_path, jint file_num);
+
+void native_patch(JNIEnv *env, jclass type,
+                                    jstring merger_path, jstring pattern_path,
+                                    jint file_num);
 
 extern int addTest(int a, int b);
 //获取文件大小

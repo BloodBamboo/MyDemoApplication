@@ -4,15 +4,16 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!--蓝牙必须的权限-->
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <!--android6.0以上使用蓝牙需要的权限，否则在Android6.0以上的手机扫描不到蓝牙设备-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <uses-feature android:name="android.hardware.location.gps" />
 
     <!--相机相关权限-->
@@ -99,40 +100,54 @@
         <activity
             android:name=".activity.DrawLayoutActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.PaletteActivity"/>
-        <activity android:name=".ndk.NDKActivity"/>
+        <activity android:name=".activity.PaletteActivity" />
+        <activity android:name=".ndk.NDKActivity" />
+
         <service android:name=".service.LocalService" />
         <service
             android:name=".service.RemoteService"
             android:process=":com.test.tt" />
-        <activity android:name=".activity.theme.ThemeActivity"/>
-        <activity android:name=".activity.theme.Theme1Activity"/>
-        <activity android:name=".activity.theme.Theme2Activity"/>
-        <activity android:name=".activity.theme.Theme3Activity"/>
-        <activity android:name=".activity.IOActivity"/>
-        <activity android:name=".activity.ReceiverActivity"/>
-        <activity android:name=".activity.BluetoothActivity"/>
-        <activity android:name=".activity.Camera2Activity"/>
+
+        <activity android:name=".activity.theme.ThemeActivity" />
+        <activity android:name=".activity.theme.Theme1Activity" />
+        <activity android:name=".activity.theme.Theme2Activity" />
+        <activity android:name=".activity.theme.Theme3Activity" />
+        <activity android:name=".activity.IOActivity" />
+        <activity android:name=".activity.ReceiverActivity" />
+        <activity android:name=".activity.BluetoothActivity" />
+        <activity android:name=".activity.Camera2Activity" />
+        <activity
+            android:name=".activity.startModel.A"
+            android:launchMode="standard" />
+        <activity
+            android:name=".activity.startModel.B"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.startModel.C"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".activity.startModel.D"
+            android:launchMode="singleTop" />
 
         <receiver android:name=".receiver.FirstReceiver">
             <intent-filter android:priority="3">
-                <action android:name="com.example.admin.myapplication.ORDER_BROADCAST"/>
+                <action android:name="com.example.admin.myapplication.ORDER_BROADCAST" />
             </intent-filter>
         </receiver>
         <receiver android:name=".receiver.SecondReceiver">
             <intent-filter android:priority="2">
-                <action android:name="com.example.admin.myapplication.ORDER_BROADCAST"/>
+                <action android:name="com.example.admin.myapplication.ORDER_BROADCAST" />
             </intent-filter>
         </receiver>
         <receiver android:name=".receiver.ThirdReceiver">
             <intent-filter android:priority="1">
-                <action android:name="com.example.admin.myapplication.ORDER_BROADCAST"/>
+                <action android:name="com.example.admin.myapplication.ORDER_BROADCAST" />
             </intent-filter>
         </receiver>
-<!--   静态注册     -->
+        <!--   静态注册     -->
         <receiver android:name=".receiver.Receiver_1">
-            <intent-filter >
-                <action android:name="ttt"/>
+            <intent-filter>
+                <action android:name="ttt" />
             </intent-filter>
         </receiver>
     </application>

@@ -13,17 +13,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.bumptech.glide.manager.Lifecycle;
 import com.example.admin.myapplication.R;
+import com.example.admin.myapplication.Utils.Constant;
 
 import java.io.File;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;
 
 
 /**
  * Created by Administrator on 2017/8/16.
+ * ndk中的对象不能混淆
  */
 
 public class NDKActivity extends AppCompatActivity {
@@ -40,27 +43,35 @@ public class NDKActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ndk);
         ndkTest = new NDKTest();
         Log.i("TEST_JNI", "onCreate: " + ndkTest.stringFromJNI(3, 2));
+        ButterKnife.bind(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        ndkTest.onDestroy();
+        ndkTest = null;
+        super.onDestroy();
     }
 
     @RequiresPermission(allOf = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE})
-    public void diff(View v){
+    public void diff(View v) {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_CONTACTS)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     10011);
-        }else{
-            ndkTest.diff(path, pattern_Path, 5);
+        } else {
+            NDKTest.diff(path, pattern_Path, 5);
         }
     }
 
     @RequiresPermission(allOf = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE})
-    public void path(View v){
+    public void path(View v) {
         PermissionGen.with(this)
                 .addRequestCode(100)
                 .permissions(
@@ -71,12 +82,12 @@ public class NDKActivity extends AppCompatActivity {
 
     @PermissionSuccess(requestCode = 10011)
     public void a_diff() {
-        ndkTest.diff(path, pattern_Path, 5);
+        NDKTest.diff(path, pattern_Path, 5);
     }
 
     @PermissionSuccess(requestCode = 100)
     public void a_path() {
-        ndkTest.patch(path1, pattern_Path, 5);
+        NDKTest.patch(path1, pattern_Path, 5);
     }
 
     @Override
@@ -99,5 +110,38 @@ public class NDKActivity extends AppCompatActivity {
 //        }
 //        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         PermissionGen.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+    }
+
+    @OnClick(R.id.button_test1)
+    public void test1(View view) {
+        Student s = new Student();
+        ndkTest.student(s);
+        Log.i(Constant.TAG, s.toString());
+    }
+
+    @OnClick(R.id.button_test2)
+    public void test2(View view) {
+        Person p = ndkTest.person();
+        Log.i(Constant.TAG, "java____test2: " + p.student.toString());
+    }
+
+    @OnClick(R.id.button_test3)
+    public void test3(View view) {
+        ndkTest.initStudent();
+    }
+
+    @OnClick(R.id.button_test4)
+    public void test4(View view) {
+        ndkTest.deleteStudent();
+    }
+
+    @OnClick(R.id.button_test5)
+    public void test5(View view) {
+        ndkTest.threadTest();
+    }
+
+    @OnClick(R.id.button_test6)
+    public void test6(View view) {
+        ndkTest.ffmepg();
     }
 }

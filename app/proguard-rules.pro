@@ -36,6 +36,7 @@
 -keep public class * extends android.view.View
 -keep public class com.android.vending.licensing.ILicensingService
 -keep public class com.tuniu.app.ui.fragment.** {*;}
+-keep public class com.example.admin.myapplication.ndk.** {*;}
 
 #-keep class android.support.v4.**{*;}
 #-dontwarn android.support.v4.**

@@ -16,4 +16,34 @@
         android:layout_height="wrap_content"
         android:text="合并"
         android:onClick="path"/>
+    <Button
+        android:id="@+id/button_test1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="传入学生对象"/>
+    <Button
+        android:id="@+id/button_test2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="构造person对象"/>
+    <Button
+        android:id="@+id/button_test3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="创建引用实验"/>
+    <Button
+        android:id="@+id/button_test4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="回收引用实验"/>
+    <Button
+        android:id="@+id/button_test5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="线程测试"/>
+    <Button
+        android:id="@+id/button_test6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ffmpeg测试"/>
 </LinearLayout>

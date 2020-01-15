@@ -41,6 +41,7 @@ import com.example.admin.myapplication.activity.TouchEventTransmitActivity;
 import com.example.admin.myapplication.activity.TransitionAnimationActivity;
 import com.example.admin.myapplication.activity.WaterActivity;
 import com.example.admin.myapplication.activity.old.OldScrollingActivity;
+import com.example.admin.myapplication.activity.startModel.A;
 import com.example.admin.myapplication.activity.theme.ThemeActivity;
 import com.example.admin.myapplication.aop.AspectJAnnotation;
 import com.example.admin.myapplication.ndk.NDKActivity;
@@ -289,6 +290,12 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_camera2)
     public void onClickCamera2() {
         startActivity(new Intent(this, Camera2Activity.class));
+    }
+
+
+    @OnClick(R.id.button_lunch_mModel)
+    public void onClickLunchModel() {
+        startActivity(new Intent(this, A.class));
     }
 
     public void onPay1() {

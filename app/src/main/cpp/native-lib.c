@@ -1,9 +1,9 @@
-#include <android/log.h>
+
 #include <malloc.h>
 #include "native-head.h"
 #include "assert.h"
 #include "pthread.h"
-
+#include <android/log.h>
 
 #define TAG "TEST_JNI"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, TAG, __VA_ARGS__)
@@ -14,7 +14,7 @@ Java_com_example_admin_myapplication_ndk_NDKTest_stringFromJNI(JNIEnv *env, jobj
     return addTest(a,b);
 }
 
-JNIEXPORT void JNICALL native_diff(JNIEnv *env, jclass type, jstring path,
+JNIEXPORT void JNICALL Java_com_example_admin_myapplication_ndk_NDKTest_diff(JNIEnv *env, jclass type, jstring path,
                                                       jstring pattern_path, jint file_num) {
 
     LOGI("JNI native diff begin");
@@ -99,7 +99,7 @@ JNIEXPORT void JNICALL native_diff(JNIEnv *env, jclass type, jstring path,
     LOGI("JNI native diff end");
 }
 
-JNIEXPORT void JNICALL native_patch(JNIEnv *env, jclass type,
+JNIEXPORT void JNICALL Java_com_example_admin_myapplication_ndk_NDKTest_patch(JNIEnv *env, jclass type,
                                                        jstring merger_path, jstring pattern_path,
                                                        jint file_num) {
     LOGI("JNI native patch begin");
@@ -176,22 +176,24 @@ static int registerNatives(JNIEnv *env)
     return JNI_TRUE;
 }
 
-
-JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved)
-{
-    LOGI("jni_OnLoad begin");
-
-    JNIEnv *env = NULL;
-
-    if ((*vm)->GetEnv(vm, (void **)&env, JNI_VERSION_1_4) != JNI_OK)
-    {
-        LOGI("ERROR: GetEnv failed\n");
-        return -1;
-    }
-
-    assert(env != NULL);
-
-    registerNatives(env);
-
-    return JNI_VERSION_1_4;
-}
+/**
+ * c 动态注册示例
+ */
+//JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved)
+//{
+//    LOGI("jni_OnLoad begin");
+//
+//    JNIEnv *env = NULL;
+//
+//    if ((*vm)->GetEnv(vm, (void **)&env, JNI_VERSION_1_6) != JNI_OK)
+//    {
+//        LOGI("ERROR: GetEnv failed\n");
+//        return -1;
+//    }
+//
+//    assert(env != NULL);
+//
+//    registerNatives(env);
+//
+//    return JNI_VERSION_1_6;
+//}
