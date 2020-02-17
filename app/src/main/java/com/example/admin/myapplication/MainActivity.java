@@ -45,6 +45,7 @@ import com.example.admin.myapplication.activity.startModel.A;
 import com.example.admin.myapplication.activity.theme.ThemeActivity;
 import com.example.admin.myapplication.aop.AspectJAnnotation;
 import com.example.admin.myapplication.ndk.NDKActivity;
+import com.example.admin.myapplication.okhttp_simple.OkhttpSimpleActivity;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -296,6 +297,12 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_lunch_mModel)
     public void onClickLunchModel() {
         startActivity(new Intent(this, A.class));
+    }
+
+
+    @OnClick(R.id.button_okhttp)
+    public void onClickokhttp() {
+        startActivity(new Intent(this, OkhttpSimpleActivity.class));
     }
 
     public void onPay1() {

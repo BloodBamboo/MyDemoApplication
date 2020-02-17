@@ -92,7 +92,7 @@ set_target_properties(add
 set(cpp_path ${CMAKE_SOURCE_DIR}/src/main/cpp)
 #引入头文件
 include_directories(${cpp_path}/include)
-#引入ffmpeg库文件，设置内部方式引入，-L指定目录 -l指定库文件
+#引入ffmpeg库文件，设置内部方式引入，-L指定目录 -l指定库文件 在原来CMAKE_CXX_FLAGS的基础之上添加新的库
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L${cpp_path}/${CMAKE_ANDROID_ARCH_ABI}")
 
 

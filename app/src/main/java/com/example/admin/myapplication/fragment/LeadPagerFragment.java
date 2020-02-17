@@ -1,5 +1,6 @@
 package com.example.admin.myapplication.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import com.example.admin.myapplication.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 
 /**
@@ -32,11 +34,18 @@ public class LeadPagerFragment extends Fragment {
     @BindView(R.id.image_bg)
     ImageView image_bg;
 
+    Unbinder un;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.lead_pager_layout, null);
-        ButterKnife.bind(this, view);
+        un = ButterKnife.bind(this, view);
         switch (getArguments().getInt("pos")) {
             case 0:
                 image_bg.setImageResource(R.drawable.a);
@@ -52,8 +61,19 @@ public class LeadPagerFragment extends Fragment {
     }
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
         Log.d("onStart", "onStart: -------------------------");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        un.unbind();
     }
 }

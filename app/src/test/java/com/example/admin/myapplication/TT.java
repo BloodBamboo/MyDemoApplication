@@ -1,11 +1,13 @@
 package com.example.admin.myapplication;
 
-import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 //2020算法练习
 public class TT {
+
     public void println(String s) {
         System.out.println(s);
     }
@@ -23,7 +25,7 @@ public class TT {
         int childIndex = 2 * parentIndex + 1;
 
         while (childIndex < length) {
-            println(i++ + "");
+//            println(i++ + "");
             if (childIndex + 1 < length && arr[childIndex] < arr[childIndex + 1]) {
                 childIndex++;
             }
@@ -141,21 +143,163 @@ public class TT {
      */
     @Test
     public void t3() {
-        Integer a=1;
-        Integer b=2;
-        Integer c=3;
-        Integer d=3;
-        Integer e=321;
-        Integer f=321;
-        Long g=3L;
-        System.out.println(c==d); //true true的原因是使用了IntegerCache.cache 没有创建新对象，所以返回true
-        System.out.println(e==f); //false 超过范围创建新对象所以返回false
+        Integer a = 1;
+        Integer b = 2;
+        Integer c = 3;
+        Integer d = 3;
+        Integer e = 321;
+        Integer f = 321;
+        Long g = 3L;
+        System.out.println(c == d); //true true的原因是使用了IntegerCache.cache 没有创建新对象，所以返回true
+        System.out.println(e == f); //false 超过范围创建新对象所以返回false
         System.out.println(e.equals(f)); //true
-        System.out.println(c==(a+b));//true 范围没超过128
-        System.out.println(c.equals(a+b));//true 同类型，值比较
-        System.out.println(g==(a+b));//true 此时类型不同，a+b的结果应该是进行了自动装箱成Long类型，又没超过范围，所以才会为true
-        System.out.println(g.equals(a+b));//false 类型不同，直接返回false
-        
+        System.out.println(c == (a + b));//true 范围没超过128
+        System.out.println(c.equals(a + b));//true 同类型，值比较
+        System.out.println(g == (a + b));//true 此时类型不同，a+b的结果应该是进行了自动装箱成Long类型，又没超过范围，所以才会为true
+        System.out.println(g.equals(a + b));//false 类型不同，直接返回false
+    }
+
+    /**
+     * 位图算法，编程珠玑第一章
+     */
+    public ArrayList<Integer> bitSort(ArrayList<Integer> array) {
+        byte[] bitList = new byte[n];
+        long o = System.currentTimeMillis();
+        for (int i = 0; i < array.size(); i++) {
+            bitList[array.get(i)] = 1;
+        }
+        long c = System.currentTimeMillis();
+        println((c - o) + "");
+//        array.clear();
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+            if (bitList[i] == 1) {
+                array.set(index, i);
+                index++;
+            }
+        }
+        o = System.currentTimeMillis();
+        println((o - c) + "");
+        return array;
+    }
+
+    /**
+     * 随机生成k个不重复范围在0~n直接的数,实现原理，在一个0~n的有序数据中随机打乱0~k个位置的数据，进行调换，最后取k个值
+     */
+    public ArrayList<Integer> buildK(int k, int n) {
+        ArrayList<Integer> result = new ArrayList<>();
+        Random random = new Random();
+        int[] x = new int[n];
+        for (int i = 0; i < n; i++) {
+            x[i] = i;
+        }
+        for (int i = 0; i < k; i++) {
+            int r = random.nextInt(n - i) + i;
+            int temp = x[i];
+            x[i] = x[r];
+            x[r] = temp;
+        }
+
+        for (int i = 0; i < k; i++) {
+            result.add(x[i]);
+        }
+        return result;
+    }
+
+    //位图总长
+    int n = 10000000;
+    //随机不重复数量
+    int k = 1000000;
+
+    @Test
+    public void bitSortTest() {
+
+        ArrayList<Integer> array = buildK(k, n);
+//        ArrayList<Integer> array = new ArrayList<>();
+//        for (int i = k - 1; i >= 0; i--) {
+//            array.add(i);
+//        }
+
+        long o = System.currentTimeMillis();
+        array = bitSort(array);
+        long c = System.currentTimeMillis();
+        println((c - o) + "");
+        println(array.size() + "");
+//        for (int i = 0; i < array.size(); i++) {
+//            println(array.get(i) + "");
+//        }
+//
+//        long o1 = System.currentTimeMillis();
+//        Collections.sort(array);
+//        long c1 = System.currentTimeMillis();
+//        println((c1 - o1) + "");
+//        println(array.size() + "");
+//        int[] x = new int[k];
+//        for (int j = 0; j < array.size(); j++) {
+//            x[j] = array.get(j);
+//        }
+//        o = System.currentTimeMillis();
+//        sortHeap(x);
+//        c = System.currentTimeMillis();
+//        println((c - o) + "");
+    }
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+
+    @Test
+    public void t4() {
+        int[] p = {1, 2, 4, 7, 3, 5, 6, 8};
+        int[] i = {4, 7, 2, 1, 5, 3, 8, 6};
+        TreeNode treeNode = reConstructBinaryTree(p, i);
+
+        left(treeNode);
+    }
+
+
+    public void left(TreeNode treeNode) {
+        if (treeNode == null) {
+            return;
+        }
+        println(treeNode.val+"");
+        left(treeNode.left);
+        left(treeNode.right);
+    }
+
+    //例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6},重建二叉树
+    public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+        return rebuild_tree(pre, in, 0, pre.length -1, 0, in.length-1);
+    }
+
+
+    public TreeNode rebuild_tree(int[] pre, int[] in, int pre_start, int pre_end ,int in_start, int in_end) {
+        TreeNode head = null;
+        if (pre_start > pre_end || in_start > in_end) {
+            return head;
+        }
+
+        head = new TreeNode(pre[pre_start]);
+
+        int i_mid = in_end;
+        for (int i = in_start ; i < in_end ; i++) {
+            if (in[i] == head.val) {
+                i_mid = i;
+                break;
+            }
+        }
+
+        int left_length  = i_mid - in_start;
+
+        head.left = rebuild_tree(pre, in,pre_start + 1, pre_start + left_length, in_start, i_mid - 1);
+        head.right = rebuild_tree(pre, in, pre_start + left_length + 1, pre_end, i_mid + 1, in_end);
+        return head;
     }
 }
 
