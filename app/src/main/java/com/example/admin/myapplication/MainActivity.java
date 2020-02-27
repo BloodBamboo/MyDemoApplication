@@ -12,11 +12,13 @@ import android.support.annotation.RequiresPermission;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.AndroidException;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
+import com.example.admin.myapplication.RxjavaSimple.RxActivity;
 import com.example.admin.myapplication.Utils.ToastUtil;
 import com.example.admin.myapplication.activity.AnimationActivity;
 import com.example.admin.myapplication.activity.BluetoothActivity;
@@ -55,7 +57,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
@@ -105,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             default:
                 getSupportActionBar().setTitle("main");
         }
-        
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         nav.setCheckedItem(R.id.call);
 //        new Thread(() -> {
@@ -145,6 +149,21 @@ public class MainActivity extends AppCompatActivity {
                     }
                     handler.sendEmptyMessage(0);
                 });
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                emitter.onNext(1);
+                emitter.onComplete();
+            }
+        })
+        .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) throws Exception {
+
+            }
+        });
     }
 
     @Override
@@ -228,6 +247,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickScanner() {
         startActivity(new Intent(this, CustomViewFinderScannerActivity.class));
     }
+
     @OnClick(R.id.button_splash_view)
     public void onClickSplashView() {
         startActivity(new Intent(this, SplashViewActivity.class));
@@ -262,6 +282,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickIO() {
         startActivity(new Intent(this, IOActivity.class));
     }
+
     @OnClick(R.id.button_receiver)
     public void onClickReceiver() {
         startActivity(new Intent(this, ReceiverActivity.class));
@@ -303,6 +324,11 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_okhttp)
     public void onClickokhttp() {
         startActivity(new Intent(this, OkhttpSimpleActivity.class));
+    }
+
+    @OnClick(R.id.button_rx)
+    public void onClickrx() {
+        startActivity(new Intent(this, RxActivity.class));
     }
 
     public void onPay1() {

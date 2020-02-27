@@ -1,10 +1,13 @@
 package com.example.admin.myapplication.activity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.admin.myapplication.R;
 import com.example.admin.myapplication.view.MyTextView;
@@ -24,6 +27,13 @@ public class TouchEventTransmitActivity extends AppCompatActivity implements Vie
         mTextView = (MyTextView) findViewById(R.id.my_text_view);
         mTextView.setOnClickListener(this); // 设置MyTextView的点击处理
         mTextView.setOnTouchListener(this); // 设置MyTextView的触摸处理
+
+
+        ImageView i1 = findViewById(R.id.image1);
+        ImageView i2 = findViewById(R.id.image2);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.xyjy2);
+        i1.setImageBitmap(bitmap);
+        i2.setImageBitmap(bitmap);
     }
 
     @Override

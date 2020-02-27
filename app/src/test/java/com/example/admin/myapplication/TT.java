@@ -1,9 +1,13 @@
 package com.example.admin.myapplication;
 
+import android.widget.LinearLayout;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Stack;
 
 //2020算法练习
 public class TT {
@@ -12,6 +16,9 @@ public class TT {
         System.out.println(s);
     }
 
+    public void println(int i) {
+        System.out.println(i);
+    }
 
     /**
      * 堆下沉，构建大根堆
@@ -256,30 +263,124 @@ public class TT {
 
     @Test
     public void t4() {
-        int[] p = {1, 2, 4, 7, 3, 5, 6, 8};
-        int[] i = {4, 7, 2, 1, 5, 3, 8, 6};
-        TreeNode treeNode = reConstructBinaryTree(p, i);
+//        int[] p = {1, 2, 4, 7, 3, 5, 6, 8};
+//        int[] i = {4, 7, 2, 1, 5, 3, 8, 6};
+//        TreeNode treeNode = reConstructBinaryTree(p, i);
+//
+//        left(treeNode);
 
-        left(treeNode);
+//        push(1);
+//        push(2);
+//        push(3);
+//        println(pop());
+//        println(pop());
+//        push(4);
+//        println(pop());
+//        push(5);
+//        println(pop());
+//        println(pop());
+
+
+//        println(JumpFloorII(4));
+        int[] a = new int[]{2, 4, 6, 1, 3, 5, 7};//{1,2,3,4,5,6,7};
+        reOrderArray(a);
+        for (int i : a) {
+            System.out.println(i);
+        }
+
+    }
+
+    //变态跳问题
+    public int JumpFloorII(int target) {
+        if (target < 1) {
+            return 0;
+        }
+        int sum = 1;
+        int first = 1;
+        //f(n) = f(1)+f(2)+f(3)+...+f(n-1) + 1
+        for (int j = 1; j < target; j++) {
+            sum += first;
+            first = sum;
+        }
+
+        return sum;
     }
 
 
+    public int JumpFloor(int target) {
+        if (target <= 0) return 0;
+        if (target == 1) return 1;
+        if (target == 2) return 2;
+        int one = 1;
+        int two = 2;
+        int result = 0;
+        for (int i = 2; i < target; i++) {
+            result = one + two;
+            one = two;
+            two = result;
+        }
+        return result;
+    }
+
+    /**
+     * 斐波那契数列
+     *
+     * @param n
+     * @return
+     */
+    public int Fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n < 3) {
+            return 1;
+        }
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
+    }
+
+    /**
+     * 通过2个栈实现入队出队
+     */
+    Stack<Integer> stack1 = new Stack<Integer>();
+    Stack<Integer> stack2 = new Stack<Integer>();
+
+    public void push(int node) {
+        stack1.push(node);
+    }
+
+    public int pop() {
+        if (stack2.isEmpty()) {
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
+            }
+            return stack2.pop();
+        } else {
+            return stack2.pop();
+        }
+    }
+
+
+    /**
+     * 二叉树前序遍历
+     *
+     * @param treeNode
+     */
     public void left(TreeNode treeNode) {
         if (treeNode == null) {
             return;
         }
-        println(treeNode.val+"");
+        println(treeNode.val + "");
         left(treeNode.left);
         left(treeNode.right);
     }
 
     //例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6},重建二叉树
     public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
-        return rebuild_tree(pre, in, 0, pre.length -1, 0, in.length-1);
+        return rebuild_tree(pre, in, 0, pre.length - 1, 0, in.length - 1);
     }
 
 
-    public TreeNode rebuild_tree(int[] pre, int[] in, int pre_start, int pre_end ,int in_start, int in_end) {
+    public TreeNode rebuild_tree(int[] pre, int[] in, int pre_start, int pre_end, int in_start, int in_end) {
         TreeNode head = null;
         if (pre_start > pre_end || in_start > in_end) {
             return head;
@@ -288,18 +389,166 @@ public class TT {
         head = new TreeNode(pre[pre_start]);
 
         int i_mid = in_end;
-        for (int i = in_start ; i < in_end ; i++) {
+        for (int i = in_start; i < in_end; i++) {
             if (in[i] == head.val) {
                 i_mid = i;
                 break;
             }
         }
 
-        int left_length  = i_mid - in_start;
+        int left_length = i_mid - in_start;
 
-        head.left = rebuild_tree(pre, in,pre_start + 1, pre_start + left_length, in_start, i_mid - 1);
+        head.left = rebuild_tree(pre, in, pre_start + 1, pre_start + left_length, in_start, i_mid - 1);
         head.right = rebuild_tree(pre, in, pre_start + left_length + 1, pre_end, i_mid + 1, in_end);
         return head;
+    }
+
+    //    //数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转
+    public int minNumberInRotateArray(int[] array) {
+        int count = array.length;
+        if (count == 0) {
+            return 0;
+        }
+        for (int j = count - 1; j > 0; j--) {
+            int pre = j - 1;
+            if (pre > -1 && array[j] < array[pre]) {
+                return array[j];
+            }
+        }
+        return 0;
+    }
+
+
+    /**
+     * 数据的正负次方幂
+     *
+     * @param base
+     * @param exponent
+     * @return
+     */
+    public double Power(double base, int exponent) {
+        //次方为0时返回1
+        if (exponent == 0) {
+            return 1;
+        }
+
+        double r = base;
+        for (int i = 1, count = Math.abs(exponent); i < count; i++) {
+            r *= base;
+        }
+        if (exponent > 0) {
+            return r;
+        } else {
+            return 1 / r;
+        }
+    }
+
+    //[1,2,3,4,5,6,7] 2,4,6,1,3,5,7
+    public void reOrderArray(int[] array) {
+        if (array.length < 2) {
+            return;
+        }
+
+        int mid = 0;
+        if (array.length % 2 == 0) {
+            mid = array.length / 2;
+        } else {
+            mid = array.length / 2 + 1;
+        }
+
+        int[] a = new int[mid];
+        int[] b = new int[array.length - mid];
+        int a_index = 0, b_index = 0;
+
+
+        for (int i = 0, count = array.length; i < count; i++) {
+            if (array[i] % 2 == 0) {
+                b[b_index] = array[i];
+                b_index++;
+            } else {
+                a[a_index] = array[i];
+                a_index++;
+            }
+        }
+
+        for (int i = 0, count = a.length; i < count; i++) {
+            array[i] = a[i];
+        }
+
+        for (int i = 0, count = b.length; i < count; i++) {
+            array[mid + i] = b[i];
+        }
+    }
+
+    @Test
+    public void t5() {
+
+
+    }
+
+    /**
+     * 输入一个链表，输出该链表中倒数第k个结点
+     */
+    public ListNode FindKthToTail(ListNode head, int k) {
+        if (head == null) {
+            return head;
+        }
+
+        if (k == 0) {
+            return null;
+        }
+
+        int count = 0;
+        ListNode l = head;
+        boolean start = false;
+        k -= 1;
+        while (head.next != null) {
+            if (count == k || start) {
+                start = true;
+                l = l.next;
+            }
+            head = head.next;
+            count++;
+        }
+        if (count < k) {
+            return null;
+        }
+        return l;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next = null;
+
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
+
+    /**
+     * 翻转一个链表
+     * @param head
+     * @return
+     */
+    public ListNode ReverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode p = head;
+        ListNode n = head.next;
+        p.next = null;
+        while (n.next != null) {
+            ListNode tmp = n.next;
+            n.next = p;
+            p = n;
+            n = tmp;
+        }
+        //这一步很重要
+        if (n.next == null) {
+            n.next = p;
+        }
+        return n;
     }
 }
 

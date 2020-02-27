@@ -27,6 +27,14 @@ public class ShaderView extends View {
     private int mWidth;
     private int mHeight;
 
+    Matrix matrix = new Matrix();
+    /**
+     * TileMode.CLAMP 拉伸最后一个像素去铺满剩下的地方
+     * TileMode.MIRROR 通过镜像翻转铺满剩下的地方。
+     * TileMode.REPEAT 重复图片平铺整个画面（电脑设置壁纸）
+     */
+    BitmapShader bitmapShader = new BitmapShader(mBitmap, Shader.TileMode.MIRROR, Shader.TileMode.MIRROR);
+
     private int[] mColors = {Color.RED,Color.GREEN,Color.BLUE,Color.YELLOW};
 
     public ShaderView(Context context) {
@@ -50,15 +58,6 @@ public class ShaderView extends View {
         super.onDraw(canvas);
 
         canvas.drawColor(Color.WHITE);
-        /**
-         * TileMode.CLAMP 拉伸最后一个像素去铺满剩下的地方
-         * TileMode.MIRROR 通过镜像翻转铺满剩下的地方。
-         * TileMode.REPEAT 重复图片平铺整个画面（电脑设置壁纸）
-         */
-        BitmapShader bitmapShader = new BitmapShader(mBitmap, Shader.TileMode.MIRROR, Shader.TileMode.MIRROR);
-
-
-        Matrix matrix = new Matrix();
 
         int scale = Math.max(mHeight, mWidth) / Math.min(mHeight, mWidth);
 
