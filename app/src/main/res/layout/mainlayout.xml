@@ -197,6 +197,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="RX简化练习" />
+                <Button
+                    android:id="@+id/button_MediaRecoder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MediaRecoder练习" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

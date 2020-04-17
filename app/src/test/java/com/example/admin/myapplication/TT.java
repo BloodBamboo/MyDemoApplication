@@ -1,7 +1,5 @@
 package com.example.admin.myapplication;
 
-import android.widget.LinearLayout;
-
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -480,11 +478,6 @@ public class TT {
         }
     }
 
-    @Test
-    public void t5() {
-
-
-    }
 
     /**
      * 输入一个链表，输出该链表中倒数第k个结点
@@ -527,6 +520,7 @@ public class TT {
 
     /**
      * 翻转一个链表
+     *
      * @param head
      * @return
      */
@@ -550,6 +544,149 @@ public class TT {
         }
         return n;
     }
+
+    /**
+     * 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+     *
+     * @param list1
+     * @param list2
+     * @return
+     */
+    public ListNode Merge(ListNode list1, ListNode list2) {
+        ListNode heard;
+        if (list1 == null && list2 == null) {
+            return null;
+        }
+        if (list1 == null) {
+            heard = list2;
+            return heard;
+        }
+
+        if (list2 == null) {
+            heard = list1;
+            return heard;
+        }
+
+        if (list1.val < list2.val) {
+            heard = list1;
+            heard.next = Merge(list1.next, list2);
+        } else {
+            heard = list2;
+            heard.next = Merge(list1, list2.next);
+        }
+
+        return heard;
+    }
+
+    /**
+     * 判断root2是不是root1的子树
+     *
+     * @param root1
+     * @param root2
+     * @return
+     */
+    public boolean HasSubtree(TreeNode root1, TreeNode root2) {
+        if (root2 == null) {
+            return false;
+        }
+        if (root1 == null && root2 != null) {
+            return false;
+        }
+        boolean isSub = false;
+        if (root1.val == root2.val) {
+            isSub = isSub(root1.left, root2.left) && isSub(root1.right, root2.right);
+        }
+        if (!isSub) {
+            isSub = HasSubtree(root1.left, root2);
+            if (!isSub) {
+                isSub = HasSubtree(root1.right, root2);
+            }
+        }
+
+        return isSub;
+
+    }
+
+    private boolean isSub(TreeNode root, TreeNode root2) {
+        if (root2 == null) {
+            return true;
+        }
+        if (root == null && root2 != null) {
+            return false;
+        }
+
+        if (root.val == root2.val) {
+            return isSub(root.left, root2.left) && isSub(root.right, root2.right);
+        }
+        return false;
+    }
+
+    /**
+     * 操作给定的二叉树，将其变换为源二叉树的镜像。
+     *
+     * @param root
+     */
+    public void Mirror(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        Mirror(root.left);
+        Mirror(root.right);
+    }
+//1 2 3 4
+//5 6 7 8
+//9 10 11 12
+//13 14 15 16
+
+    @Test
+    public void t5() {
+
+    }
+
+    /**
+     * 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，
+     * 例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+     * 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
+     * @param matrix
+     * @return
+     */
+    public ArrayList<Integer> printMatrix(int[][] matrix) {
+        ArrayList<Integer> list = new ArrayList<>();
+        int row = matrix.length;
+        int col = matrix[0].length;
+        if (row == 0 || col == 0)  return null;
+        int left = 0,top = 0,right = col - 1,bottom = row - 1;
+        while(left <= right && top <= bottom){
+            for(int i = left; i <= right; i++) {
+                list.add(matrix[top][i]);
+            }
+            for (int i = top + 1; i <= bottom ; i++) {
+                list.add(matrix[i][right]);
+            }
+            if (top != bottom){
+                for (int i = right - 1; i >= left ; i--) {
+                    list.add(matrix[bottom][i]);
+                }
+            }
+
+            if (left != right) {
+                for (int i = bottom - 1; i > top ; i--) {
+                    list.add(matrix[i][left]);
+                }
+            }
+            left++;
+            top++;
+            right--;
+            bottom--;
+        }
+
+        return list;
+    }
+
+
 }
 
 

@@ -103,4 +103,8 @@
     <string name="switchViewCompat">SwitchCompat</string>
     <string name="radiobutton">Ratio Button</string>
     <string name="edit_text">Input field</string>
+    <string name="start_record">开始录制</string>
+    <string name="start_play">开始播放</string>
+    <string name="stop_play">停止播放</string>
+    <string name="stop_record">停止录制</string>
 </resources>

@@ -4,10 +4,14 @@
 
 #include <pthread.h>
 #include "native_test.h"
+#include "mp3_encoder.h"
+#include <stdio.h>
 
 //c++使用c的头文件和库需要使用混合编译，否则报错
 extern "C" {
 #include "libavutil/avutil.h"
+#include "libavformat/avformat.h"
+#include "libavcodec/avcodec.h"
 }
 
 JavaVM *jvm;
@@ -17,7 +21,7 @@ Java_com_example_admin_myapplication_ndk_NDKTest_student(JNIEnv *env, jobject th
                                                          jobject student) {
     LOGI("====setStu===begin====");
 
-    LOGI("第三方库引用1+2=%d", add(1,2));
+    LOGI("第三方库引用1+2=%d", add(1, 2));
     const char *student_class_str = "com/example/admin/myapplication/ndk/Student";
     //获取jclass的实例
     jclass student_class = env->FindClass(student_class_str);
@@ -174,8 +178,8 @@ static const JNINativeMethod d_register[] = {
         {"initStudent",   "()V", (void *) (init_student)},
         {"deleteStudent", "()V", (void *) (delete_student)},
         {"threadTest",    "()V", (void *) (thread_test)},
-        {"onDestroy",    "()V", (void *) (onDestroy)},
-        {"ffmepg",    "()V", (void *) (ffmepg)}
+        {"onDestroy",     "()V", (void *) (onDestroy)},
+        {"ffmepg",        "()V", (void *) (ffmepg)}
 };
 
 
@@ -196,3 +200,48 @@ extern "C" JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
     return JNI_VERSION_1_6;
 };
 
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_example_admin_myapplication_ndk_NDKFFmpegTest_ffmpegLoadPath(JNIEnv *env, jobject thiz,
+                                                                      jstring path) {
+    const char *pattern_path_str = env->GetStringUTFChars(path, nullptr);
+    AVFormatContext *av_context = nullptr;
+    int ret = -1;
+    LOGW("ffmpeg示例代码编译不通过 %s", pattern_path_str);
+//    报错不能使用，估计ffmpeg编译时缺少对应的文件或者其他问题，解决版本增加编译配置 -lz,在build.gradle里配置，具体意思不知，网上找到答案，但是未详细说明含义
+    av_register_all();
+    ret = avformat_open_input(&av_context, pattern_path_str, nullptr, nullptr);
+    LOGW("打开媒体失败:%s, %d", av_err2str(ret), ret);
+    if (ret < 0) {
+        LOGW("文件打开失败");
+        return;
+    } else {
+        LOGW("文件打开成功 %d", ret);
+        av_dump_format(av_context, 0, pattern_path_str, 0);
+    }
+
+    avformat_close_input(&av_context);
+}
+
+
+
+extern "C"
+JNIEXPORT jint JNICALL
+Java_com_example_admin_myapplication_ndk_NDKFFmpegTest_init(JNIEnv *env, jobject thiz,
+                                                            jstring pcmPathParam, jint channels,
+                                                            jint bitRate, jint sampleRate,
+                                                            jstring mp3PathParam) {
+    const char* pcmPath = env->GetStringUTFChars(pcmPathParam, NULL);
+    const char* mp3Path = env->GetStringUTFChars(mp3PathParam, NULL);
+    Mp3Encoder encoder;
+    int ret = encoder.Init(pcmPath, mp3Path, sampleRate, channels, bitRate);
+    if (ret != -1) {
+        encoder.Encode();
+        encoder.Destory();
+    }
+    LOGW("ret ：%d", ret);
+    env->ReleaseStringUTFChars(mp3PathParam, mp3Path);
+    env->ReleaseStringUTFChars(pcmPathParam, pcmPath);
+
+    return 0;
+}

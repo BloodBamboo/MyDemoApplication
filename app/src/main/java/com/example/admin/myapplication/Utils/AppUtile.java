@@ -20,6 +20,14 @@ public class AppUtile {
     }
 
     /**
+     * 获取内置SD卡路径
+     * @return
+     */
+    public static String getInnerSDCardPicturesPath() {
+        return Environment.getExternalStorageDirectory().getPath()+"/Pictures/";
+    }
+
+    /**
      * 获取外置SD卡路径
      * @return  应该就一条记录或空
      */

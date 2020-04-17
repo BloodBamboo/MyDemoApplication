@@ -11,14 +11,21 @@ android {
         versionName "1.0"
         manifestPlaceholders = [ LAUNCHER:"main" ]
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        ndk{
-            moduleName "MyTestLib" //生成的.so的名字
-            abiFilters "armeabi-v7a"//,"armeabi-v7a","x86"
-        }
+//        ndk{
+//            moduleName "MyTestLib" //生成的.so的名字
+//            abiFilters "armeabi-v7a"//,"armeabi-v7a","x86"
+//        }
         externalNativeBuild {
+            ndk{
+                moduleName "MyTestLib" //生成的.so的名字
+                abiFilters "armeabi-v7a"//,"armeabi-v7a","x86"
+            }
             cmake {
 //                cppFlags "-frtti -fexceptions"
-                cppFlags "-std=c++11"
+                //此处可以设置编译时的一些配置参数，具体配置哪些暂时还不懂，ffmpeg -lz 编译就不会报引用找不到
+                //cFlags -DSTDC_HEADERS cppFlags -frtti -fexceptions lame库编译参数，具体意思不知，网上查询，同时按资料修改了lame3个源文件，到底是哪个方式解决问题不清楚
+//                cFlags "-DSTDC_HEADERS"
+                cppFlags "-std=c++11 -lz"
             }
         }
     }

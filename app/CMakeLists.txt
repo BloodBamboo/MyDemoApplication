@@ -22,6 +22,7 @@ add_library( # Sets the name of the library.
         # Provides a relative path to your source file(s).
         src/main/cpp/native-lib.c
         src/main/cpp/native_test.cpp
+        src/main/cpp/mp3_encoder.cpp
         #        ${allCpp} 批量文件使用
         )
 
@@ -46,7 +47,7 @@ target_link_libraries( # Specifies the target library.
         native-lib
         test-lib
         add
-
+        mp3lame
         #libavcodec libavfilter libavformat libavutil libswresample libswscale
         #需要依赖顺序，否则报错
         avformat avcodec avfilter avutil swresample swscale
@@ -58,7 +59,7 @@ target_link_libraries( # Specifies the target library.
 
 #设置so库路径
 set(my_lib_path ${CMAKE_SOURCE_DIR}/libs)
-#讲第三方库作为动态库引用
+#第三方库作为动态库引用
 add_library(test-lib
         SHARED
         IMPORTED)

@@ -2,6 +2,8 @@ package com.example.admin.myapplication.ndk;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
@@ -14,9 +16,12 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.admin.myapplication.R;
+import com.example.admin.myapplication.Utils.AppUtile;
 import com.example.admin.myapplication.Utils.Constant;
+import com.example.admin.myapplication.Utils.ToastUtil;
 
 import java.io.File;
+import java.io.IOException;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -36,12 +41,14 @@ public class NDKActivity extends AppCompatActivity {
     String path = SD_CARD_PATH + File.separatorChar + "JavaScript设计模式.pdf";
     String pattern_Path = SD_CARD_PATH + File.separatorChar + "JavaScript设计模式_%d.pdf";
     String path1 = SD_CARD_PATH + File.separatorChar + "JavaScript设计模式1.pdf";
+    NDKFFmpegTest fmpegTest;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ndk);
         ndkTest = new NDKTest();
+        fmpegTest = new NDKFFmpegTest();
         Log.i("TEST_JNI", "onCreate: " + ndkTest.stringFromJNI(3, 2));
         ButterKnife.bind(this);
     }
@@ -143,5 +150,28 @@ public class NDKActivity extends AppCompatActivity {
     @OnClick(R.id.button_test6)
     public void test6(View view) {
         ndkTest.ffmepg();
+    }
+
+    @OnClick(R.id.button_test7)
+    public void test7(View view) {
+        String path = AppUtile.getInnerSDCardPath() +"/test.pcm";
+        String targpath = AppUtile.getInnerSDCardPath() +"/test.mp3";
+        File f  = new File(path);
+        if (f.exists()) {
+            //采样率如果是44100转换出的声音就会变快，原理暂时不知道(问题原因可能是转换逻辑是按双声道进行的转换，录制是单声道，所以使用22050转换就正常了) 比特率=采样率 * 采样位数 * 通道数
+            fmpegTest.init(path, 1, 64, 22050, targpath);
+            ToastUtil.showShort(getBaseContext(), "转换完成");
+        } else {
+            ToastUtil.showShort(getBaseContext(), "不存在");
+        }
+//        String targpath = AppUtile.getInnerSDCardPath() +"/test.mp4";
+//        File dataFile = new File(targpath);
+//        if (dataFile.exists()) {
+//            ToastUtil.showShort(getBaseContext(), "存在");
+//        } else {
+//            ToastUtil.showShort(getBaseContext(), "不存在");
+//        }
+//        fmpegTest.ffmpegLoadPath(targpath);
+
     }
 }

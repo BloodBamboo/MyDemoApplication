@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--录音权限-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <!--蓝牙必须的权限-->
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -116,7 +118,9 @@
         <activity android:name=".activity.ReceiverActivity" />
         <activity android:name=".activity.BluetoothActivity" />
         <activity android:name=".activity.Camera2Activity" />
-        <activity android:name=".RxjavaSimple.RxActivity"/>
+        <activity android:name=".RxjavaSimple.RxActivity" />
+        <activity android:name=".activity.MediaRecoderActivity"/>
+        <activity android:name=".ndk.AudioRecordActivity"/>
         <activity
             android:name=".activity.startModel.A"
             android:launchMode="standard" />
@@ -129,7 +133,7 @@
         <activity
             android:name=".activity.startModel.D"
             android:launchMode="singleTop" />
-        <activity android:name=".okhttp_simple.OkhttpSimpleActivity"/>
+        <activity android:name=".okhttp_simple.OkhttpSimpleActivity" />
 
         <receiver android:name=".receiver.FirstReceiver">
             <intent-filter android:priority="3">

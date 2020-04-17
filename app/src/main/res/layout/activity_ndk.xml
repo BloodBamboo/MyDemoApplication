@@ -46,4 +46,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ffmpeg测试"/>
+    <Button
+        android:id="@+id/button_test7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ffmpeg_log_测试"/>
 </LinearLayout>
