@@ -35,6 +35,8 @@ public class ScrollingActivity extends AppCompatActivity {
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
             .build();
 
+
+
     private WebView web_view;
     String id = "246";
 

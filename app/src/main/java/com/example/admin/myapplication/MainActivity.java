@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
 import com.example.admin.myapplication.RxjavaSimple.RxActivity;
+import com.example.admin.myapplication.Utils.FieldUtil;
 import com.example.admin.myapplication.Utils.ToastUtil;
 import com.example.admin.myapplication.activity.AnimationActivity;
 import com.example.admin.myapplication.activity.BluetoothActivity;
@@ -29,7 +30,6 @@ import com.example.admin.myapplication.activity.LeadPagerActivity;
 import com.example.admin.myapplication.activity.ListPopAnimationActivity;
 import com.example.admin.myapplication.activity.LoveBezierActivity;
 import com.example.admin.myapplication.activity.MapActivity;
-import com.example.admin.myapplication.activity.MediaRecoderActivity;
 import com.example.admin.myapplication.activity.PaletteActivity;
 import com.example.admin.myapplication.activity.ReceiverActivity;
 import com.example.admin.myapplication.activity.RecycleViewActivity;
@@ -50,6 +50,7 @@ import com.example.admin.myapplication.ndk.AudioRecordActivity;
 import com.example.admin.myapplication.ndk.NDKActivity;
 import com.example.admin.myapplication.okhttp_simple.OkhttpSimpleActivity;
 
+import java.lang.reflect.Field;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -165,6 +166,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Class<?> activityThreadClass = null;
+        try {
+            activityThreadClass = Class.forName( "android.app.ActivityThread");
+            Object currentActivityThread= FieldUtil.getField (activityThreadClass ,null ,"sCurrentActivityThread" ) ;
+            Log.e("============11", currentActivityThread.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -336,6 +346,10 @@ public class MainActivity extends AppCompatActivity {
     public void onClickbutton_MediaRecoder() {
 //        startActivity(new Intent(this, MediaRecoderActivity.class));
         startActivity(new Intent(this, AudioRecordActivity.class));
+    }
+
+    @OnClick(R.id.button_hook_activity)
+    public void onClickbutton_hook_activity() {
     }
 
     public void onPay1() {

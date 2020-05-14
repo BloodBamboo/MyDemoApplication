@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 import java.util.Stack;
 
@@ -643,13 +645,20 @@ public class TT {
 
     @Test
     public void t5() {
-
+        int[] a = {1, 2, 3, 4, 5};
+        int[] b = {4, 5, 3, 2, 1};
+        int[] c = {4, 3, 5, 1, 2};
+        int[] d = {4, 2, 5, 3, 2};
+        println(IsPopOrder(a, b) + "");
+        println(IsPopOrder(a, c) + "");
+        println(IsPopOrder(a, d) + "");
     }
 
     /**
      * 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，
      * 例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
      * 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
+     *
      * @param matrix
      * @return
      */
@@ -657,23 +666,23 @@ public class TT {
         ArrayList<Integer> list = new ArrayList<>();
         int row = matrix.length;
         int col = matrix[0].length;
-        if (row == 0 || col == 0)  return null;
-        int left = 0,top = 0,right = col - 1,bottom = row - 1;
-        while(left <= right && top <= bottom){
-            for(int i = left; i <= right; i++) {
+        if (row == 0 || col == 0) return null;
+        int left = 0, top = 0, right = col - 1, bottom = row - 1;
+        while (left <= right && top <= bottom) {
+            for (int i = left; i <= right; i++) {
                 list.add(matrix[top][i]);
             }
-            for (int i = top + 1; i <= bottom ; i++) {
+            for (int i = top + 1; i <= bottom; i++) {
                 list.add(matrix[i][right]);
             }
-            if (top != bottom){
-                for (int i = right - 1; i >= left ; i--) {
+            if (top != bottom) {
+                for (int i = right - 1; i >= left; i--) {
                     list.add(matrix[bottom][i]);
                 }
             }
 
             if (left != right) {
-                for (int i = bottom - 1; i > top ; i--) {
+                for (int i = bottom - 1; i > top; i--) {
                     list.add(matrix[i][left]);
                 }
             }
@@ -683,6 +692,99 @@ public class TT {
             bottom--;
         }
 
+        return list;
+    }
+
+
+    /**
+     * 定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
+     * 注意：保证测试中不会当栈为空的时候，对栈调用pop()或者min()或者top()方法。
+     */
+    public class Solution {
+        private Stack<Integer> one = new Stack<>();
+        private Stack<Integer> two = new Stack<>();
+
+        public void push(int node) {
+            if (two.isEmpty()) {
+                two.push(node);
+            } else if (two.peek() > node) {
+                two.push(node);
+            }
+            one.push(node);
+        }
+
+        public void pop() {
+            if (one.isEmpty()) {
+                return;
+            }
+
+            int temp = one.pop();
+            if (temp == two.peek()) {
+                two.pop();
+            }
+        }
+
+        public int top() {
+            if (one.isEmpty()) {
+                return -1;
+            }
+            return one.peek();
+        }
+
+        public int min() {
+            if (two.isEmpty()) {
+                return -1;
+            }
+
+            return two.peek();
+        }
+    }
+
+    //    输入两个整数序列，第一个序列表示栈的压入顺序，
+//    请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。
+//    例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，
+//    但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）
+    public boolean IsPopOrder(int[] pushA, int[] popA) {
+        if (pushA != null
+                && pushA.length > 0
+                && popA != null
+                && popA.length > 0
+                && pushA.length == popA.length) {
+
+            Stack<Integer> tempStack = new Stack<>();
+            int pushIndex = 0, popIndex = 0, length = pushA.length;
+
+            do {
+                if (!tempStack.isEmpty() && tempStack.peek() == popA[popIndex]) {
+                    tempStack.pop();
+                    popIndex++;
+                } else if (pushIndex < length) {
+                    tempStack.push(pushA[pushIndex]);
+                    pushIndex++;
+                } else {
+                    return false;
+                }
+            } while (popIndex < length);
+
+            return true;
+        }
+        return false;
+    }
+
+    //    从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+    public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root == null) {
+            return list;
+        }
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            list.add(node.val);
+            if (node.left != null) queue.add(node.left);
+            if (node.right != null) queue.add(node.right);
+        }
         return list;
     }
 

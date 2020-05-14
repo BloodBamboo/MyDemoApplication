@@ -158,6 +158,7 @@ public class NDKActivity extends AppCompatActivity {
         String targpath = AppUtile.getInnerSDCardPath() +"/test.mp3";
         File f  = new File(path);
         if (f.exists()) {
+//             帧率 * 像素宽 * 像素长 * 位深度 = 视频图像码率。如一个视频属性为：60fps（帧率），480*720p，32位位深，则视频图像码率 = 60 * 480 * 720 * 32
             //采样率如果是44100转换出的声音就会变快，原理暂时不知道(问题原因可能是转换逻辑是按双声道进行的转换，录制是单声道，所以使用22050转换就正常了) 比特率=采样率 * 采样位数 * 通道数
             fmpegTest.init(path, 1, 64, 22050, targpath);
             ToastUtil.showShort(getBaseContext(), "转换完成");

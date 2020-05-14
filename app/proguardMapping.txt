@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.69
 # min_api: 21
-# pg_map_id: 2a284ac
+# pg_map_id: 6cad451
 android.arch.core.executor.ArchTaskExecutor -> a.a.a.a.a:
     android.arch.core.executor.ArchTaskExecutor sInstance -> c
     android.arch.core.executor.TaskExecutor mDelegate -> a
@@ -25964,224 +25964,236 @@ com.example.admin.myapplication.MainActivity -> com.example.admin.myapplication.
     android.os.Handler handler -> b
     org.aspectj.lang.JoinPoint$StaticPart ajc$tjp_0 -> c
     1:1:void <clinit>() -> <clinit>
-    69:69:void <init>() -> <init>
+    72:72:void <init>() -> <init>
     26:39:java.lang.Object onClickCamera2_aroundBody1$advice(com.example.admin.myapplication.MainActivity,org.aspectj.lang.JoinPoint,com.example.admin.myapplication.aop.AspectJTest,org.aspectj.lang.ProceedingJoinPoint) -> a
-    125:142:void lambda$onCreate$0() -> a
-    146:150:void lambda$onCreate$1(java.lang.Long) -> a
-    312:313:void onClickCamera2_aroundBody0(com.example.admin.myapplication.MainActivity,org.aspectj.lang.JoinPoint) -> a
-    336:339:void lambda$onPay1$2(io.reactivex.ObservableEmitter) -> a
-    358:358:java.lang.Boolean lambda$onPay1$3(java.lang.Throwable) -> a
-    363:363:void lambda$onPay1$4(java.lang.Boolean) -> a
-    334:367:void onPay1() -> b
+    128:145:void lambda$onCreate$0() -> a
+    149:153:void lambda$onCreate$1(java.lang.Long) -> a
+    325:326:void onClickCamera2_aroundBody0(com.example.admin.myapplication.MainActivity,org.aspectj.lang.JoinPoint) -> a
+    359:362:void lambda$onPay1$2(io.reactivex.ObservableEmitter) -> a
+    381:381:java.lang.Boolean lambda$onPay1$3(java.lang.Throwable) -> a
+    386:386:void lambda$onPay1$4(java.lang.Boolean) -> a
+    357:390:void onPay1() -> b
     1:1:void ajc$preClinit() -> c
-    196:197:void onClick() -> onClick
-    186:187:void onClickAnimationPath() -> onClickAnimationPath
-    306:307:void onClickBluetooth() -> onClickBluetooth
+    209:210:void onClick() -> onClick
+    199:200:void onClickAnimationPath() -> onClickAnimationPath
+    319:320:void onClickBluetooth() -> onClickBluetooth
     1:1:void onClickCamera2() -> onClickCamera2
-    261:262:void onClickDrawLayout() -> onClickDrawLayout
-    281:282:void onClickIO() -> onClickIO
-    191:192:void onClickListPopAnimation() -> onClickListPopAnimation
-    241:242:void onClickLoveBeizer() -> onClickLoveBeizer
-    318:319:void onClickLunchModel() -> onClickLunchModel
-    236:237:void onClickMap() -> onClickMap
-    271:272:void onClickNDK() -> onClickNDK
-    176:177:void onClickOldDemo() -> onClickOldDemo
-    266:267:void onClickPalette() -> onClickPalette
-    291:292:void onClickPay() -> onClickPay
-    286:287:void onClickReceiver() -> onClickReceiver
-    256:257:void onClickRecycleView() -> onClickRecycleView
-    181:182:void onClickRetrofit() -> onClickRetrofit
-    216:217:void onClickRevealSearch() -> onClickRevealSearch
-    246:247:void onClickScanner() -> onClickScanner
-    226:227:void onClickSearchView() -> onClickSearchView
-    296:297:void onClickSendMessage() -> onClickSendMessage
-    201:202:void onClickServiceGuard() -> onClickServiceGuard
-    211:212:void onClickShader() -> onClickShader
-    251:252:void onClickSplashView() -> onClickSplashView
-    301:302:void onClickStopMessage() -> onClickStopMessage
-    276:277:void onClickTheme() -> onClickTheme
-    206:207:void onClickTouchTransmit() -> onClickTouchTransmit
-    231:232:void onClickTransitionAnim() -> onClickTransitionAnim
-    221:222:void onClickWater() -> onClickWater
-    324:325:void onClickokhttp() -> onClickokhttp
-    329:330:void onClickrx() -> onClickrx
-    80:165:void onCreate(android.os.Bundle) -> onCreate
-    169:170:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    371:372:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+    274:275:void onClickDrawLayout() -> onClickDrawLayout
+    294:295:void onClickIO() -> onClickIO
+    204:205:void onClickListPopAnimation() -> onClickListPopAnimation
+    254:255:void onClickLoveBeizer() -> onClickLoveBeizer
+    331:332:void onClickLunchModel() -> onClickLunchModel
+    249:250:void onClickMap() -> onClickMap
+    284:285:void onClickNDK() -> onClickNDK
+    189:190:void onClickOldDemo() -> onClickOldDemo
+    279:280:void onClickPalette() -> onClickPalette
+    304:305:void onClickPay() -> onClickPay
+    299:300:void onClickReceiver() -> onClickReceiver
+    269:270:void onClickRecycleView() -> onClickRecycleView
+    194:195:void onClickRetrofit() -> onClickRetrofit
+    229:230:void onClickRevealSearch() -> onClickRevealSearch
+    259:260:void onClickScanner() -> onClickScanner
+    239:240:void onClickSearchView() -> onClickSearchView
+    309:310:void onClickSendMessage() -> onClickSendMessage
+    214:215:void onClickServiceGuard() -> onClickServiceGuard
+    224:225:void onClickShader() -> onClickShader
+    264:265:void onClickSplashView() -> onClickSplashView
+    314:315:void onClickStopMessage() -> onClickStopMessage
+    289:290:void onClickTheme() -> onClickTheme
+    219:220:void onClickTouchTransmit() -> onClickTouchTransmit
+    244:245:void onClickTransitionAnim() -> onClickTransitionAnim
+    234:235:void onClickWater() -> onClickWater
+    348:349:void onClickbutton_MediaRecoder() -> onClickbutton_MediaRecoder
+    353:353:void onClickbutton_hook_activity() -> onClickbutton_hook_activity
+    337:338:void onClickokhttp() -> onClickokhttp
+    342:343:void onClickrx() -> onClickrx
+    83:178:void onCreate(android.os.Bundle) -> onCreate
+    182:183:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    394:395:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
 com.example.admin.myapplication.MainActivity$1 -> com.example.admin.myapplication.g:
     com.example.admin.myapplication.MainActivity this$0 -> a
-    126:126:void <init>(com.example.admin.myapplication.MainActivity) -> <init>
-    129:139:void handleMessage(android.os.Message) -> handleMessage
+    129:129:void <init>(com.example.admin.myapplication.MainActivity) -> <init>
+    132:142:void handleMessage(android.os.Message) -> handleMessage
 com.example.admin.myapplication.MainActivity$2 -> com.example.admin.myapplication.MainActivity$a:
-    159:159:void <init>(com.example.admin.myapplication.MainActivity) -> <init>
-    159:159:void accept(java.lang.Object) -> a
-    163:163:void accept(java.lang.Integer) -> a
+    163:163:void <init>(com.example.admin.myapplication.MainActivity) -> <init>
+    163:163:void accept(java.lang.Object) -> a
+    167:167:void accept(java.lang.Integer) -> a
 com.example.admin.myapplication.MainActivity$3 -> com.example.admin.myapplication.MainActivity$b:
-    151:151:void <init>(com.example.admin.myapplication.MainActivity) -> <init>
-    154:156:void subscribe(io.reactivex.ObservableEmitter) -> a
+    154:154:void <init>(com.example.admin.myapplication.MainActivity) -> <init>
+    157:159:void subscribe(io.reactivex.ObservableEmitter) -> a
 com.example.admin.myapplication.MainActivity$4 -> com.example.admin.myapplication.MainActivity$c:
-    340:340:void <init>(com.example.admin.myapplication.MainActivity) -> <init>
-    340:340:java.lang.Object apply(java.lang.Object) -> a
-    344:353:java.lang.Boolean apply(java.util.Map) -> a
+    363:363:void <init>(com.example.admin.myapplication.MainActivity) -> <init>
+    363:363:java.lang.Object apply(java.lang.Object) -> a
+    367:376:java.lang.Boolean apply(java.util.Map) -> a
 com.example.admin.myapplication.MainActivity_ViewBinding -> com.example.admin.myapplication.MainActivity_ViewBinding:
-    android.view.View view2131296340 -> x
-    android.view.View view2131296347 -> z
-    android.view.View view2131296344 -> p
-    android.view.View view2131296341 -> r
-    android.view.View view2131296337 -> t
-    android.view.View view2131296357 -> v
-    android.view.View view2131296359 -> i
-    android.view.View view2131296362 -> k
-    android.view.View view2131296358 -> m
-    android.view.View view2131296331 -> o
-    android.view.View view2131296342 -> c
-    android.view.View view2131296322 -> B
-    android.view.View view2131296330 -> e
-    android.view.View view2131296332 -> D
-    android.view.View view2131296348 -> g
-    android.view.View view2131296343 -> F
-    android.view.View view2131296339 -> y
+    android.view.View view2131296345 -> x
+    android.view.View view2131296352 -> z
+    android.view.View view2131296349 -> p
+    android.view.View view2131296346 -> r
+    android.view.View view2131296342 -> t
+    android.view.View view2131296363 -> v
+    android.view.View view2131296365 -> i
+    android.view.View view2131296332 -> H
+    android.view.View view2131296368 -> k
+    android.view.View view2131296364 -> m
+    android.view.View view2131296336 -> o
+    android.view.View view2131296347 -> c
+    android.view.View view2131296326 -> B
+    android.view.View view2131296335 -> e
+    android.view.View view2131296337 -> D
+    android.view.View view2131296353 -> g
+    android.view.View view2131296348 -> F
+    android.view.View view2131296344 -> y
     com.example.admin.myapplication.MainActivity target -> a
-    android.view.View view2131296349 -> q
-    android.view.View view2131296325 -> s
-    android.view.View view2131296334 -> u
-    android.view.View view2131296328 -> w
-    android.view.View view2131296361 -> h
-    android.view.View view2131296360 -> j
-    android.view.View view2131296345 -> l
-    android.view.View view2131296333 -> n
-    android.view.View view2131296350 -> A
-    android.view.View view2131296323 -> C
-    android.view.View view2131296336 -> b
-    android.view.View view2131296335 -> E
-    android.view.View view2131296321 -> d
-    android.view.View view2131296329 -> f
-    86:340:void <init>(com.example.admin.myapplication.MainActivity,android.view.View) -> <init>
-    345:346:void unbind() -> unbind
+    android.view.View view2131296354 -> q
+    android.view.View view2131296329 -> s
+    android.view.View view2131296339 -> u
+    android.view.View view2131296333 -> w
+    android.view.View view2131296367 -> h
+    android.view.View view2131296366 -> j
+    android.view.View view2131296350 -> l
+    android.view.View view2131296338 -> n
+    android.view.View view2131296355 -> A
+    android.view.View view2131296327 -> C
+    android.view.View view2131296341 -> b
+    android.view.View view2131296340 -> E
+    android.view.View view2131296325 -> d
+    android.view.View view2131296323 -> G
+    android.view.View view2131296334 -> f
+    90:360:void <init>(com.example.admin.myapplication.MainActivity,android.view.View) -> <init>
+    365:366:void unbind() -> unbind
 com.example.admin.myapplication.MainActivity_ViewBinding$1 -> com.example.admin.myapplication.MainActivity_ViewBinding$k:
     com.example.admin.myapplication.MainActivity val$target -> b
-    94:94:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    97:98:void doClick(android.view.View) -> doClick
+    98:98:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    101:102:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$10 -> com.example.admin.myapplication.MainActivity_ViewBinding$a:
     com.example.admin.myapplication.MainActivity val$target -> b
-    166:166:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    169:170:void doClick(android.view.View) -> doClick
+    170:170:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    173:174:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$11 -> com.example.admin.myapplication.MainActivity_ViewBinding$b:
     com.example.admin.myapplication.MainActivity val$target -> b
-    174:174:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    177:178:void doClick(android.view.View) -> doClick
+    178:178:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    181:182:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$12 -> com.example.admin.myapplication.MainActivity_ViewBinding$c:
     com.example.admin.myapplication.MainActivity val$target -> b
-    182:182:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    185:186:void doClick(android.view.View) -> doClick
+    186:186:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    189:190:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$13 -> com.example.admin.myapplication.MainActivity_ViewBinding$d:
     com.example.admin.myapplication.MainActivity val$target -> b
-    190:190:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    193:194:void doClick(android.view.View) -> doClick
+    194:194:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    197:198:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$14 -> com.example.admin.myapplication.MainActivity_ViewBinding$e:
     com.example.admin.myapplication.MainActivity val$target -> b
-    198:198:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    201:202:void doClick(android.view.View) -> doClick
+    202:202:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    205:206:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$15 -> com.example.admin.myapplication.MainActivity_ViewBinding$f:
     com.example.admin.myapplication.MainActivity val$target -> b
-    206:206:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    209:210:void doClick(android.view.View) -> doClick
+    210:210:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    213:214:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$16 -> com.example.admin.myapplication.MainActivity_ViewBinding$g:
     com.example.admin.myapplication.MainActivity val$target -> b
-    214:214:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    217:218:void doClick(android.view.View) -> doClick
+    218:218:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    221:222:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$17 -> com.example.admin.myapplication.MainActivity_ViewBinding$h:
     com.example.admin.myapplication.MainActivity val$target -> b
-    222:222:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    225:226:void doClick(android.view.View) -> doClick
+    226:226:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    229:230:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$18 -> com.example.admin.myapplication.MainActivity_ViewBinding$i:
     com.example.admin.myapplication.MainActivity val$target -> b
-    230:230:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    233:234:void doClick(android.view.View) -> doClick
+    234:234:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    237:238:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$19 -> com.example.admin.myapplication.MainActivity_ViewBinding$j:
     com.example.admin.myapplication.MainActivity val$target -> b
-    238:238:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    241:242:void doClick(android.view.View) -> doClick
+    242:242:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    245:246:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$2 -> com.example.admin.myapplication.MainActivity_ViewBinding$v:
     com.example.admin.myapplication.MainActivity val$target -> b
-    102:102:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    105:106:void doClick(android.view.View) -> doClick
+    106:106:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    109:110:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$20 -> com.example.admin.myapplication.MainActivity_ViewBinding$l:
     com.example.admin.myapplication.MainActivity val$target -> b
-    246:246:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    249:250:void doClick(android.view.View) -> doClick
+    250:250:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    253:254:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$21 -> com.example.admin.myapplication.MainActivity_ViewBinding$m:
     com.example.admin.myapplication.MainActivity val$target -> b
-    254:254:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    257:258:void doClick(android.view.View) -> doClick
+    258:258:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    261:262:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$22 -> com.example.admin.myapplication.MainActivity_ViewBinding$n:
     com.example.admin.myapplication.MainActivity val$target -> b
-    262:262:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    265:266:void doClick(android.view.View) -> doClick
+    266:266:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    269:270:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$23 -> com.example.admin.myapplication.MainActivity_ViewBinding$o:
     com.example.admin.myapplication.MainActivity val$target -> b
-    270:270:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    273:274:void doClick(android.view.View) -> doClick
+    274:274:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    277:278:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$24 -> com.example.admin.myapplication.MainActivity_ViewBinding$p:
     com.example.admin.myapplication.MainActivity val$target -> b
-    278:278:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    281:282:void doClick(android.view.View) -> doClick
+    282:282:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    285:286:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$25 -> com.example.admin.myapplication.MainActivity_ViewBinding$q:
     com.example.admin.myapplication.MainActivity val$target -> b
-    286:286:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    289:290:void doClick(android.view.View) -> doClick
+    290:290:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    293:294:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$26 -> com.example.admin.myapplication.MainActivity_ViewBinding$r:
     com.example.admin.myapplication.MainActivity val$target -> b
-    294:294:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    297:298:void doClick(android.view.View) -> doClick
+    298:298:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    301:302:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$27 -> com.example.admin.myapplication.MainActivity_ViewBinding$s:
     com.example.admin.myapplication.MainActivity val$target -> b
-    302:302:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    305:306:void doClick(android.view.View) -> doClick
+    306:306:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    309:310:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$28 -> com.example.admin.myapplication.MainActivity_ViewBinding$t:
     com.example.admin.myapplication.MainActivity val$target -> b
-    310:310:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    313:314:void doClick(android.view.View) -> doClick
+    314:314:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    317:318:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$29 -> com.example.admin.myapplication.MainActivity_ViewBinding$u:
     com.example.admin.myapplication.MainActivity val$target -> b
-    318:318:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    321:322:void doClick(android.view.View) -> doClick
-com.example.admin.myapplication.MainActivity_ViewBinding$3 -> com.example.admin.myapplication.MainActivity_ViewBinding$y:
+    322:322:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    325:326:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.MainActivity_ViewBinding$3 -> com.example.admin.myapplication.MainActivity_ViewBinding$a0:
     com.example.admin.myapplication.MainActivity val$target -> b
-    110:110:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    113:114:void doClick(android.view.View) -> doClick
+    114:114:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    117:118:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$30 -> com.example.admin.myapplication.MainActivity_ViewBinding$w:
     com.example.admin.myapplication.MainActivity val$target -> b
-    326:326:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    329:330:void doClick(android.view.View) -> doClick
+    330:330:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    333:334:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.MainActivity_ViewBinding$31 -> com.example.admin.myapplication.MainActivity_ViewBinding$x:
     com.example.admin.myapplication.MainActivity val$target -> b
-    334:334:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    337:338:void doClick(android.view.View) -> doClick
-com.example.admin.myapplication.MainActivity_ViewBinding$4 -> com.example.admin.myapplication.MainActivity_ViewBinding$z:
+    338:338:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    341:342:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.MainActivity_ViewBinding$32 -> com.example.admin.myapplication.MainActivity_ViewBinding$y:
     com.example.admin.myapplication.MainActivity val$target -> b
-    118:118:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    121:122:void doClick(android.view.View) -> doClick
-com.example.admin.myapplication.MainActivity_ViewBinding$5 -> com.example.admin.myapplication.MainActivity_ViewBinding$a0:
+    346:346:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    349:350:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.MainActivity_ViewBinding$33 -> com.example.admin.myapplication.MainActivity_ViewBinding$z:
     com.example.admin.myapplication.MainActivity val$target -> b
-    126:126:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    129:130:void doClick(android.view.View) -> doClick
-com.example.admin.myapplication.MainActivity_ViewBinding$6 -> com.example.admin.myapplication.MainActivity_ViewBinding$b0:
+    354:354:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    357:358:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.MainActivity_ViewBinding$4 -> com.example.admin.myapplication.MainActivity_ViewBinding$b0:
     com.example.admin.myapplication.MainActivity val$target -> b
-    134:134:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    137:138:void doClick(android.view.View) -> doClick
-com.example.admin.myapplication.MainActivity_ViewBinding$7 -> com.example.admin.myapplication.MainActivity_ViewBinding$c0:
+    122:122:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    125:126:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.MainActivity_ViewBinding$5 -> com.example.admin.myapplication.MainActivity_ViewBinding$c0:
     com.example.admin.myapplication.MainActivity val$target -> b
-    142:142:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    145:146:void doClick(android.view.View) -> doClick
-com.example.admin.myapplication.MainActivity_ViewBinding$8 -> com.example.admin.myapplication.MainActivity_ViewBinding$d0:
+    130:130:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    133:134:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.MainActivity_ViewBinding$6 -> com.example.admin.myapplication.MainActivity_ViewBinding$d0:
     com.example.admin.myapplication.MainActivity val$target -> b
-    150:150:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    153:154:void doClick(android.view.View) -> doClick
-com.example.admin.myapplication.MainActivity_ViewBinding$9 -> com.example.admin.myapplication.MainActivity_ViewBinding$e0:
+    138:138:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    141:142:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.MainActivity_ViewBinding$7 -> com.example.admin.myapplication.MainActivity_ViewBinding$e0:
     com.example.admin.myapplication.MainActivity val$target -> b
-    158:158:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
-    161:162:void doClick(android.view.View) -> doClick
+    146:146:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    149:150:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.MainActivity_ViewBinding$8 -> com.example.admin.myapplication.MainActivity_ViewBinding$f0:
+    com.example.admin.myapplication.MainActivity val$target -> b
+    154:154:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    157:158:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.MainActivity_ViewBinding$9 -> com.example.admin.myapplication.MainActivity_ViewBinding$g0:
+    com.example.admin.myapplication.MainActivity val$target -> b
+    162:162:void <init>(com.example.admin.myapplication.MainActivity_ViewBinding,com.example.admin.myapplication.MainActivity) -> <init>
+    165:166:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.R$anim -> com.example.admin.myapplication.R$anim:
     11:11:void <init>() -> <init>
 com.example.admin.myapplication.R$animator -> com.example.admin.myapplication.R$animator:
@@ -26201,26 +26213,26 @@ com.example.admin.myapplication.R$drawable -> com.example.admin.myapplication.R$
 com.example.admin.myapplication.R$id -> com.example.admin.myapplication.R$id:
     6157:6157:void <init>() -> <init>
 com.example.admin.myapplication.R$integer -> com.example.admin.myapplication.R$integer:
-    6541:6541:void <init>() -> <init>
+    6548:6548:void <init>() -> <init>
 com.example.admin.myapplication.R$interpolator -> com.example.admin.myapplication.R$interpolator:
-    6560:6560:void <init>() -> <init>
+    6567:6567:void <init>() -> <init>
 com.example.admin.myapplication.R$layout -> com.example.admin.myapplication.R$layout:
-    6566:6566:void <init>() -> <init>
+    6573:6573:void <init>() -> <init>
 com.example.admin.myapplication.R$menu -> com.example.admin.myapplication.R$menu:
-    6724:6724:void <init>() -> <init>
+    6733:6733:void <init>() -> <init>
 com.example.admin.myapplication.R$mipmap -> com.example.admin.myapplication.R$mipmap:
-    6728:6728:void <init>() -> <init>
+    6737:6737:void <init>() -> <init>
 com.example.admin.myapplication.R$string -> com.example.admin.myapplication.R$string:
-    6745:6745:void <init>() -> <init>
+    6754:6754:void <init>() -> <init>
 com.example.admin.myapplication.R$style -> com.example.admin.myapplication.R$style:
-    6828:6828:void <init>() -> <init>
+    6841:6841:void <init>() -> <init>
 com.example.admin.myapplication.R$styleable -> com.example.admin.myapplication.R$styleable:
-    7368:22812:void <clinit>() -> <clinit>
-    7356:7356:void <init>() -> <init>
+    7381:22825:void <clinit>() -> <clinit>
+    7369:7369:void <init>() -> <init>
 com.example.admin.myapplication.R$transition -> com.example.admin.myapplication.R$transition:
-    22874:22874:void <init>() -> <init>
+    22887:22887:void <init>() -> <init>
 com.example.admin.myapplication.R$xml -> com.example.admin.myapplication.R$xml:
-    22878:22878:void <init>() -> <init>
+    22891:22891:void <init>() -> <init>
 com.example.admin.myapplication.RxjavaSimple.AbstractObservableWithUpstream -> com.example.admin.myapplication.RxjavaSimple.a:
     com.example.admin.myapplication.RxjavaSimple.ObserverableSource source -> a
     8:10:void <init>(com.example.admin.myapplication.RxjavaSimple.ObserverableSource) -> <init>
@@ -26349,7 +26361,9 @@ com.example.admin.myapplication.Utils.BezierEvaluator -> com.example.admin.myapp
 com.example.admin.myapplication.Utils.ByteUtils -> com.example.admin.myapplication.h.c:
     19:27:java.lang.String byteToString(byte[]) -> a
     52:52:boolean isEmpty(byte[]) -> b
-com.example.admin.myapplication.Utils.PathParser -> com.example.admin.myapplication.h.d:
+com.example.admin.myapplication.Utils.FieldUtil -> com.example.admin.myapplication.h.d:
+    7:9:java.lang.Object getField(java.lang.Class,java.lang.Object,java.lang.String) -> a
+com.example.admin.myapplication.Utils.PathParser -> com.example.admin.myapplication.h.e:
     32:33:float[] copyOfRange(float[],int,int) -> a
     69:90:com.example.admin.myapplication.Utils.PathParser$PathDataNode[] createNodesFromPathData(java.lang.String) -> a
     150:162:int nextStart(java.lang.String,int) -> a
@@ -26357,13 +26371,13 @@ com.example.admin.myapplication.Utils.PathParser -> com.example.admin.myapplicat
     231:273:void extract(java.lang.String,int,com.example.admin.myapplication.Utils.PathParser$ExtractFloatResult) -> a
     51:61:android.graphics.Path createPathFromPathData(java.lang.String) -> b
     184:217:float[] getFloats(java.lang.String) -> c
-com.example.admin.myapplication.Utils.PathParser$1 -> com.example.admin.myapplication.h.d$a:
-com.example.admin.myapplication.Utils.PathParser$ExtractFloatResult -> com.example.admin.myapplication.h.d$b:
+com.example.admin.myapplication.Utils.PathParser$1 -> com.example.admin.myapplication.h.e$a:
+com.example.admin.myapplication.Utils.PathParser$ExtractFloatResult -> com.example.admin.myapplication.h.e$b:
     boolean mEndWithNegOrDot -> b
     int mEndPosition -> a
     169:169:void <init>() -> <init>
     169:169:void <init>(com.example.admin.myapplication.Utils.PathParser$1) -> <init>
-com.example.admin.myapplication.Utils.PathParser$PathDataNode -> com.example.admin.myapplication.h.d$c:
+com.example.admin.myapplication.Utils.PathParser$PathDataNode -> com.example.admin.myapplication.h.e$c:
     char type -> a
     float[] params -> b
     280:280:void <init>(char,float[],com.example.admin.myapplication.Utils.PathParser$1) -> <init>
@@ -26372,19 +26386,26 @@ com.example.admin.myapplication.Utils.PathParser$PathDataNode -> com.example.adm
     330:575:void addCommand(android.graphics.Path,float[],char,char,float[]) -> a
     589:652:void drawArc(android.graphics.Path,float,float,float,float,float,float,float,boolean,boolean) -> a
     682:721:void arcToBezier(android.graphics.Path,double,double,double,double,double,double,double,double,double) -> a
-com.example.admin.myapplication.Utils.SharedPreferencesHelper -> com.example.admin.myapplication.h.e:
+com.example.admin.myapplication.Utils.PcmToWavUtil -> com.example.admin.myapplication.h.f:
+    int mSampleRate -> b
+    int mChannel -> c
+    int mBufferSize -> a
+    33:37:void <init>(int,int,int) -> <init>
+    51:71:void pcmToWav(java.lang.String,java.lang.String) -> a
+    80:134:void writeWaveFileHeader(java.io.FileOutputStream,long,long,long,int,long) -> a
+com.example.admin.myapplication.Utils.SharedPreferencesHelper -> com.example.admin.myapplication.h.g:
     android.content.SharedPreferences$Editor editor -> b
     android.content.SharedPreferences sharedPreferences -> a
     21:24:void <init>(android.content.Context) -> <init>
     59:70:java.lang.Object get(java.lang.String,java.lang.Object) -> a
     34:48:void put(java.lang.String,java.lang.Object) -> b
-com.example.admin.myapplication.Utils.ToastUtil -> com.example.admin.myapplication.h.f:
+com.example.admin.myapplication.Utils.ToastUtil -> com.example.admin.myapplication.h.h:
     android.widget.Toast mToast -> b
     boolean isShow -> a
     15:16:void <clinit>() -> <clinit>
     47:55:void showShort(android.content.Context,java.lang.CharSequence) -> a
     116:124:void show(android.content.Context,java.lang.CharSequence,int) -> a
-com.example.admin.myapplication.Utils.TwoTuple -> com.example.admin.myapplication.h.g:
+com.example.admin.myapplication.Utils.TwoTuple -> com.example.admin.myapplication.h.i:
     java.lang.Object two -> b
     java.lang.Object one -> a
     7:10:void <init>(java.lang.Object,java.lang.Object) -> <init>
@@ -26414,16 +26435,18 @@ com.example.admin.myapplication.activity.-$$Lambda$IOActivity$qr8ysyiZnu5AjcIywG
     void subscribe(io.reactivex.ObservableEmitter) -> a
 com.example.admin.myapplication.activity.-$$Lambda$MapActivity$W0RQGTcniqOtoxxjKGVDWgfBVYw -> com.example.admin.myapplication.activity.k:
     com.example.admin.myapplication.activity.MapActivity f$0 -> b
-com.example.admin.myapplication.activity.-$$Lambda$ReceiverActivity$bEJHt4ylw6JrdrgjOjIttn8WW1k -> com.example.admin.myapplication.activity.l:
+com.example.admin.myapplication.activity.-$$Lambda$MediaRecoderActivity$o8Zjq41H1h8ppWrFtKB_XL5bl9M -> com.example.admin.myapplication.activity.l:
+    com.example.admin.myapplication.activity.MediaRecoderActivity f$0 -> b
+com.example.admin.myapplication.activity.-$$Lambda$ReceiverActivity$bEJHt4ylw6JrdrgjOjIttn8WW1k -> com.example.admin.myapplication.activity.m:
     com.example.admin.myapplication.activity.ReceiverActivity f$0 -> b
-com.example.admin.myapplication.activity.-$$Lambda$ReceiverActivity$mocwVie1jF4rN-ekBI-ux4Em8Rs -> com.example.admin.myapplication.activity.m:
+com.example.admin.myapplication.activity.-$$Lambda$ReceiverActivity$mocwVie1jF4rN-ekBI-ux4Em8Rs -> com.example.admin.myapplication.activity.n:
     com.example.admin.myapplication.activity.ReceiverActivity f$0 -> b
-com.example.admin.myapplication.activity.-$$Lambda$RevealSearchViewActivity$ASmFCdJUzqekvU8yUbwHyAiyTuU -> com.example.admin.myapplication.activity.n:
+com.example.admin.myapplication.activity.-$$Lambda$RevealSearchViewActivity$ASmFCdJUzqekvU8yUbwHyAiyTuU -> com.example.admin.myapplication.activity.o:
     com.example.admin.myapplication.activity.RevealSearchViewActivity f$0 -> b
-com.example.admin.myapplication.activity.-$$Lambda$ScrollingActivity$5eBnV0_xECl95-onRXGromvthSg -> com.example.admin.myapplication.activity.o:
+com.example.admin.myapplication.activity.-$$Lambda$ScrollingActivity$5eBnV0_xECl95-onRXGromvthSg -> com.example.admin.myapplication.activity.p:
     com.example.admin.myapplication.activity.-$$Lambda$ScrollingActivity$5eBnV0_xECl95-onRXGromvthSg INSTANCE -> a
     void accept(java.lang.Object) -> a
-com.example.admin.myapplication.activity.-$$Lambda$SplashViewActivity$Z7jxiL50kO7TSA6iT0SYE2ay_-U -> com.example.admin.myapplication.activity.p:
+com.example.admin.myapplication.activity.-$$Lambda$SplashViewActivity$Z7jxiL50kO7TSA6iT0SYE2ay_-U -> com.example.admin.myapplication.activity.q:
     com.example.admin.myapplication.view.ui.SplashView f$0 -> a
     void accept(java.lang.Object) -> a
 com.example.admin.myapplication.activity.AnimationActivity -> com.example.admin.myapplication.activity.AnimationActivity:
@@ -26622,15 +26645,15 @@ com.example.admin.myapplication.activity.IOActivity -> com.example.admin.myappli
     110:138:void onButton2(android.view.View) -> onButton2
     178:192:void onButton4() -> onButton4
     54:65:void onCreate(android.os.Bundle) -> onCreate
-com.example.admin.myapplication.activity.IOActivity$1 -> com.example.admin.myapplication.activity.q:
+com.example.admin.myapplication.activity.IOActivity$1 -> com.example.admin.myapplication.activity.r:
     123:123:void <init>(com.example.admin.myapplication.activity.IOActivity) -> <init>
 com.example.admin.myapplication.activity.IOActivity_ViewBinding -> com.example.admin.myapplication.activity.IOActivity_ViewBinding:
     com.example.admin.myapplication.activity.IOActivity target -> a
-    android.view.View view2131296309 -> c
-    android.view.View view2131296308 -> b
-    android.view.View view2131296313 -> e
-    android.view.View view2131296312 -> d
-    android.view.View view2131296314 -> f
+    android.view.View view2131296312 -> c
+    android.view.View view2131296311 -> b
+    android.view.View view2131296316 -> e
+    android.view.View view2131296315 -> d
+    android.view.View view2131296317 -> f
     34:79:void <init>(com.example.admin.myapplication.activity.IOActivity,android.view.View) -> <init>
     84:85:void unbind() -> unbind
 com.example.admin.myapplication.activity.IOActivity_ViewBinding$1 -> com.example.admin.myapplication.activity.IOActivity_ViewBinding$a:
@@ -26687,7 +26710,7 @@ com.example.admin.myapplication.activity.ListPopAnimationActivity$MyViewHolder -
     44:47:void <init>(com.example.admin.myapplication.activity.ListPopAnimationActivity,android.view.View) -> <init>
 com.example.admin.myapplication.activity.ListPopAnimationActivity_ViewBinding -> com.example.admin.myapplication.activity.ListPopAnimationActivity_ViewBinding:
     com.example.admin.myapplication.activity.ListPopAnimationActivity target -> a
-    android.view.View view2131296309 -> b
+    android.view.View view2131296312 -> b
     26:39:void <init>(com.example.admin.myapplication.activity.ListPopAnimationActivity,android.view.View) -> <init>
     44:45:void unbind() -> unbind
 com.example.admin.myapplication.activity.ListPopAnimationActivity_ViewBinding$1 -> com.example.admin.myapplication.activity.ListPopAnimationActivity_ViewBinding$a:
@@ -26703,6 +26726,17 @@ com.example.admin.myapplication.activity.MapActivity -> com.example.admin.myappl
     15:15:void <init>() -> <init>
     23:24:void lambda$onCreate$0(android.view.View) -> a
     19:25:void onCreate(android.os.Bundle) -> onCreate
+com.example.admin.myapplication.activity.MediaRecoderActivity -> com.example.admin.myapplication.activity.MediaRecoderActivity:
+    android.media.MediaRecorder mMediaRecorder -> b
+    java.lang.String fileName -> c
+    java.lang.String filePath -> d
+    29:29:void <init>() -> <init>
+    81:82:void lambda$startRecord$0() -> a
+    36:40:void onCreate(android.os.Bundle) -> onCreate
+    45:46:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    53:70:void onStartRecord(android.view.View) -> onStartRecord
+    79:107:void startRecord() -> startRecord
+    111:128:void stopRecord(android.view.View) -> stopRecord
 com.example.admin.myapplication.activity.PaletteActivity -> com.example.admin.myapplication.activity.PaletteActivity:
     22:22:void <init>() -> <init>
     26:47:void onCreate(android.os.Bundle) -> onCreate
@@ -26745,10 +26779,10 @@ com.example.admin.myapplication.activity.RevealSearchViewActivity$2 -> com.examp
     95:95:void accept(java.lang.Object) -> a
     98:102:void accept(java.lang.Long) -> a
 com.example.admin.myapplication.activity.RevealSearchViewActivity_ViewBinding -> com.example.admin.myapplication.activity.RevealSearchViewActivity_ViewBinding:
-    android.view.View view2131296312 -> c
-    android.view.View view2131296309 -> b
+    android.view.View view2131296315 -> c
+    android.view.View view2131296312 -> b
     com.example.admin.myapplication.activity.RevealSearchViewActivity target -> a
-    android.view.View view2131296313 -> d
+    android.view.View view2131296316 -> d
     31:61:void <init>(com.example.admin.myapplication.activity.RevealSearchViewActivity,android.view.View) -> <init>
     66:67:void unbind() -> unbind
 com.example.admin.myapplication.activity.RevealSearchViewActivity_ViewBinding$1 -> com.example.admin.myapplication.activity.RevealSearchViewActivity_ViewBinding$a:
@@ -26837,7 +26871,7 @@ com.example.admin.myapplication.activity.SearchViewActivity -> com.example.admin
     27:30:void onCreate(android.os.Bundle) -> onCreate
 com.example.admin.myapplication.activity.SearchViewActivity_ViewBinding -> com.example.admin.myapplication.activity.SearchViewActivity_ViewBinding:
     com.example.admin.myapplication.activity.SearchViewActivity target -> a
-    android.view.View view2131296554 -> b
+    android.view.View view2131296560 -> b
     26:38:void <init>(com.example.admin.myapplication.activity.SearchViewActivity,android.view.View) -> <init>
     43:43:void unbind() -> unbind
 com.example.admin.myapplication.activity.SearchViewActivity_ViewBinding$1 -> com.example.admin.myapplication.activity.SearchViewActivity_ViewBinding$a:
@@ -26874,10 +26908,10 @@ com.example.admin.myapplication.activity.TransitionAnimationActivity -> com.exam
     35:39:void onCreate(android.os.Bundle) -> onCreate
 com.example.admin.myapplication.activity.TransitionAnimationActivity_ViewBinding -> com.example.admin.myapplication.activity.TransitionAnimationActivity_ViewBinding:
     com.example.admin.myapplication.activity.TransitionAnimationActivity target -> a
-    android.view.View view2131296312 -> c
-    android.view.View view2131296309 -> b
-    android.view.View view2131296314 -> e
-    android.view.View view2131296313 -> d
+    android.view.View view2131296315 -> c
+    android.view.View view2131296312 -> b
+    android.view.View view2131296317 -> e
+    android.view.View view2131296316 -> d
     33:70:void <init>(com.example.admin.myapplication.activity.TransitionAnimationActivity,android.view.View) -> <init>
     75:76:void unbind() -> unbind
 com.example.admin.myapplication.activity.TransitionAnimationActivity_ViewBinding$1 -> com.example.admin.myapplication.activity.TransitionAnimationActivity_ViewBinding$a:
@@ -26903,7 +26937,7 @@ com.example.admin.myapplication.activity.WaterActivity -> com.example.admin.myap
     39:40:void onPause() -> onPause
 com.example.admin.myapplication.activity.WaterActivity_ViewBinding -> com.example.admin.myapplication.activity.WaterActivity_ViewBinding:
     com.example.admin.myapplication.activity.WaterActivity target -> a
-    android.view.View view2131296633 -> b
+    android.view.View view2131296640 -> b
     26:39:void <init>(com.example.admin.myapplication.activity.WaterActivity,android.view.View) -> <init>
     44:45:void unbind() -> unbind
 com.example.admin.myapplication.activity.WaterActivity_ViewBinding$1 -> com.example.admin.myapplication.activity.WaterActivity_ViewBinding$a:
@@ -26975,7 +27009,7 @@ com.example.admin.myapplication.activity.old.OldLeadPagerActivity -> com.example
     39:56:void onclickMove() -> onclickMove
 com.example.admin.myapplication.activity.old.OldLeadPagerActivity_ViewBinding -> com.example.admin.myapplication.activity.old.OldLeadPagerActivity_ViewBinding:
     com.example.admin.myapplication.activity.old.OldLeadPagerActivity target -> a
-    android.view.View view2131296309 -> b
+    android.view.View view2131296312 -> b
     28:43:void <init>(com.example.admin.myapplication.activity.old.OldLeadPagerActivity,android.view.View) -> <init>
     48:49:void unbind() -> unbind
 com.example.admin.myapplication.activity.old.OldLeadPagerActivity_ViewBinding$1 -> com.example.admin.myapplication.activity.old.OldLeadPagerActivity_ViewBinding$a:
@@ -27029,8 +27063,8 @@ com.example.admin.myapplication.activity.old.oneActivity -> com.example.admin.my
     154:156:void onEnterAnimationComplete() -> onEnterAnimationComplete
 com.example.admin.myapplication.activity.old.oneActivity_ViewBinding -> com.example.admin.myapplication.activity.old.oneActivity_ViewBinding:
     com.example.admin.myapplication.activity.old.oneActivity target -> a
-    android.view.View view2131296326 -> c
-    android.view.View view2131296327 -> b
+    android.view.View view2131296330 -> c
+    android.view.View view2131296331 -> b
     28:50:void <init>(com.example.admin.myapplication.activity.old.oneActivity,android.view.View) -> <init>
     55:56:void unbind() -> unbind
 com.example.admin.myapplication.activity.old.oneActivity_ViewBinding$1 -> com.example.admin.myapplication.activity.old.oneActivity_ViewBinding$a:
@@ -27050,8 +27084,8 @@ com.example.admin.myapplication.activity.startModel.A -> com.example.admin.myapp
     36:37:void start2() -> start2
 com.example.admin.myapplication.activity.startModel.A_ViewBinding -> com.example.admin.myapplication.activity.startModel.A_ViewBinding:
     com.example.admin.myapplication.activity.startModel.A target -> a
-    android.view.View view2131296312 -> c
-    android.view.View view2131296309 -> b
+    android.view.View view2131296315 -> c
+    android.view.View view2131296312 -> b
     27:47:void <init>(com.example.admin.myapplication.activity.startModel.A,android.view.View) -> <init>
     52:52:void unbind() -> unbind
 com.example.admin.myapplication.activity.startModel.A_ViewBinding$1 -> com.example.admin.myapplication.activity.startModel.A_ViewBinding$a:
@@ -27071,8 +27105,8 @@ com.example.admin.myapplication.activity.startModel.B -> com.example.admin.myapp
     40:42:void start2() -> start2
 com.example.admin.myapplication.activity.startModel.B_ViewBinding -> com.example.admin.myapplication.activity.startModel.B_ViewBinding:
     com.example.admin.myapplication.activity.startModel.B target -> a
-    android.view.View view2131296312 -> c
-    android.view.View view2131296309 -> b
+    android.view.View view2131296315 -> c
+    android.view.View view2131296312 -> b
     27:47:void <init>(com.example.admin.myapplication.activity.startModel.B,android.view.View) -> <init>
     52:52:void unbind() -> unbind
 com.example.admin.myapplication.activity.startModel.B_ViewBinding$1 -> com.example.admin.myapplication.activity.startModel.B_ViewBinding$a:
@@ -27091,7 +27125,7 @@ com.example.admin.myapplication.activity.startModel.C -> com.example.admin.myapp
     36:37:void start() -> start
 com.example.admin.myapplication.activity.startModel.C_ViewBinding -> com.example.admin.myapplication.activity.startModel.C_ViewBinding:
     com.example.admin.myapplication.activity.startModel.C target -> a
-    android.view.View view2131296309 -> b
+    android.view.View view2131296312 -> b
     25:37:void <init>(com.example.admin.myapplication.activity.startModel.C,android.view.View) -> <init>
     42:42:void unbind() -> unbind
 com.example.admin.myapplication.activity.startModel.C_ViewBinding$1 -> com.example.admin.myapplication.activity.startModel.C_ViewBinding$a:
@@ -27106,7 +27140,7 @@ com.example.admin.myapplication.activity.startModel.D -> com.example.admin.myapp
     37:38:void start() -> start
 com.example.admin.myapplication.activity.startModel.D_ViewBinding -> com.example.admin.myapplication.activity.startModel.D_ViewBinding:
     com.example.admin.myapplication.activity.startModel.D target -> a
-    android.view.View view2131296309 -> b
+    android.view.View view2131296312 -> b
     25:37:void <init>(com.example.admin.myapplication.activity.startModel.D,android.view.View) -> <init>
     42:42:void unbind() -> unbind
 com.example.admin.myapplication.activity.startModel.D_ViewBinding$1 -> com.example.admin.myapplication.activity.startModel.D_ViewBinding$a:
@@ -27413,50 +27447,83 @@ com.example.admin.myapplication.layout.NestedScrollingLayout -> com.example.admi
     28:28:boolean onStartNestedScroll(android.view.View,android.view.View,int) -> onStartNestedScroll
 com.example.admin.myapplication.layout.PercentLinearLayout -> com.example.admin.myapplication.layout.PercentLinearLayout:
     14:15:void <init>(android.content.Context) -> <init>
+com.example.admin.myapplication.ndk.AudioRecordActivity -> com.example.admin.myapplication.ndk.AudioRecordActivity:
+    34:51:void <init>() -> <init>
+    34:34:boolean access$000(com.example.admin.myapplication.ndk.AudioRecordActivity) -> access$000
+    34:34:android.media.AudioRecord access$100(com.example.admin.myapplication.ndk.AudioRecordActivity) -> access$100
+    34:34:java.io.FileInputStream access$200(com.example.admin.myapplication.ndk.AudioRecordActivity) -> access$200
+    34:34:android.media.AudioTrack access$300(com.example.admin.myapplication.ndk.AudioRecordActivity) -> access$300
+    203:215:void checkPermissions() -> checkPermissions
+    77:118:void onClick(android.view.View) -> onClick
+    62:72:void onCreate(android.os.Bundle) -> onCreate
+    123:131:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    227:270:void playInModeStream() -> playInModeStream
+    135:186:void startRecord() -> startRecord
+    334:341:void stopPlay() -> stopPlay
+    190:198:void stopRecord() -> stopRecord
+com.example.admin.myapplication.ndk.AudioRecordActivity$1 -> com.example.admin.myapplication.ndk.AudioRecordActivity$a:
+    java.io.File val$file -> b
+    com.example.admin.myapplication.ndk.AudioRecordActivity this$0 -> e
+    int val$minBufferSize -> d
+    byte[] val$data -> c
+    154:154:void <init>(com.example.admin.myapplication.ndk.AudioRecordActivity,java.io.File,byte[],int) -> <init>
+    158:184:void run() -> run
+com.example.admin.myapplication.ndk.AudioRecordActivity$2 -> com.example.admin.myapplication.ndk.AudioRecordActivity$b:
+    com.example.admin.myapplication.ndk.AudioRecordActivity this$0 -> c
+    int val$minBufferSize -> b
+    246:246:void <init>(com.example.admin.myapplication.ndk.AudioRecordActivity,int) -> <init>
+    250:264:void run() -> run
 com.example.admin.myapplication.ndk.NDKActivity -> com.example.admin.myapplication.ndk.NDKActivity:
-    34:34:void <clinit>() -> <clinit>
-    32:38:void <init>() -> <init>
-    85:86:void a_diff() -> a_diff
-    90:91:void a_path() -> a_path
-    60:69:void diff(android.view.View) -> diff
-    42:47:void onCreate(android.os.Bundle) -> onCreate
-    51:54:void onDestroy() -> onDestroy
-    112:113:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    75:81:void path(android.view.View) -> path
-    117:120:void test1(android.view.View) -> test1
-    124:126:void test2(android.view.View) -> test2
-    130:131:void test3(android.view.View) -> test3
-    135:136:void test4(android.view.View) -> test4
-    140:141:void test5(android.view.View) -> test5
-    145:146:void test6(android.view.View) -> test6
+    39:39:void <clinit>() -> <clinit>
+    37:43:void <init>() -> <init>
+    92:93:void a_diff() -> a_diff
+    97:98:void a_path() -> a_path
+    67:76:void diff(android.view.View) -> diff
+    48:54:void onCreate(android.os.Bundle) -> onCreate
+    58:61:void onDestroy() -> onDestroy
+    119:120:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    82:88:void path(android.view.View) -> path
+    124:127:void test1(android.view.View) -> test1
+    131:133:void test2(android.view.View) -> test2
+    137:138:void test3(android.view.View) -> test3
+    142:143:void test4(android.view.View) -> test4
+    147:148:void test5(android.view.View) -> test5
+    152:153:void test6(android.view.View) -> test6
+    157:177:void test7(android.view.View) -> test7
 com.example.admin.myapplication.ndk.NDKActivity_ViewBinding -> com.example.admin.myapplication.ndk.NDKActivity_ViewBinding:
-    31:32:void <init>(com.example.admin.myapplication.ndk.NDKActivity) -> <init>
-    35:87:void <init>(com.example.admin.myapplication.ndk.NDKActivity,android.view.View) -> <init>
-    92:92:void unbind() -> unbind
+    33:34:void <init>(com.example.admin.myapplication.ndk.NDKActivity) -> <init>
+    37:97:void <init>(com.example.admin.myapplication.ndk.NDKActivity,android.view.View) -> <init>
+    102:102:void unbind() -> unbind
 com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$1 -> com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$a:
     com.example.admin.myapplication.ndk.NDKActivity val$target -> b
-    41:41:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
-    44:45:void doClick(android.view.View) -> doClick
+    43:43:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
+    46:47:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$2 -> com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$b:
     com.example.admin.myapplication.ndk.NDKActivity val$target -> b
-    49:49:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
-    52:53:void doClick(android.view.View) -> doClick
+    51:51:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
+    54:55:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$3 -> com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$c:
     com.example.admin.myapplication.ndk.NDKActivity val$target -> b
-    57:57:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
-    60:61:void doClick(android.view.View) -> doClick
+    59:59:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
+    62:63:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$4 -> com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$d:
     com.example.admin.myapplication.ndk.NDKActivity val$target -> b
-    65:65:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
-    68:69:void doClick(android.view.View) -> doClick
+    67:67:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
+    70:71:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$5 -> com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$e:
     com.example.admin.myapplication.ndk.NDKActivity val$target -> b
-    73:73:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
-    76:77:void doClick(android.view.View) -> doClick
+    75:75:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
+    78:79:void doClick(android.view.View) -> doClick
 com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$6 -> com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$f:
     com.example.admin.myapplication.ndk.NDKActivity val$target -> b
-    81:81:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
-    84:85:void doClick(android.view.View) -> doClick
+    83:83:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
+    86:87:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$7 -> com.example.admin.myapplication.ndk.NDKActivity_ViewBinding$g:
+    com.example.admin.myapplication.ndk.NDKActivity val$target -> b
+    91:91:void <init>(com.example.admin.myapplication.ndk.NDKActivity_ViewBinding,com.example.admin.myapplication.ndk.NDKActivity) -> <init>
+    94:95:void doClick(android.view.View) -> doClick
+com.example.admin.myapplication.ndk.NDKFFmpegTest -> com.example.admin.myapplication.ndk.NDKFFmpegTest:
+    3:3:void <init>() -> <init>
 com.example.admin.myapplication.ndk.NDKTest -> com.example.admin.myapplication.ndk.NDKTest:
     17:19:void <clinit>() -> <clinit>
     12:12:void <init>() -> <init>

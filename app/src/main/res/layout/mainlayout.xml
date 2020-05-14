@@ -202,6 +202,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="MediaRecoder练习" />
+
+                <Button
+                    android:id="@+id/button_hook_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="插件化Activity练习" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
