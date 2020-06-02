@@ -22,7 +22,6 @@ import com.example.admin.myapplication.Utils.FieldUtil;
 import com.example.admin.myapplication.Utils.ToastUtil;
 import com.example.admin.myapplication.activity.AnimationActivity;
 import com.example.admin.myapplication.activity.BluetoothActivity;
-import com.example.admin.myapplication.activity.Camera2Activity;
 import com.example.admin.myapplication.activity.CustomViewFinderScannerActivity;
 import com.example.admin.myapplication.activity.DrawLayoutActivity;
 import com.example.admin.myapplication.activity.IOActivity;
@@ -46,11 +45,11 @@ import com.example.admin.myapplication.activity.old.OldScrollingActivity;
 import com.example.admin.myapplication.activity.startModel.A;
 import com.example.admin.myapplication.activity.theme.ThemeActivity;
 import com.example.admin.myapplication.aop.AspectJAnnotation;
+import com.example.admin.myapplication.camera2.Camera2TestActivity;
 import com.example.admin.myapplication.ndk.AudioRecordActivity;
 import com.example.admin.myapplication.ndk.NDKActivity;
 import com.example.admin.myapplication.okhttp_simple.OkhttpSimpleActivity;
 
-import java.lang.reflect.Field;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -322,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
     @AspectJAnnotation(value = Manifest.permission.CAMERA)
     @OnClick(R.id.button_camera2)
     public void onClickCamera2() {
-        startActivity(new Intent(this, Camera2Activity.class));
+        startActivity(new Intent(this, Camera2TestActivity.class));
     }
 
 

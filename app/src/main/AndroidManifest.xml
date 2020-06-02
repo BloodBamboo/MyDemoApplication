@@ -117,10 +117,12 @@
         <activity android:name=".activity.IOActivity" />
         <activity android:name=".activity.ReceiverActivity" />
         <activity android:name=".activity.BluetoothActivity" />
-        <activity android:name=".activity.Camera2Activity" />
         <activity android:name=".RxjavaSimple.RxActivity" />
         <activity android:name=".activity.MediaRecoderActivity"/>
         <activity android:name=".ndk.AudioRecordActivity"/>
+        <activity android:name=".camera2.Camera2TestActivity"
+            android:screenOrientation="userPortrait"
+            />
         <activity
             android:name=".activity.startModel.A"
             android:launchMode="standard" />
