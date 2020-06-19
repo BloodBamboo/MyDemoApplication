@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.69
 # min_api: 21
-# pg_map_id: 9072517
+# pg_map_id: 0275ff1
 android.arch.core.executor.ArchTaskExecutor -> a.a.a.a.a:
     android.arch.core.executor.ArchTaskExecutor sInstance -> c
     android.arch.core.executor.TaskExecutor mDelegate -> a
@@ -12038,9 +12038,10 @@ android.support.v7.app.ActionBar -> android.support.v7.app.a:
     boolean collapseActionView() -> f
     int getDisplayOptions() -> g
     android.content.Context getThemedContext() -> h
-    1080:1080:boolean invalidateOptionsMenu() -> i
-    1121:1121:void onDestroy() -> j
-    1068:1068:boolean openOptionsMenu() -> k
+    void hide() -> i
+    1080:1080:boolean invalidateOptionsMenu() -> j
+    1121:1121:void onDestroy() -> k
+    1068:1068:boolean openOptionsMenu() -> l
 android.support.v7.app.ActionBar$LayoutParams -> android.support.v7.app.a$a:
     int gravity -> a
     1377:1382:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
@@ -12706,12 +12707,13 @@ android.support.v7.app.ToolbarActionBar -> android.support.v7.app.i:
     440:444:boolean collapseActionView() -> f
     323:323:int getDisplayOptions() -> g
     146:146:android.content.Context getThemedContext() -> h
-    433:435:boolean invalidateOptionsMenu() -> i
-    489:490:void onDestroy() -> j
-    423:423:boolean openOptionsMenu() -> k
-    77:77:android.view.Window$Callback getWrappedWindowCallback() -> l
-    448:461:void populateOptionsMenu() -> m
-    543:548:android.view.Menu getMenu() -> n
+    413:414:void hide() -> i
+    433:435:boolean invalidateOptionsMenu() -> j
+    489:490:void onDestroy() -> k
+    423:423:boolean openOptionsMenu() -> l
+    77:77:android.view.Window$Callback getWrappedWindowCallback() -> m
+    448:461:void populateOptionsMenu() -> n
+    543:548:android.view.Menu getMenu() -> o
 android.support.v7.app.ToolbarActionBar$1 -> android.support.v7.app.i$a:
     android.support.v7.app.ToolbarActionBar this$0 -> d
     53:53:void <init>(android.support.v7.app.ToolbarActionBar) -> <init>
@@ -12824,15 +12826,16 @@ android.support.v7.app.WindowDecorActionBar -> android.support.v7.app.l:
     837:865:void doHide(boolean) -> g
     788:834:void doShow(boolean) -> h
     921:933:android.content.Context getThemedContext() -> h
+    705:709:void hide() -> i
     731:737:void setHideOnContentScrollEnabled(boolean) -> i
     395:396:void setHomeButtonEnabled(boolean) -> j
     263:285:void setHasEmbeddedTabs(boolean) -> k
-    312:317:void completeDeferredDestroyActionMode() -> l
     771:785:void updateVisibility(boolean) -> l
-    513:513:int getNavigationMode() -> m
-    712:719:void hideForActionMode() -> n
-    916:916:boolean shouldAnimateContextView() -> o
-    686:693:void showForActionMode() -> p
+    312:317:void completeDeferredDestroyActionMode() -> m
+    513:513:int getNavigationMode() -> n
+    712:719:void hideForActionMode() -> o
+    916:916:boolean shouldAnimateContextView() -> p
+    686:693:void showForActionMode() -> q
 android.support.v7.app.WindowDecorActionBar$1 -> android.support.v7.app.l$a:
     android.support.v7.app.WindowDecorActionBar this$0 -> a
     135:135:void <init>(android.support.v7.app.WindowDecorActionBar) -> <init>
@@ -27674,82 +27677,82 @@ com.example.admin.myapplication.camera2.Camera2TestActivity -> com.example.admin
     int STATE_WAITING_LOCK -> t
     android.os.Handler backgroundHandler -> l
     android.hardware.camera2.CameraCaptureSession captureSession -> h
-    53:208:void <init>() -> <init>
-    53:53:void access$000(com.example.admin.myapplication.camera2.Camera2TestActivity,int,int) -> a
-    53:53:java.io.File access$1000(com.example.admin.myapplication.camera2.Camera2TestActivity) -> a
-    53:53:android.hardware.camera2.CameraCaptureSession access$1202(com.example.admin.myapplication.camera2.Camera2TestActivity,android.hardware.camera2.CameraCaptureSession) -> a
-    53:53:void access$1400(com.example.admin.myapplication.camera2.Camera2TestActivity,android.hardware.camera2.CaptureRequest$Builder) -> a
-    53:53:android.hardware.camera2.CaptureRequest access$1502(com.example.admin.myapplication.camera2.Camera2TestActivity,android.hardware.camera2.CaptureRequest) -> a
-    53:53:android.hardware.camera2.CameraDevice access$302(com.example.admin.myapplication.camera2.Camera2TestActivity,android.hardware.camera2.CameraDevice) -> a
-    53:53:int access$502(com.example.admin.myapplication.camera2.Camera2TestActivity,int) -> a
-    296:329:void captureStillPicture() -> a
-    493:494:void lambda$init$0(android.view.View) -> a
-    528:532:void setAutoFlash(android.hardware.camera2.CaptureRequest$Builder) -> a
-    539:541:void configureTransform(int,int) -> a
-    692:717:android.util.Size chooseOptimalSize(android.util.Size[],int,int,int,int,android.util.Size) -> a
-    53:53:void access$100(com.example.admin.myapplication.camera2.Camera2TestActivity,int,int) -> b
-    53:53:void access$1100(com.example.admin.myapplication.camera2.Camera2TestActivity) -> b
-    498:525:void openCamera(int,int) -> b
-    736:745:boolean checkRequiredPermissions() -> b
-    53:53:android.hardware.camera2.CameraCaptureSession access$1200(com.example.admin.myapplication.camera2.Camera2TestActivity) -> c
-    463:483:void closeCamera() -> c
-    567:670:void setUpCameraOutputs(int,int) -> c
-    53:53:android.hardware.camera2.CaptureRequest$Builder access$1300(com.example.admin.myapplication.camera2.Camera2TestActivity) -> d
-    365:418:void createCameraPreviewSession() -> d
-    53:53:android.hardware.camera2.CaptureRequest access$1500(com.example.admin.myapplication.camera2.Camera2TestActivity) -> e
-    487:495:void init() -> e
-    53:53:android.hardware.camera2.CameraCaptureSession$CaptureCallback access$1600(com.example.admin.myapplication.camera2.Camera2TestActivity) -> f
-    334:343:void lockFocus() -> f
-    53:53:android.os.Handler access$1700(com.example.admin.myapplication.camera2.Camera2TestActivity) -> g
-    282:291:void runPrecaptureSequence() -> g
-    53:53:java.util.concurrent.Semaphore access$200(com.example.admin.myapplication.camera2.Camera2TestActivity) -> h
-    725:728:void startBackgroundThread() -> h
-    53:53:android.hardware.camera2.CameraDevice access$300(com.example.admin.myapplication.camera2.Camera2TestActivity) -> i
-    451:459:void stopBackgroundThread() -> i
-    53:53:void access$400(com.example.admin.myapplication.camera2.Camera2TestActivity) -> j
-    348:360:void unlockFocus() -> j
-    53:53:int access$500(com.example.admin.myapplication.camera2.Camera2TestActivity) -> k
-    53:53:int access$600(com.example.admin.myapplication.camera2.Camera2TestActivity) -> l
-    53:53:int access$700(com.example.admin.myapplication.camera2.Camera2TestActivity) -> m
-    53:53:void access$800(com.example.admin.myapplication.camera2.Camera2TestActivity) -> n
-    53:53:void access$900(com.example.admin.myapplication.camera2.Camera2TestActivity) -> o
-    423:428:void onCreate(android.os.Bundle) -> onCreate
-    444:448:void onPause() -> onPause
-    750:767:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    433:440:void onResume() -> onResume
+    54:209:void <init>() -> <init>
+    54:54:void access$000(com.example.admin.myapplication.camera2.Camera2TestActivity,int,int) -> a
+    54:54:java.io.File access$1000(com.example.admin.myapplication.camera2.Camera2TestActivity) -> a
+    54:54:android.hardware.camera2.CameraCaptureSession access$1202(com.example.admin.myapplication.camera2.Camera2TestActivity,android.hardware.camera2.CameraCaptureSession) -> a
+    54:54:void access$1400(com.example.admin.myapplication.camera2.Camera2TestActivity,android.hardware.camera2.CaptureRequest$Builder) -> a
+    54:54:android.hardware.camera2.CaptureRequest access$1502(com.example.admin.myapplication.camera2.Camera2TestActivity,android.hardware.camera2.CaptureRequest) -> a
+    54:54:android.hardware.camera2.CameraDevice access$302(com.example.admin.myapplication.camera2.Camera2TestActivity,android.hardware.camera2.CameraDevice) -> a
+    54:54:int access$502(com.example.admin.myapplication.camera2.Camera2TestActivity,int) -> a
+    297:331:void captureStillPicture() -> a
+    497:498:void lambda$init$0(android.view.View) -> a
+    532:536:void setAutoFlash(android.hardware.camera2.CaptureRequest$Builder) -> a
+    543:545:void configureTransform(int,int) -> a
+    697:722:android.util.Size chooseOptimalSize(android.util.Size[],int,int,int,int,android.util.Size) -> a
+    54:54:void access$100(com.example.admin.myapplication.camera2.Camera2TestActivity,int,int) -> b
+    54:54:void access$1100(com.example.admin.myapplication.camera2.Camera2TestActivity) -> b
+    502:529:void openCamera(int,int) -> b
+    741:750:boolean checkRequiredPermissions() -> b
+    54:54:android.hardware.camera2.CameraCaptureSession access$1200(com.example.admin.myapplication.camera2.Camera2TestActivity) -> c
+    467:487:void closeCamera() -> c
+    571:675:void setUpCameraOutputs(int,int) -> c
+    54:54:android.hardware.camera2.CaptureRequest$Builder access$1300(com.example.admin.myapplication.camera2.Camera2TestActivity) -> d
+    367:420:void createCameraPreviewSession() -> d
+    54:54:android.hardware.camera2.CaptureRequest access$1500(com.example.admin.myapplication.camera2.Camera2TestActivity) -> e
+    491:499:void init() -> e
+    54:54:android.hardware.camera2.CameraCaptureSession$CaptureCallback access$1600(com.example.admin.myapplication.camera2.Camera2TestActivity) -> f
+    336:345:void lockFocus() -> f
+    54:54:android.os.Handler access$1700(com.example.admin.myapplication.camera2.Camera2TestActivity) -> g
+    283:292:void runPrecaptureSequence() -> g
+    54:54:java.util.concurrent.Semaphore access$200(com.example.admin.myapplication.camera2.Camera2TestActivity) -> h
+    730:733:void startBackgroundThread() -> h
+    54:54:android.hardware.camera2.CameraDevice access$300(com.example.admin.myapplication.camera2.Camera2TestActivity) -> i
+    455:463:void stopBackgroundThread() -> i
+    54:54:void access$400(com.example.admin.myapplication.camera2.Camera2TestActivity) -> j
+    350:362:void unlockFocus() -> j
+    54:54:int access$500(com.example.admin.myapplication.camera2.Camera2TestActivity) -> k
+    54:54:int access$600(com.example.admin.myapplication.camera2.Camera2TestActivity) -> l
+    54:54:int access$700(com.example.admin.myapplication.camera2.Camera2TestActivity) -> m
+    54:54:void access$800(com.example.admin.myapplication.camera2.Camera2TestActivity) -> n
+    54:54:void access$900(com.example.admin.myapplication.camera2.Camera2TestActivity) -> o
+    425:432:void onCreate(android.os.Bundle) -> onCreate
+    448:452:void onPause() -> onPause
+    755:772:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    437:444:void onResume() -> onResume
 com.example.admin.myapplication.camera2.Camera2TestActivity$1 -> com.example.admin.myapplication.camera2.Camera2TestActivity$a:
     com.example.admin.myapplication.camera2.Camera2TestActivity this$0 -> a
-    159:159:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
-    162:164:void onSurfaceTextureAvailable(android.graphics.SurfaceTexture,int,int) -> onSurfaceTextureAvailable
-    174:175:boolean onSurfaceTextureDestroyed(android.graphics.SurfaceTexture) -> onSurfaceTextureDestroyed
-    168:170:void onSurfaceTextureSizeChanged(android.graphics.SurfaceTexture,int,int) -> onSurfaceTextureSizeChanged
-    180:180:void onSurfaceTextureUpdated(android.graphics.SurfaceTexture) -> onSurfaceTextureUpdated
+    160:160:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
+    163:165:void onSurfaceTextureAvailable(android.graphics.SurfaceTexture,int,int) -> onSurfaceTextureAvailable
+    175:176:boolean onSurfaceTextureDestroyed(android.graphics.SurfaceTexture) -> onSurfaceTextureDestroyed
+    169:171:void onSurfaceTextureSizeChanged(android.graphics.SurfaceTexture,int,int) -> onSurfaceTextureSizeChanged
+    181:181:void onSurfaceTextureUpdated(android.graphics.SurfaceTexture) -> onSurfaceTextureUpdated
 com.example.admin.myapplication.camera2.Camera2TestActivity$2 -> com.example.admin.myapplication.camera2.Camera2TestActivity$b:
     com.example.admin.myapplication.camera2.Camera2TestActivity this$0 -> a
-    183:183:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
-    194:197:void onDisconnected(android.hardware.camera2.CameraDevice) -> onDisconnected
-    201:205:void onError(android.hardware.camera2.CameraDevice,int) -> onError
-    187:190:void onOpened(android.hardware.camera2.CameraDevice) -> onOpened
+    184:184:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
+    195:198:void onDisconnected(android.hardware.camera2.CameraDevice) -> onDisconnected
+    202:206:void onError(android.hardware.camera2.CameraDevice,int) -> onError
+    188:191:void onOpened(android.hardware.camera2.CameraDevice) -> onOpened
 com.example.admin.myapplication.camera2.Camera2TestActivity$3 -> com.example.admin.myapplication.camera2.Camera2TestActivity$c:
     com.example.admin.myapplication.camera2.Camera2TestActivity this$0 -> a
-    208:208:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
-    262:276:void capturePicture(android.hardware.camera2.CaptureResult) -> a
-    227:259:void process(android.hardware.camera2.CaptureResult) -> b
-    221:223:void onCaptureCompleted(android.hardware.camera2.CameraCaptureSession,android.hardware.camera2.CaptureRequest,android.hardware.camera2.TotalCaptureResult) -> onCaptureCompleted
-    213:215:void onCaptureProgressed(android.hardware.camera2.CameraCaptureSession,android.hardware.camera2.CaptureRequest,android.hardware.camera2.CaptureResult) -> onCaptureProgressed
+    209:209:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
+    263:277:void capturePicture(android.hardware.camera2.CaptureResult) -> a
+    228:260:void process(android.hardware.camera2.CaptureResult) -> b
+    222:224:void onCaptureCompleted(android.hardware.camera2.CameraCaptureSession,android.hardware.camera2.CaptureRequest,android.hardware.camera2.TotalCaptureResult) -> onCaptureCompleted
+    214:216:void onCaptureProgressed(android.hardware.camera2.CameraCaptureSession,android.hardware.camera2.CaptureRequest,android.hardware.camera2.CaptureResult) -> onCaptureProgressed
 com.example.admin.myapplication.camera2.Camera2TestActivity$4 -> com.example.admin.myapplication.camera2.Camera2TestActivity$d:
     com.example.admin.myapplication.camera2.Camera2TestActivity this$0 -> a
-    315:315:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
-    318:322:void onCaptureCompleted(android.hardware.camera2.CameraCaptureSession,android.hardware.camera2.CaptureRequest,android.hardware.camera2.TotalCaptureResult) -> onCaptureCompleted
+    317:317:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
+    320:324:void onCaptureCompleted(android.hardware.camera2.CameraCaptureSession,android.hardware.camera2.CaptureRequest,android.hardware.camera2.TotalCaptureResult) -> onCaptureCompleted
 com.example.admin.myapplication.camera2.Camera2TestActivity$5 -> com.example.admin.myapplication.camera2.Camera2TestActivity$e:
     com.example.admin.myapplication.camera2.Camera2TestActivity this$0 -> a
-    382:382:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
-    410:411:void onConfigureFailed(android.hardware.camera2.CameraCaptureSession) -> onConfigureFailed
-    386:406:void onConfigured(android.hardware.camera2.CameraCaptureSession) -> onConfigured
+    384:384:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
+    412:413:void onConfigureFailed(android.hardware.camera2.CameraCaptureSession) -> onConfigureFailed
+    388:408:void onConfigured(android.hardware.camera2.CameraCaptureSession) -> onConfigured
 com.example.admin.myapplication.camera2.Camera2TestActivity$6 -> com.example.admin.myapplication.camera2.Camera2TestActivity$f:
     com.example.admin.myapplication.camera2.Camera2TestActivity this$0 -> a
-    593:593:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
-    597:598:void onImageAvailable(android.media.ImageReader) -> onImageAvailable
+    598:598:void <init>(com.example.admin.myapplication.camera2.Camera2TestActivity) -> <init>
+    602:603:void onImageAvailable(android.media.ImageReader) -> onImageAvailable
 com.example.admin.myapplication.databinding.fragment.FragmentDataBinding -> com.example.admin.myapplication.l.a.a:
     com.example.admin.myapplication.handler.EventHandler mHandler -> y
     com.example.admin.myapplication.bean.User mUser -> x

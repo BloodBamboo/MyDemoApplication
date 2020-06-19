@@ -33,6 +33,7 @@ import android.util.Log;
 import android.util.Size;
 import android.view.Surface;
 import android.view.TextureView;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.example.admin.myapplication.R;
@@ -303,6 +304,7 @@ public class Camera2TestActivity extends AppCompatActivity {
             // We have to take that into account and rotate JPEG properly.
             // For devices with orientation of 90, we return our mapping from ORIENTATIONS.
             // For devices with orientation of 270, we need to rotate the JPEG 180 degrees.
+            //这里对拍照图片进行旋转以符合正确视角
             builder.set(CaptureRequest.JPEG_ORIENTATION,
                     (helper.ORIENTATIONS.get(rotation) + mSensorOrientation + 270) % 360);
 
@@ -320,7 +322,7 @@ public class Camera2TestActivity extends AppCompatActivity {
                     Log.d("===", file.toString());
                     unlockFocus();
                 }
-            }, backgroundHandler);
+            }, null);
 
 
         } catch (Exception e) {
@@ -409,7 +411,7 @@ public class Camera2TestActivity extends AppCompatActivity {
                 public void onConfigureFailed(@NonNull CameraCaptureSession session) {
                     ToastUtil.showShort(getApplicationContext(), "创建session失败");
                 }
-            }, backgroundHandler);
+            }, null);
 
 
         } catch (Exception e) {
@@ -421,6 +423,8 @@ public class Camera2TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//remove title bar  即隐藏标题栏
+        getSupportActionBar().hide();// 隐藏ActionBar
         setContentView(R.layout.activity_camera2);
         if (checkRequiredPermissions()) {
             init();
@@ -433,7 +437,7 @@ public class Camera2TestActivity extends AppCompatActivity {
         super.onResume();
         startBackgroundThread();
 //        if (textureView.isActivated()) {
-            openCamera(textureView.getWidth(), textureView.getHeight());
+        openCamera(textureView.getWidth(), textureView.getHeight());
 //        } else {
 //
 //        }
@@ -572,6 +576,7 @@ public class Camera2TestActivity extends AppCompatActivity {
                 int cameraDirection = characteristics.get(CameraCharacteristics.LENS_FACING);
                 if (cameraDirection == CameraCharacteristics.LENS_FACING_FRONT) {
                     fontCameraId = cameraId;
+                    //这里暂时跳过前置摄像头，如果不跳过就有可能使用前置摄像头参数进行了配置，但是使用后置摄像头，导致拍照出来的图有问题
                     continue;
                 } else if (cameraDirection == CameraCharacteristics.LENS_FACING_BACK) {
                     backCameraId = cameraId;
@@ -584,12 +589,12 @@ public class Camera2TestActivity extends AppCompatActivity {
                 }
 
                 if (map.isOutputSupportedFor(ImageFormat.JPEG)) {
-                    Size size =helper.getOptimalSize(map.getOutputSizes(ImageFormat.JPEG), MAX_PREVIEW_WIDTH, MAX_PREVIEW_HEIGHT);
+                    Size size = helper.getOptimalSize(map.getOutputSizes(ImageFormat.JPEG), MAX_PREVIEW_WIDTH, MAX_PREVIEW_HEIGHT);
                     if (size == null) {
                         continue;
                     }
                     //创建拍照imageReader实例
-                    imageReader = ImageReader.newInstance(size.getWidth(), size.getHeight(), ImageFormat.JPEG, 1);
+                    imageReader = ImageReader.newInstance(size.getWidth(), size.getHeight(), ImageFormat.JPEG, 3);
                     imageReader.setOnImageAvailableListener(new ImageReader.OnImageAvailableListener() {
                         @Override
                         public void onImageAvailable(ImageReader reader) {
