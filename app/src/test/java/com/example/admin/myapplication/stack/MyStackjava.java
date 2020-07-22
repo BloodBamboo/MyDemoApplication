@@ -1,5 +1,7 @@
 package com.example.admin.myapplication.stack;
 
+import com.example.admin.myapplication.link.SolutionLinkKotlin;
+
 import org.junit.Test;
 
 import java.util.LinkedList;
@@ -84,9 +86,10 @@ public class MyStackjava {
 
     @Test
     public void t() {
-        String s = "abbaca";
-        SolutionDeleteRepetition solution = new SolutionDeleteRepetition();
-        println(solution.removeDuplicates(s));
+        String s1 = "y#fo##f";
+        String s2 = "y#f#o##f";
+        SolutionLinkKotlin solutionLinkKotlin = new SolutionLinkKotlin();
+        println(solutionLinkKotlin.backspaceCompare(s1, s2) + "");
     }
 
 
