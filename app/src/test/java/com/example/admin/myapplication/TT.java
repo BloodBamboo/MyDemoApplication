@@ -1,5 +1,8 @@
 package com.example.admin.myapplication;
 
+import com.example.admin.myapplication.array.SolutionArray;
+import com.example.admin.myapplication.array.SolutionArrayKotlin;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -645,13 +648,17 @@ public class TT {
 
     @Test
     public void t5() {
-        int[] a = {1, 2, 3, 4, 5};
-        int[] b = {4, 5, 3, 2, 1};
-        int[] c = {4, 3, 5, 1, 2};
-        int[] d = {4, 2, 5, 3, 2};
-        println(IsPopOrder(a, b) + "");
-        println(IsPopOrder(a, c) + "");
-        println(IsPopOrder(a, d) + "");
+//["LRUCache","get","put","get","put","put","get","get"]
+//[[2],[2],[2,6],[1],[1,5],[1,2],[1],[2]]
+//        LRUCache cache = new LRUCache(2 /* 缓存容量 */);
+//        println(cache.get(2));
+//        cache.put(2,6);
+//        println(cache.get(1));
+//        cache.put(1,5);
+//        cache.put(1,2);
+//        println(cache.get(1));
+//        println(cache.get(2));
+
     }
 
     /**
@@ -787,7 +794,6 @@ public class TT {
         }
         return list;
     }
-
 
 
 }

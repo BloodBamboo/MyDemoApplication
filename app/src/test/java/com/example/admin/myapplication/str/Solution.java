@@ -38,4 +38,42 @@ public class Solution {
         return max;
     }
 
+
+    /**
+     * 567. 字符串的排列
+     * 给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的排列。
+     * 换句话说，第一个字符串的排列之一是第二个字符串的子串。
+     */
+    public boolean checkInclusion(String s1, String s2) {
+        if (s1 == null || s2 == null || s1.length() > s2.length()) {
+            return false;
+        }
+
+        int map1[] = new int[26];
+        int map2[] = new int[26];
+        int size1 = s1.length();
+        for (int i = 0; i < size1; i++) {
+            map1[s1.charAt(i) - 'a']++;
+            map2[s2.charAt(i) - 'a']++;
+        }
+        map2[s2.charAt(size1 - 1) - 'a']--;
+        for (int i = size1 - 1, count = s2.length(); i < count; i++) {
+            map2[s2.charAt(i) - 'a']++;
+            if (compare(map1, map2)) {
+                return true;
+            }
+            map2[s2.charAt(i - size1 + 1) - 'a']--;
+        }
+
+        return false;
+    }
+
+    private boolean compare(int[] map1, int[] map2) {
+        for (int i = 0, count = map1.length; i < count; i++) {
+            if (map1[i] != map2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

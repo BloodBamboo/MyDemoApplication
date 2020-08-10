@@ -202,4 +202,89 @@ public class SolutionArray {
         }
         return sb.reverse().toString();
     }
+
+    /**
+     * 349. 两个数组的交集
+     * 给定两个数组，编写一个函数来计算它们的交集。
+     */
+    public int[] intersection(int[] nums1, int[] nums2) {
+        if (nums1.length == 0) {
+            return nums1;
+        }
+
+        if (nums2.length == 0) {
+            return nums2;
+        }
+
+        insertSort(nums1);
+        insertSort(nums2);
+        int[] array = new int[Math.min(nums1.length, nums2.length)];
+        int count = 0;
+        int index = 0;
+        if (nums1.length < nums2.length) {
+            for (int i = 0; i < nums1.length; i++) {
+                for (int j = index; j < nums2.length; j++) {
+                    if (nums1[i] == nums2[j]) {
+                        if (count == 0 || nums1[i] != array[count - 1]) {
+                            array[count++] = nums1[i];
+                        }
+                        index = j;
+                        break;
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < nums2.length; i++) {
+                for (int j = index; j < nums1.length; j++) {
+                    if (nums2[i] == nums1[j]) {
+                        if (count == 0 || nums2[i] != array[count - 1]) {
+                            array[count++] = nums2[i];
+                        }
+                        index = j;
+                        break;
+                    }
+                }
+            }
+        }
+        int[] r = new int[count];
+        for (int i = 0; i < count; i++) {
+            r[i] = array[i];
+        }
+        return r;
+    }
+
+    //插入排序
+    public void insertSort(int[] nums) {
+        int current = 0;
+        int tmp;
+        for (int i = 0; i < nums.length; i++) {
+            current = i;
+            while (current > 0 && nums[current] < nums[current - 1]) {
+                tmp = nums[current - 1];
+                nums[current - 1] = nums[current];
+                nums[current] = tmp;
+                current--;
+            }
+        }
+    }
+
+    /**
+     * 面试题 05.01. 插入
+     * 插入。给定两个32位的整数N与M，以及表示比特位置的i与j。
+     * 编写一种方法，将M插入N，使得M从N的第j位开始，到第i位结束。
+     * 假定从j位到i位足以容纳M，也即若M = 10 011，那么j和i之间至少可容纳5个位。
+     * 例如，不可能出现j = 3和i = 2的情况，因为第3位和第2位之间放不下M
+     */
+    public int insertBits(int N, int M, int i, int j) {
+        int tmp;
+        for (int k = i; k <= j; k++) {
+            tmp = 1 << k;
+            if ((N & tmp) > 0) {
+                N -= tmp;
+            }
+        }
+        M = M << i;
+        return N | M;
+    }
+
 }
